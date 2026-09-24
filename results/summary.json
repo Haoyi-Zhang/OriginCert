@@ -1,0 +1,247 @@
+{
+  "ablations": [
+    {
+      "coverage_detected": 36,
+      "coverage_total": 36,
+      "method": "certificate_method",
+      "origin_detected": 36,
+      "origin_total": 36,
+      "semantic_detected": 108,
+      "semantic_total": 108
+    },
+    {
+      "coverage_detected": 0,
+      "coverage_total": 36,
+      "method": "global_template_lint",
+      "origin_detected": 0,
+      "origin_total": 36,
+      "semantic_detected": 0,
+      "semantic_total": 108
+    },
+    {
+      "coverage_detected": 0,
+      "coverage_total": 36,
+      "method": "default_trace_safety",
+      "origin_detected": 0,
+      "origin_total": 36,
+      "semantic_detected": 0,
+      "semantic_total": 108
+    },
+    {
+      "coverage_detected": 0,
+      "coverage_total": 36,
+      "method": "three_trace_tests",
+      "origin_detected": 0,
+      "origin_total": 36,
+      "semantic_detected": 99,
+      "semantic_total": 108
+    },
+    {
+      "coverage_detected": 0,
+      "coverage_total": 36,
+      "method": "exhaustive_trace_safety",
+      "origin_detected": 0,
+      "origin_total": 36,
+      "semantic_detected": 108,
+      "semantic_total": 108
+    },
+    {
+      "coverage_detected": 36,
+      "coverage_total": 36,
+      "method": "coverage_plus_safety",
+      "origin_detected": 0,
+      "origin_total": 36,
+      "semantic_detected": 108,
+      "semantic_total": 108
+    },
+    {
+      "coverage_detected": 0,
+      "coverage_total": 36,
+      "method": "origin_plus_safety",
+      "origin_detected": 36,
+      "origin_total": 36,
+      "semantic_detected": 108,
+      "semantic_total": 108
+    },
+    {
+      "coverage_detected": 36,
+      "coverage_total": 36,
+      "method": "origin_plus_coverage",
+      "origin_detected": 36,
+      "origin_total": 36,
+      "semantic_detected": 0,
+      "semantic_total": 108
+    }
+  ],
+  "baselines": [
+    {
+      "accuracy": 1.0,
+      "false_negative": 0,
+      "false_positive": 0,
+      "method": "certificate_method",
+      "precision": 1.0,
+      "recall": 1.0,
+      "true_negative": 180,
+      "true_positive": 180
+    },
+    {
+      "accuracy": 0.5,
+      "false_negative": 180,
+      "false_positive": 0,
+      "method": "global_template_lint",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_negative": 180,
+      "true_positive": 0
+    },
+    {
+      "accuracy": 0.5,
+      "false_negative": 180,
+      "false_positive": 0,
+      "method": "default_trace_safety",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_negative": 180,
+      "true_positive": 0
+    },
+    {
+      "accuracy": 0.775,
+      "false_negative": 81,
+      "false_positive": 0,
+      "method": "three_trace_tests",
+      "precision": 1.0,
+      "recall": 0.55,
+      "true_negative": 180,
+      "true_positive": 99
+    },
+    {
+      "accuracy": 0.8,
+      "false_negative": 72,
+      "false_positive": 0,
+      "method": "exhaustive_trace_safety",
+      "precision": 1.0,
+      "recall": 0.6,
+      "true_negative": 180,
+      "true_positive": 108
+    },
+    {
+      "accuracy": 0.9,
+      "false_negative": 36,
+      "false_positive": 0,
+      "method": "coverage_plus_safety",
+      "precision": 1.0,
+      "recall": 0.8,
+      "true_negative": 180,
+      "true_positive": 144
+    },
+    {
+      "accuracy": 0.9,
+      "false_negative": 36,
+      "false_positive": 0,
+      "method": "origin_plus_safety",
+      "precision": 1.0,
+      "recall": 0.8,
+      "true_negative": 180,
+      "true_positive": 144
+    },
+    {
+      "accuracy": 0.7,
+      "false_negative": 108,
+      "false_positive": 0,
+      "method": "origin_plus_coverage",
+      "precision": 1.0,
+      "recall": 0.4,
+      "true_negative": 180,
+      "true_positive": 72
+    }
+  ],
+  "certificate": {
+    "accepted_certificate_count": 180,
+    "median_assignment_to_cell_ratio": 6.0,
+    "median_bytes": 19771.0,
+    "p95_assignment_to_cell_ratio": 6.0,
+    "p95_bytes": 33234.0
+  },
+  "corpus": {
+    "accepted": 180,
+    "cases": 360,
+    "constructed_cases": 324,
+    "constructed_families": 3,
+    "control_event_skeletons": 138,
+    "coverage_faults": 36,
+    "exhaustive_assignments": 8640,
+    "families": 6,
+    "generator_nodes_max": 23,
+    "generator_nodes_median": 13.0,
+    "generator_nodes_min": 8,
+    "historical_anchor_cases": 36,
+    "historical_anchor_families": 3,
+    "historical_patched_cases": 18,
+    "historical_vulnerable_cases": 18,
+    "missing_obligation_faults": 18,
+    "nonexistent_origin_faults": 18,
+    "origin_faults": 36,
+    "pure_control_topologies": 33,
+    "rejected": 180,
+    "semantic_faults": 108,
+    "spurious_obligation_faults": 18,
+    "wrong_existing_origin_faults": 18
+  },
+  "correctness": {
+    "construction_labels_match_checker_classification": 360,
+    "historical_oracle_cases": 36,
+    "historical_oracle_matches_checker_classification": 36,
+    "independent_checker_passes": 360,
+    "producer_checker_assignment_semantics_compared": 8640,
+    "producer_matches_checker_classification": 360,
+    "tampered_records_rejected": 1440,
+    "tampered_records_tested": 1440
+  },
+  "counterexample": {
+    "count": 180,
+    "mean_size_reduction": 2.5,
+    "median_bytes": 9077.0,
+    "median_minimal_input_size": 1.0,
+    "median_reverse_branch_first_size": 4.0
+  },
+  "historical_anchors": [
+    {
+      "anchor": "python-model-factory",
+      "assignments": 288,
+      "cases": 12,
+      "oracle_checker_agreements": 12,
+      "patched_cases": 6,
+      "record": "GHSA-386q-5hp3-95m9",
+      "unsafe_assignments": 72,
+      "vulnerable_cases": 6
+    },
+    {
+      "anchor": "php-sdk-literal",
+      "assignments": 288,
+      "cases": 12,
+      "oracle_checker_agreements": 12,
+      "patched_cases": 6,
+      "record": "GHSA-jqwh-526h-c92j",
+      "unsafe_assignments": 72,
+      "vulnerable_cases": 6
+    },
+    {
+      "anchor": "typescript-mock-const",
+      "assignments": 288,
+      "cases": 12,
+      "oracle_checker_agreements": 12,
+      "patched_cases": 6,
+      "record": "GHSA-f456-rf33-4626",
+      "unsafe_assignments": 72,
+      "vulnerable_cases": 6
+    }
+  ],
+  "performance": {
+    "checker_median_ms": 5.421585,
+    "checker_p95_ms": 8.018932,
+    "evaluation_peak_rss_kib": 98104,
+    "evaluation_wall_seconds": 26.309964664000063,
+    "producer_median_ms": 4.4955375,
+    "producer_p95_ms": 7.196232
+  }
+}

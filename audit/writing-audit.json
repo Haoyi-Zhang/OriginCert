@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "sentence_count": 340,
+  "max_sentence_words": 93,
+  "sentences_over_70_words": 2,
+  "longest_sentences": [
+    {
+      "words": 93,
+      "text": "acmart =1 =15 [citation] booktabs array multirow tikz arrows.meta,positioning,fit,calc,shapes.geometric,backgrounds pgfplots compat=1.18 xspace L [1] > p #1 pdfcreator= ,pdfproducer= none printacmref=false The ACM International Conference on the Foundations of Software Engineering July 12--16, 2027 Shenzhen, China 2027 2027 TraceCert G D O T C rank emit seq if repeat safe origin decl trig document Origin-Complete Traceability Certificates for Bounded Code Generators Anonymous Author(s) Anonymous Author(s) abstract A generated program can execute safely while carrying a broken explanation of how it was produced."
+    },
+    {
+      "words": 86,
+      "text": "This work contributes: itemize a finite generator-to-event contract that separates semantic safety from exact obligation coverage and exact emit-node origin; certificate and minimum-counterexample constructions, with proof arguments for partition preservation, checker soundness, relative completeness, termination, and a formal separation from operation-only observation; and a separately implemented checker and reproducible evaluation over 360 cases, including three public-advisory abstractions, with exhaustive controls, component ablations, and mutation tests. itemize Motivating Failure and Design Requirements sec:motivation A safe trace with broken evidence Consider a generator for a database-backed endpoint."
+    },
+    {
+      "words": 63,
+      "text": "Parsing, scanning, testing, and execution are valuable, but they do not by themselves distinguish three properties: enumerate semantic safety : the emitted operations satisfy a declared monitor; obligation coverage : every security-sensitive operation declares exactly the checks that apply to it; and origin integrity : every emitted operation claims the exact generator emit node that created it. enumerate The distinction appears even in a two-node generator."
+    },
+    {
+      "words": 58,
+      "text": "If the independent checker accepts a certificate for , then for every : enumerate belongs to exactly one certificate cube; independent concrete execution produces that cell's event trace and rendered program; every event's claimed origin equals the actual emit node reached at that event position; the event's declared obligations equal ; and the deterministic monitor accepts the complete trace. enumerate Proof."
+    },
+    {
+      "words": 53,
+      "text": "The result isolates traceability as a checkable property distinct from output safety. abstract Software and its engineering Formal software verification Security and privacy Software security engineering code generation, software traceability, security obligations, symbolic execution, certificates, program analysis pdfcreator= ,pdfproducer= Introduction Build tools, protocol compilers, and model-driven frameworks turn compact inputs into executable artifacts."
+    },
+    {
+      "words": 51,
+      "text": "Each emitted event carries four classes of data: itemize an operation and operation-specific arguments; a claimed identifier for the emit node that created it; the exact set of declared obligation identifiers; and an optional nonempty occurrence path for nested bounded repetitions. itemize The normal claimed origin is the emit node's identifier."
+    },
+    {
+      "words": 47,
+      "text": "It is a sequence of security-relevant events, such as “protect value,” “check capability,” “declare random source,” “database query,” “HTML sink,” “command execution,” “path open,” “privileged action,” “random token,” or “credential use.” Rendering converts an event sequence to a readable pseudo-program, but the monitor consumes the structured events."
+    },
+    {
+      "words": 43,
+      "text": "In the event abstraction, a query is safe when its data value has acquired an SQL-sanitization protection; an HTML sink is safe when its value has acquired HTML encoding; a privileged action is safe when the required capability appeared in an earlier check."
+    },
+    {
+      "words": 43,
+      "text": "Reproduction rebuilds all 360 cases and results, classifies cases by checker-side exhaustive replay without construction labels, compares both implementations on all 8,640 inputs, checks the 36 advisory abstractions with mechanism-specific oracles, runs the mutation suite, and executes 29 contract and regression tests."
+    },
+    {
+      "words": 42,
+      "text": "Running python scripts/reproduce.py regenerates the corpus and results, compares both semantics on 8,640 inputs, checks all 36 advisory abstractions with mechanism-specific oracles, performs 1,440 mutation checks, and runs the complete test suite using only the Python standard library."
+    },
+    {
+      "words": 38,
+      "text": "The origin defect keeps the same operations and obligations but changes the query's origin to another claimed node; Figure [reference] uses a nonexistent identifier, while the corpus also includes identifiers that name a real but wrong generator node."
+    },
+    {
+      "words": 38,
+      "text": "Evaluation sec:evaluation Questions and methodology The evaluation asks five questions: description Can checker-side exhaustive replay classify every case without construction labels, agree with producer semantics on every input, and match independent source-to-sink oracles for the public anchors?"
+    }
+  ],
+  "hype_terms": [],
+  "defensive_phrase_counts": {},
+  "repeated_openers": {},
+  "issues": []
+}

@@ -1,0 +1,879 @@
+{
+  "cells": [
+    {
+      "cube": {
+        "admin": [
+          false,
+          true
+        ],
+        "feature": [
+          false,
+          true
+        ],
+        "mode": [
+          "legacy"
+        ],
+        "replicas": [
+          1
+        ]
+      },
+      "events": [
+        {
+          "input": "request",
+          "obligations": [],
+          "op": "source",
+          "origin": "web-html-017-selected-clone-16",
+          "target": "user"
+        },
+        {
+          "obligations": [],
+          "op": "protect",
+          "origin": "web-html-017-selected-clone-17",
+          "protection": "html_escape",
+          "source": "user",
+          "target": "safe0"
+        },
+        {
+          "obligations": [],
+          "op": "protect",
+          "origin": "web-html-017-selected-clone-18",
+          "protection": "html_escape",
+          "source": "safe0",
+          "target": "safe_extra"
+        },
+        {
+          "channel": "html",
+          "obligations": [
+            "CWE-79"
+          ],
+          "occurrence": [
+            0
+          ],
+          "op": "sink",
+          "origin": "web-html-017-selected-clone-20",
+          "source": "safe_extra"
+        }
+      ],
+      "monitor_steps": [
+        {
+          "after": {
+            "checks": [],
+            "protections": {},
+            "strong_rng": []
+          },
+          "before": {
+            "checks": [],
+            "protections": {},
+            "strong_rng": []
+          },
+          "event_index": 0,
+          "violations": []
+        },
+        {
+          "after": {
+            "checks": [],
+            "protections": {
+              "safe0": [
+                "html_escape"
+              ]
+            },
+            "strong_rng": []
+          },
+          "before": {
+            "checks": [],
+            "protections": {},
+            "strong_rng": []
+          },
+          "event_index": 1,
+          "violations": []
+        },
+        {
+          "after": {
+            "checks": [],
+            "protections": {
+              "safe0": [
+                "html_escape"
+              ],
+              "safe_extra": [
+                "html_escape"
+              ]
+            },
+            "strong_rng": []
+          },
+          "before": {
+            "checks": [],
+            "protections": {
+              "safe0": [
+                "html_escape"
+              ]
+            },
+            "strong_rng": []
+          },
+          "event_index": 2,
+          "violations": []
+        },
+        {
+          "after": {
+            "checks": [],
+            "protections": {
+              "safe0": [
+                "html_escape"
+              ],
+              "safe_extra": [
+                "html_escape"
+              ]
+            },
+            "strong_rng": []
+          },
+          "before": {
+            "checks": [],
+            "protections": {
+              "safe0": [
+                "html_escape"
+              ],
+              "safe_extra": [
+                "html_escape"
+              ]
+            },
+            "strong_rng": []
+          },
+          "event_index": 3,
+          "violations": []
+        }
+      ],
+      "program": [
+        "user = input(request)",
+        "safe0 = html_escape(user)",
+        "safe_extra = html_escape(safe0)",
+        "html_sink(safe_extra)"
+      ]
+    },
+    {
+      "cube": {
+        "admin": [
+          false,
+          true
+        ],
+        "feature": [
+          false,
+          true
+        ],
+        "mode": [
+          "legacy"
+        ],
+        "replicas": [
+          2
+        ]
+      },
+      "events": [
+        {
+          "input": "request",
+          "obligations": [],
+          "op": "source",
+          "origin": "web-html-017-selected-clone-16",
+          "target": "user"
+        },
+        {
+          "obligations": [],
+          "op": "protect",
+          "origin": "web-html-017-selected-clone-17",
+          "protection": "html_escape",
+          "source": "user",
+          "target": "safe0"
+        },
+        {
+          "obligations": [],
+          "op": "protect",
+          "origin": "web-html-017-selected-clone-18",
+          "protection": "html_escape",
+          "source": "safe0",
+          "target": "safe_extra"
+        },
+        {
+          "channel": "html",
+          "obligations": [
+            "CWE-79"
+          ],
+          "occurrence": [
+            0
+          ],
+          "op": "sink",
+          "origin": "web-html-017-selected-clone-20",
+          "source": "safe_extra"
+        },
+        {
+          "channel": "html",
+          "obligations": [
+            "CWE-79"
+          ],
+          "occurrence": [
+            1
+          ],
+          "op": "sink",
+          "origin": "web-html-017-selected-clone-20",
+          "source": "safe_extra"
+        }
+      ],
+      "monitor_steps": [
+        {
+          "after": {
+            "checks": [],
+            "protections": {},
+            "strong_rng": []
+          },
+          "before": {
+            "checks": [],
+            "protections": {},
+            "strong_rng": []
+          },
+          "event_index": 0,
+          "violations": []
+        },
+        {
+          "after": {
+            "checks": [],
+            "protections": {
+              "safe0": [
+                "html_escape"
+              ]
+            },
+            "strong_rng": []
+          },
+          "before": {
+            "checks": [],
+            "protections": {},
+            "strong_rng": []
+          },
+          "event_index": 1,
+          "violations": []
+        },
+        {
+          "after": {
+            "checks": [],
+            "protections": {
+              "safe0": [
+                "html_escape"
+              ],
+              "safe_extra": [
+                "html_escape"
+              ]
+            },
+            "strong_rng": []
+          },
+          "before": {
+            "checks": [],
+            "protections": {
+              "safe0": [
+                "html_escape"
+              ]
+            },
+            "strong_rng": []
+          },
+          "event_index": 2,
+          "violations": []
+        },
+        {
+          "after": {
+            "checks": [],
+            "protections": {
+              "safe0": [
+                "html_escape"
+              ],
+              "safe_extra": [
+                "html_escape"
+              ]
+            },
+            "strong_rng": []
+          },
+          "before": {
+            "checks": [],
+            "protections": {
+              "safe0": [
+                "html_escape"
+              ],
+              "safe_extra": [
+                "html_escape"
+              ]
+            },
+            "strong_rng": []
+          },
+          "event_index": 3,
+          "violations": []
+        },
+        {
+          "after": {
+            "checks": [],
+            "protections": {
+              "safe0": [
+                "html_escape"
+              ],
+              "safe_extra": [
+                "html_escape"
+              ]
+            },
+            "strong_rng": []
+          },
+          "before": {
+            "checks": [],
+            "protections": {
+              "safe0": [
+                "html_escape"
+              ],
+              "safe_extra": [
+                "html_escape"
+              ]
+            },
+            "strong_rng": []
+          },
+          "event_index": 4,
+          "violations": []
+        }
+      ],
+      "program": [
+        "user = input(request)",
+        "safe0 = html_escape(user)",
+        "safe_extra = html_escape(safe0)",
+        "html_sink(safe_extra)",
+        "html_sink(safe_extra)"
+      ]
+    },
+    {
+      "cube": {
+        "admin": [
+          false,
+          true
+        ],
+        "feature": [
+          false,
+          true
+        ],
+        "mode": [
+          "normal",
+          "bulk"
+        ],
+        "replicas": [
+          1
+        ]
+      },
+      "events": [
+        {
+          "input": "request",
+          "obligations": [],
+          "op": "source",
+          "origin": "web-html-017-other-clone-22",
+          "target": "user"
+        },
+        {
+          "obligations": [],
+          "op": "protect",
+          "origin": "web-html-017-other-clone-23",
+          "protection": "html_escape",
+          "source": "user",
+          "target": "safe0"
+        },
+        {
+          "channel": "html",
+          "obligations": [
+            "CWE-79"
+          ],
+          "occurrence": [
+            0
+          ],
+          "op": "sink",
+          "origin": "web-html-017-other-clone-25",
+          "source": "safe0"
+        }
+      ],
+      "monitor_steps": [
+        {
+          "after": {
+            "checks": [],
+            "protections": {},
+            "strong_rng": []
+          },
+          "before": {
+            "checks": [],
+            "protections": {},
+            "strong_rng": []
+          },
+          "event_index": 0,
+          "violations": []
+        },
+        {
+          "after": {
+            "checks": [],
+            "protections": {
+              "safe0": [
+                "html_escape"
+              ]
+            },
+            "strong_rng": []
+          },
+          "before": {
+            "checks": [],
+            "protections": {},
+            "strong_rng": []
+          },
+          "event_index": 1,
+          "violations": []
+        },
+        {
+          "after": {
+            "checks": [],
+            "protections": {
+              "safe0": [
+                "html_escape"
+              ]
+            },
+            "strong_rng": []
+          },
+          "before": {
+            "checks": [],
+            "protections": {
+              "safe0": [
+                "html_escape"
+              ]
+            },
+            "strong_rng": []
+          },
+          "event_index": 2,
+          "violations": []
+        }
+      ],
+      "program": [
+        "user = input(request)",
+        "safe0 = html_escape(user)",
+        "html_sink(safe0)"
+      ]
+    },
+    {
+      "cube": {
+        "admin": [
+          false,
+          true
+        ],
+        "feature": [
+          false,
+          true
+        ],
+        "mode": [
+          "normal",
+          "bulk"
+        ],
+        "replicas": [
+          2
+        ]
+      },
+      "events": [
+        {
+          "input": "request",
+          "obligations": [],
+          "op": "source",
+          "origin": "web-html-017-other-clone-22",
+          "target": "user"
+        },
+        {
+          "obligations": [],
+          "op": "protect",
+          "origin": "web-html-017-other-clone-23",
+          "protection": "html_escape",
+          "source": "user",
+          "target": "safe0"
+        },
+        {
+          "channel": "html",
+          "obligations": [
+            "CWE-79"
+          ],
+          "occurrence": [
+            0
+          ],
+          "op": "sink",
+          "origin": "web-html-017-other-clone-25",
+          "source": "safe0"
+        },
+        {
+          "channel": "html",
+          "obligations": [
+            "CWE-79"
+          ],
+          "occurrence": [
+            1
+          ],
+          "op": "sink",
+          "origin": "web-html-017-other-clone-25",
+          "source": "safe0"
+        }
+      ],
+      "monitor_steps": [
+        {
+          "after": {
+            "checks": [],
+            "protections": {},
+            "strong_rng": []
+          },
+          "before": {
+            "checks": [],
+            "protections": {},
+            "strong_rng": []
+          },
+          "event_index": 0,
+          "violations": []
+        },
+        {
+          "after": {
+            "checks": [],
+            "protections": {
+              "safe0": [
+                "html_escape"
+              ]
+            },
+            "strong_rng": []
+          },
+          "before": {
+            "checks": [],
+            "protections": {},
+            "strong_rng": []
+          },
+          "event_index": 1,
+          "violations": []
+        },
+        {
+          "after": {
+            "checks": [],
+            "protections": {
+              "safe0": [
+                "html_escape"
+              ]
+            },
+            "strong_rng": []
+          },
+          "before": {
+            "checks": [],
+            "protections": {
+              "safe0": [
+                "html_escape"
+              ]
+            },
+            "strong_rng": []
+          },
+          "event_index": 2,
+          "violations": []
+        },
+        {
+          "after": {
+            "checks": [],
+            "protections": {
+              "safe0": [
+                "html_escape"
+              ]
+            },
+            "strong_rng": []
+          },
+          "before": {
+            "checks": [],
+            "protections": {
+              "safe0": [
+                "html_escape"
+              ]
+            },
+            "strong_rng": []
+          },
+          "event_index": 3,
+          "violations": []
+        }
+      ],
+      "program": [
+        "user = input(request)",
+        "safe0 = html_escape(user)",
+        "html_sink(safe0)",
+        "html_sink(safe0)"
+      ]
+    }
+  ],
+  "claim": {
+    "domain_partitioned": true,
+    "obligation_complete": true,
+    "origin_complete": true,
+    "trace_safe": true
+  },
+  "kind": "certificate",
+  "subject": {
+    "case_id": "web-html-017",
+    "catalog": {
+      "name": "CWE-derived bounded trace obligations",
+      "obligations": [
+        {
+          "id": "CWE-89",
+          "rule": {
+            "kind": "protection",
+            "requires": [
+              "sql_parameter"
+            ]
+          },
+          "trigger": {
+            "channel": "sql",
+            "op": "sink"
+          }
+        },
+        {
+          "id": "CWE-79",
+          "rule": {
+            "kind": "protection",
+            "requires": [
+              "html_escape"
+            ]
+          },
+          "trigger": {
+            "channel": "html",
+            "op": "sink"
+          }
+        },
+        {
+          "id": "CWE-78",
+          "rule": {
+            "kind": "protection",
+            "requires": [
+              "argv_exec"
+            ]
+          },
+          "trigger": {
+            "channel": "shell",
+            "op": "sink"
+          }
+        },
+        {
+          "id": "CWE-22",
+          "rule": {
+            "kind": "protection",
+            "requires": [
+              "path_normalize",
+              "base_confine"
+            ]
+          },
+          "trigger": {
+            "channel": "path",
+            "op": "sink"
+          }
+        },
+        {
+          "id": "CWE-862",
+          "rule": {
+            "capability_field": "capability",
+            "kind": "preceded"
+          },
+          "trigger": {
+            "op": "privileged"
+          }
+        },
+        {
+          "id": "CWE-330",
+          "rule": {
+            "kind": "strong_rng",
+            "source_field": "source"
+          },
+          "trigger": {
+            "op": "token"
+          }
+        },
+        {
+          "id": "CWE-798",
+          "rule": {
+            "kind": "protection",
+            "requires": [
+              "external_secret"
+            ]
+          },
+          "trigger": {
+            "op": "credential_use"
+          }
+        },
+        {
+          "cwe": "CWE-94",
+          "id": "GEN-PY-FACTORY",
+          "rule": {
+            "kind": "protection",
+            "requires": [
+              "factory_allowlist"
+            ]
+          },
+          "trigger": {
+            "channel": "python_factory",
+            "op": "sink"
+          }
+        },
+        {
+          "cwe": "CWE-94",
+          "id": "GEN-PHP-LITERAL",
+          "rule": {
+            "kind": "protection",
+            "requires": [
+              "php_dollar_escape"
+            ]
+          },
+          "trigger": {
+            "channel": "php_double_quote",
+            "op": "sink"
+          }
+        },
+        {
+          "cwe": "CWE-94",
+          "id": "GEN-TS-CONST",
+          "rule": {
+            "kind": "protection",
+            "requires": [
+              "json_serialize"
+            ]
+          },
+          "trigger": {
+            "channel": "typescript_const",
+            "op": "sink"
+          }
+        }
+      ]
+    },
+    "corpus_source": "constructed",
+    "family": "web",
+    "generator": {
+      "condition": {
+        "equals": "legacy",
+        "field": "mode"
+      },
+      "else": {
+        "children": [
+          {
+            "declared_obligations": [],
+            "event": {
+              "input": "request",
+              "op": "source",
+              "target": "user"
+            },
+            "kind": "emit",
+            "node": "web-html-017-other-clone-22"
+          },
+          {
+            "declared_obligations": [],
+            "event": {
+              "op": "protect",
+              "protection": "html_escape",
+              "source": "user",
+              "target": "safe0"
+            },
+            "kind": "emit",
+            "node": "web-html-017-other-clone-23"
+          },
+          {
+            "body": {
+              "declared_obligations": [
+                "CWE-79"
+              ],
+              "event": {
+                "channel": "html",
+                "op": "sink",
+                "source": "safe0"
+              },
+              "kind": "emit",
+              "node": "web-html-017-other-clone-25"
+            },
+            "count_field": "replicas",
+            "kind": "repeat",
+            "node": "web-html-017-other-clone-24"
+          }
+        ],
+        "kind": "seq",
+        "node": "web-html-017-other-clone-21"
+      },
+      "kind": "if",
+      "node": "web-html-017-guard-26",
+      "then": {
+        "children": [
+          {
+            "declared_obligations": [],
+            "event": {
+              "input": "request",
+              "op": "source",
+              "target": "user"
+            },
+            "kind": "emit",
+            "node": "web-html-017-selected-clone-16"
+          },
+          {
+            "declared_obligations": [],
+            "event": {
+              "op": "protect",
+              "protection": "html_escape",
+              "source": "user",
+              "target": "safe0"
+            },
+            "kind": "emit",
+            "node": "web-html-017-selected-clone-17"
+          },
+          {
+            "declared_obligations": [],
+            "event": {
+              "op": "protect",
+              "protection": "html_escape",
+              "source": "safe0",
+              "target": "safe_extra"
+            },
+            "kind": "emit",
+            "node": "web-html-017-selected-clone-18"
+          },
+          {
+            "body": {
+              "declared_obligations": [
+                "CWE-79"
+              ],
+              "event": {
+                "channel": "html",
+                "op": "sink",
+                "source": "safe_extra"
+              },
+              "kind": "emit",
+              "node": "web-html-017-selected-clone-20"
+            },
+            "count_field": "replicas",
+            "kind": "repeat",
+            "node": "web-html-017-selected-clone-19"
+          }
+        ],
+        "kind": "seq",
+        "node": "web-html-017-selected-clone-15"
+      }
+    },
+    "schema": {
+      "fields": [
+        {
+          "domain": [
+            "normal",
+            "legacy",
+            "bulk"
+          ],
+          "name": "mode"
+        },
+        {
+          "domain": [
+            false,
+            true
+          ],
+          "name": "admin"
+        },
+        {
+          "domain": [
+            false,
+            true
+          ],
+          "name": "feature"
+        },
+        {
+          "domain": [
+            1,
+            2
+          ],
+          "name": "replicas"
+        }
+      ]
+    },
+    "subtype": "html"
+  }
+}

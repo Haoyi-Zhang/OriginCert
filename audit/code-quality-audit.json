@@ -1,0 +1,32 @@
+{
+  "bare_excepts": [],
+  "dangerous_calls": [],
+  "production_asserts": [],
+  "scope": "All distributed Python files; asserts are prohibited in src/ and checker/ because -O removes them.",
+  "statistics": {
+    "classes": 8,
+    "files": 21,
+    "functions": 225,
+    "logical_lines": 4715,
+    "tests": 33
+  },
+  "status": "FAIL",
+  "todo_markers": [
+    {
+      "file": "scripts/audit_code.py",
+      "line": 68
+    },
+    {
+      "file": "scripts/audit_code.py",
+      "line": 68
+    },
+    {
+      "file": "scripts/audit_code.py",
+      "line": 68
+    },
+    {
+      "file": "scripts/audit_references.py",
+      "line": 21
+    }
+  ]
+}

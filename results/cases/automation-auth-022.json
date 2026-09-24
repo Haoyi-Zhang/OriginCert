@@ -1,0 +1,304 @@
+{
+  "kind": "counterexample",
+  "subject": {
+    "case_id": "automation-auth-022",
+    "catalog": {
+      "name": "CWE-derived bounded trace obligations",
+      "obligations": [
+        {
+          "id": "CWE-89",
+          "rule": {
+            "kind": "protection",
+            "requires": [
+              "sql_parameter"
+            ]
+          },
+          "trigger": {
+            "channel": "sql",
+            "op": "sink"
+          }
+        },
+        {
+          "id": "CWE-79",
+          "rule": {
+            "kind": "protection",
+            "requires": [
+              "html_escape"
+            ]
+          },
+          "trigger": {
+            "channel": "html",
+            "op": "sink"
+          }
+        },
+        {
+          "id": "CWE-78",
+          "rule": {
+            "kind": "protection",
+            "requires": [
+              "argv_exec"
+            ]
+          },
+          "trigger": {
+            "channel": "shell",
+            "op": "sink"
+          }
+        },
+        {
+          "id": "CWE-22",
+          "rule": {
+            "kind": "protection",
+            "requires": [
+              "path_normalize",
+              "base_confine"
+            ]
+          },
+          "trigger": {
+            "channel": "path",
+            "op": "sink"
+          }
+        },
+        {
+          "id": "CWE-862",
+          "rule": {
+            "capability_field": "capability",
+            "kind": "preceded"
+          },
+          "trigger": {
+            "op": "privileged"
+          }
+        },
+        {
+          "id": "CWE-330",
+          "rule": {
+            "kind": "strong_rng",
+            "source_field": "source"
+          },
+          "trigger": {
+            "op": "token"
+          }
+        },
+        {
+          "id": "CWE-798",
+          "rule": {
+            "kind": "protection",
+            "requires": [
+              "external_secret"
+            ]
+          },
+          "trigger": {
+            "op": "credential_use"
+          }
+        },
+        {
+          "cwe": "CWE-94",
+          "id": "GEN-PY-FACTORY",
+          "rule": {
+            "kind": "protection",
+            "requires": [
+              "factory_allowlist"
+            ]
+          },
+          "trigger": {
+            "channel": "python_factory",
+            "op": "sink"
+          }
+        },
+        {
+          "cwe": "CWE-94",
+          "id": "GEN-PHP-LITERAL",
+          "rule": {
+            "kind": "protection",
+            "requires": [
+              "php_dollar_escape"
+            ]
+          },
+          "trigger": {
+            "channel": "php_double_quote",
+            "op": "sink"
+          }
+        },
+        {
+          "cwe": "CWE-94",
+          "id": "GEN-TS-CONST",
+          "rule": {
+            "kind": "protection",
+            "requires": [
+              "json_serialize"
+            ]
+          },
+          "trigger": {
+            "channel": "typescript_const",
+            "op": "sink"
+          }
+        }
+      ]
+    },
+    "corpus_source": "constructed",
+    "family": "automation",
+    "generator": {
+      "condition": {
+        "equals": true,
+        "field": "remote"
+      },
+      "else": {
+        "children": [
+          {
+            "declared_obligations": [],
+            "event": {
+              "capability": "admin",
+              "op": "check"
+            },
+            "kind": "emit",
+            "node": "automation-auth-022-other-clone-12"
+          },
+          {
+            "body": {
+              "declared_obligations": [
+                "CWE-862"
+              ],
+              "event": {
+                "capability": "admin",
+                "op": "privileged"
+              },
+              "kind": "emit",
+              "node": "automation-auth-022-other-clone-14"
+            },
+            "count_field": "jobs",
+            "kind": "repeat",
+            "node": "automation-auth-022-other-clone-13"
+          }
+        ],
+        "kind": "seq",
+        "node": "automation-auth-022-other-clone-11"
+      },
+      "kind": "if",
+      "node": "automation-auth-022-guard-15",
+      "then": {
+        "children": [
+          {
+            "body": {
+              "declared_obligations": [
+                "CWE-862"
+              ],
+              "event": {
+                "capability": "admin",
+                "op": "privileged"
+              },
+              "kind": "emit",
+              "node": "automation-auth-022-selected-clone-10"
+            },
+            "count_field": "jobs",
+            "kind": "repeat",
+            "node": "automation-auth-022-selected-clone-09"
+          }
+        ],
+        "kind": "seq",
+        "node": "automation-auth-022-selected-clone-08"
+      }
+    },
+    "schema": {
+      "fields": [
+        {
+          "domain": [
+            "direct",
+            "compat",
+            "batch"
+          ],
+          "name": "runner"
+        },
+        {
+          "domain": [
+            false,
+            true
+          ],
+          "name": "remote"
+        },
+        {
+          "domain": [
+            false,
+            true
+          ],
+          "name": "strict"
+        },
+        {
+          "domain": [
+            1,
+            2
+          ],
+          "name": "jobs"
+        }
+      ]
+    },
+    "subtype": "auth"
+  },
+  "witness": {
+    "events": [
+      {
+        "capability": "admin",
+        "obligations": [
+          "CWE-862"
+        ],
+        "occurrence": [
+          0
+        ],
+        "op": "privileged",
+        "origin": "automation-auth-022-selected-clone-10"
+      }
+    ],
+    "input": {
+      "jobs": 1,
+      "remote": true,
+      "runner": "direct",
+      "strict": false
+    },
+    "input_size": 1,
+    "monitor_steps": [
+      {
+        "after": {
+          "checks": [],
+          "protections": {},
+          "strong_rng": []
+        },
+        "before": {
+          "checks": [],
+          "protections": {},
+          "strong_rng": []
+        },
+        "event_index": 0,
+        "violations": [
+          {
+            "detail": "capability 'admin' was not checked",
+            "event_index": 0,
+            "kind": "safety",
+            "obligation": "CWE-862",
+            "prefix_length": 1
+          }
+        ]
+      }
+    ],
+    "program": [
+      "privileged(admin)"
+    ],
+    "violating_prefix": [
+      {
+        "capability": "admin",
+        "obligations": [
+          "CWE-862"
+        ],
+        "occurrence": [
+          0
+        ],
+        "op": "privileged",
+        "origin": "automation-auth-022-selected-clone-10"
+      }
+    ],
+    "violation": {
+      "detail": "capability 'admin' was not checked",
+      "event_index": 0,
+      "kind": "safety",
+      "obligation": "CWE-862",
+      "prefix_length": 1
+    }
+  }
+}

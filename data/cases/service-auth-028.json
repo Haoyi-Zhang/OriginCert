@@ -1,0 +1,274 @@
+{
+  "case_id": "service-auth-028",
+  "catalog": {
+    "name": "CWE-derived bounded trace obligations",
+    "obligations": [
+      {
+        "id": "CWE-89",
+        "rule": {
+          "kind": "protection",
+          "requires": [
+            "sql_parameter"
+          ]
+        },
+        "trigger": {
+          "channel": "sql",
+          "op": "sink"
+        }
+      },
+      {
+        "id": "CWE-79",
+        "rule": {
+          "kind": "protection",
+          "requires": [
+            "html_escape"
+          ]
+        },
+        "trigger": {
+          "channel": "html",
+          "op": "sink"
+        }
+      },
+      {
+        "id": "CWE-78",
+        "rule": {
+          "kind": "protection",
+          "requires": [
+            "argv_exec"
+          ]
+        },
+        "trigger": {
+          "channel": "shell",
+          "op": "sink"
+        }
+      },
+      {
+        "id": "CWE-22",
+        "rule": {
+          "kind": "protection",
+          "requires": [
+            "path_normalize",
+            "base_confine"
+          ]
+        },
+        "trigger": {
+          "channel": "path",
+          "op": "sink"
+        }
+      },
+      {
+        "id": "CWE-862",
+        "rule": {
+          "capability_field": "capability",
+          "kind": "preceded"
+        },
+        "trigger": {
+          "op": "privileged"
+        }
+      },
+      {
+        "id": "CWE-330",
+        "rule": {
+          "kind": "strong_rng",
+          "source_field": "source"
+        },
+        "trigger": {
+          "op": "token"
+        }
+      },
+      {
+        "id": "CWE-798",
+        "rule": {
+          "kind": "protection",
+          "requires": [
+            "external_secret"
+          ]
+        },
+        "trigger": {
+          "op": "credential_use"
+        }
+      },
+      {
+        "cwe": "CWE-94",
+        "id": "GEN-PY-FACTORY",
+        "rule": {
+          "kind": "protection",
+          "requires": [
+            "factory_allowlist"
+          ]
+        },
+        "trigger": {
+          "channel": "python_factory",
+          "op": "sink"
+        }
+      },
+      {
+        "cwe": "CWE-94",
+        "id": "GEN-PHP-LITERAL",
+        "rule": {
+          "kind": "protection",
+          "requires": [
+            "php_dollar_escape"
+          ]
+        },
+        "trigger": {
+          "channel": "php_double_quote",
+          "op": "sink"
+        }
+      },
+      {
+        "cwe": "CWE-94",
+        "id": "GEN-TS-CONST",
+        "rule": {
+          "kind": "protection",
+          "requires": [
+            "json_serialize"
+          ]
+        },
+        "trigger": {
+          "channel": "typescript_const",
+          "op": "sink"
+        }
+      }
+    ]
+  },
+  "corpus_source": "constructed",
+  "expected": "rejected",
+  "family": "service",
+  "fault_detail": "monitor-violation",
+  "fault_kind": "semantic",
+  "generator": {
+    "condition": {
+      "equals": true,
+      "field": "debug"
+    },
+    "else": {
+      "children": [
+        {
+          "declared_obligations": [],
+          "event": {
+            "capability": "admin",
+            "op": "check"
+          },
+          "kind": "emit",
+          "node": "service-auth-028-other-clone-17"
+        },
+        {
+          "body": {
+            "declared_obligations": [
+              "CWE-862"
+            ],
+            "event": {
+              "capability": "admin",
+              "op": "privileged"
+            },
+            "kind": "emit",
+            "node": "service-auth-028-other-clone-19"
+          },
+          "count_field": "replicas",
+          "kind": "repeat",
+          "node": "service-auth-028-other-clone-18"
+        }
+      ],
+      "kind": "seq",
+      "node": "service-auth-028-other-clone-16"
+    },
+    "kind": "if",
+    "node": "service-auth-028-guard-20",
+    "then": {
+      "condition": {
+        "equals": true,
+        "field": "elevated"
+      },
+      "else": {
+        "children": [
+          {
+            "declared_obligations": [],
+            "event": {
+              "capability": "admin",
+              "op": "check"
+            },
+            "kind": "emit",
+            "node": "service-auth-028-other-clone-12"
+          },
+          {
+            "body": {
+              "declared_obligations": [
+                "CWE-862"
+              ],
+              "event": {
+                "capability": "admin",
+                "op": "privileged"
+              },
+              "kind": "emit",
+              "node": "service-auth-028-other-clone-14"
+            },
+            "count_field": "replicas",
+            "kind": "repeat",
+            "node": "service-auth-028-other-clone-13"
+          }
+        ],
+        "kind": "seq",
+        "node": "service-auth-028-other-clone-11"
+      },
+      "kind": "if",
+      "node": "service-auth-028-guard-15",
+      "then": {
+        "children": [
+          {
+            "body": {
+              "declared_obligations": [
+                "CWE-862"
+              ],
+              "event": {
+                "capability": "admin",
+                "op": "privileged"
+              },
+              "kind": "emit",
+              "node": "service-auth-028-selected-clone-10"
+            },
+            "count_field": "replicas",
+            "kind": "repeat",
+            "node": "service-auth-028-selected-clone-09"
+          }
+        ],
+        "kind": "seq",
+        "node": "service-auth-028-selected-clone-08"
+      }
+    }
+  },
+  "schema": {
+    "fields": [
+      {
+        "domain": [
+          "standard",
+          "migration",
+          "recovery"
+        ],
+        "name": "profile"
+      },
+      {
+        "domain": [
+          false,
+          true
+        ],
+        "name": "elevated"
+      },
+      {
+        "domain": [
+          false,
+          true
+        ],
+        "name": "debug"
+      },
+      {
+        "domain": [
+          1,
+          2
+        ],
+        "name": "replicas"
+      }
+    ]
+  },
+  "subtype": "auth"
+}

@@ -1,0 +1,293 @@
+{
+  "case_id": "automation-path-033",
+  "catalog": {
+    "name": "CWE-derived bounded trace obligations",
+    "obligations": [
+      {
+        "id": "CWE-89",
+        "rule": {
+          "kind": "protection",
+          "requires": [
+            "sql_parameter"
+          ]
+        },
+        "trigger": {
+          "channel": "sql",
+          "op": "sink"
+        }
+      },
+      {
+        "id": "CWE-79",
+        "rule": {
+          "kind": "protection",
+          "requires": [
+            "html_escape"
+          ]
+        },
+        "trigger": {
+          "channel": "html",
+          "op": "sink"
+        }
+      },
+      {
+        "id": "CWE-78",
+        "rule": {
+          "kind": "protection",
+          "requires": [
+            "argv_exec"
+          ]
+        },
+        "trigger": {
+          "channel": "shell",
+          "op": "sink"
+        }
+      },
+      {
+        "id": "CWE-22",
+        "rule": {
+          "kind": "protection",
+          "requires": [
+            "path_normalize",
+            "base_confine"
+          ]
+        },
+        "trigger": {
+          "channel": "path",
+          "op": "sink"
+        }
+      },
+      {
+        "id": "CWE-862",
+        "rule": {
+          "capability_field": "capability",
+          "kind": "preceded"
+        },
+        "trigger": {
+          "op": "privileged"
+        }
+      },
+      {
+        "id": "CWE-330",
+        "rule": {
+          "kind": "strong_rng",
+          "source_field": "source"
+        },
+        "trigger": {
+          "op": "token"
+        }
+      },
+      {
+        "id": "CWE-798",
+        "rule": {
+          "kind": "protection",
+          "requires": [
+            "external_secret"
+          ]
+        },
+        "trigger": {
+          "op": "credential_use"
+        }
+      },
+      {
+        "cwe": "CWE-94",
+        "id": "GEN-PY-FACTORY",
+        "rule": {
+          "kind": "protection",
+          "requires": [
+            "factory_allowlist"
+          ]
+        },
+        "trigger": {
+          "channel": "python_factory",
+          "op": "sink"
+        }
+      },
+      {
+        "cwe": "CWE-94",
+        "id": "GEN-PHP-LITERAL",
+        "rule": {
+          "kind": "protection",
+          "requires": [
+            "php_dollar_escape"
+          ]
+        },
+        "trigger": {
+          "channel": "php_double_quote",
+          "op": "sink"
+        }
+      },
+      {
+        "cwe": "CWE-94",
+        "id": "GEN-TS-CONST",
+        "rule": {
+          "kind": "protection",
+          "requires": [
+            "json_serialize"
+          ]
+        },
+        "trigger": {
+          "channel": "typescript_const",
+          "op": "sink"
+        }
+      }
+    ]
+  },
+  "corpus_source": "constructed",
+  "expected": "rejected",
+  "family": "automation",
+  "fault_detail": "nonexistent-origin",
+  "fault_kind": "origin",
+  "generator": {
+    "condition": {
+      "equals": "compat",
+      "field": "runner"
+    },
+    "else": {
+      "children": [
+        {
+          "declared_obligations": [],
+          "event": {
+            "input": "request",
+            "op": "source",
+            "target": "user"
+          },
+          "kind": "emit",
+          "node": "automation-path-033-other-clone-20"
+        },
+        {
+          "declared_obligations": [],
+          "event": {
+            "op": "protect",
+            "protection": "path_normalize",
+            "source": "user",
+            "target": "safe0"
+          },
+          "kind": "emit",
+          "node": "automation-path-033-other-clone-21"
+        },
+        {
+          "declared_obligations": [],
+          "event": {
+            "op": "protect",
+            "protection": "base_confine",
+            "source": "safe0",
+            "target": "safe1"
+          },
+          "kind": "emit",
+          "node": "automation-path-033-other-clone-22"
+        },
+        {
+          "body": {
+            "declared_obligations": [
+              "CWE-22"
+            ],
+            "event": {
+              "channel": "path",
+              "op": "sink",
+              "source": "safe1"
+            },
+            "kind": "emit",
+            "node": "automation-path-033-other-clone-24"
+          },
+          "count_field": "jobs",
+          "kind": "repeat",
+          "node": "automation-path-033-other-clone-23"
+        }
+      ],
+      "kind": "seq",
+      "node": "automation-path-033-other-clone-19"
+    },
+    "kind": "if",
+    "node": "automation-path-033-guard-25",
+    "then": {
+      "children": [
+        {
+          "declared_obligations": [],
+          "event": {
+            "input": "request",
+            "op": "source",
+            "target": "user"
+          },
+          "kind": "emit",
+          "node": "automation-path-033-selected-clone-14"
+        },
+        {
+          "declared_obligations": [],
+          "event": {
+            "op": "protect",
+            "protection": "path_normalize",
+            "source": "user",
+            "target": "bad_safe0"
+          },
+          "kind": "emit",
+          "node": "automation-path-033-selected-clone-15"
+        },
+        {
+          "declared_obligations": [],
+          "event": {
+            "op": "protect",
+            "protection": "base_confine",
+            "source": "bad_safe0",
+            "target": "bad_safe1"
+          },
+          "kind": "emit",
+          "node": "automation-path-033-selected-clone-16"
+        },
+        {
+          "body": {
+            "declared_obligations": [
+              "CWE-22"
+            ],
+            "event": {
+              "channel": "path",
+              "op": "sink",
+              "source": "bad_safe1"
+            },
+            "kind": "emit",
+            "node": "automation-path-033-selected-clone-18",
+            "origin_override": "absent-generator-node"
+          },
+          "count_field": "jobs",
+          "kind": "repeat",
+          "node": "automation-path-033-selected-clone-17"
+        }
+      ],
+      "kind": "seq",
+      "node": "automation-path-033-selected-clone-13"
+    }
+  },
+  "schema": {
+    "fields": [
+      {
+        "domain": [
+          "direct",
+          "compat",
+          "batch"
+        ],
+        "name": "runner"
+      },
+      {
+        "domain": [
+          false,
+          true
+        ],
+        "name": "remote"
+      },
+      {
+        "domain": [
+          false,
+          true
+        ],
+        "name": "strict"
+      },
+      {
+        "domain": [
+          1,
+          2
+        ],
+        "name": "jobs"
+      }
+    ]
+  },
+  "subtype": "path"
+}

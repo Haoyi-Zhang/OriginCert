@@ -1,0 +1,359 @@
+{
+  "kind": "counterexample",
+  "subject": {
+    "case_id": "web-html-026",
+    "catalog": {
+      "name": "CWE-derived bounded trace obligations",
+      "obligations": [
+        {
+          "id": "CWE-89",
+          "rule": {
+            "kind": "protection",
+            "requires": [
+              "sql_parameter"
+            ]
+          },
+          "trigger": {
+            "channel": "sql",
+            "op": "sink"
+          }
+        },
+        {
+          "id": "CWE-79",
+          "rule": {
+            "kind": "protection",
+            "requires": [
+              "html_escape"
+            ]
+          },
+          "trigger": {
+            "channel": "html",
+            "op": "sink"
+          }
+        },
+        {
+          "id": "CWE-78",
+          "rule": {
+            "kind": "protection",
+            "requires": [
+              "argv_exec"
+            ]
+          },
+          "trigger": {
+            "channel": "shell",
+            "op": "sink"
+          }
+        },
+        {
+          "id": "CWE-22",
+          "rule": {
+            "kind": "protection",
+            "requires": [
+              "path_normalize",
+              "base_confine"
+            ]
+          },
+          "trigger": {
+            "channel": "path",
+            "op": "sink"
+          }
+        },
+        {
+          "id": "CWE-862",
+          "rule": {
+            "capability_field": "capability",
+            "kind": "preceded"
+          },
+          "trigger": {
+            "op": "privileged"
+          }
+        },
+        {
+          "id": "CWE-330",
+          "rule": {
+            "kind": "strong_rng",
+            "source_field": "source"
+          },
+          "trigger": {
+            "op": "token"
+          }
+        },
+        {
+          "id": "CWE-798",
+          "rule": {
+            "kind": "protection",
+            "requires": [
+              "external_secret"
+            ]
+          },
+          "trigger": {
+            "op": "credential_use"
+          }
+        },
+        {
+          "cwe": "CWE-94",
+          "id": "GEN-PY-FACTORY",
+          "rule": {
+            "kind": "protection",
+            "requires": [
+              "factory_allowlist"
+            ]
+          },
+          "trigger": {
+            "channel": "python_factory",
+            "op": "sink"
+          }
+        },
+        {
+          "cwe": "CWE-94",
+          "id": "GEN-PHP-LITERAL",
+          "rule": {
+            "kind": "protection",
+            "requires": [
+              "php_dollar_escape"
+            ]
+          },
+          "trigger": {
+            "channel": "php_double_quote",
+            "op": "sink"
+          }
+        },
+        {
+          "cwe": "CWE-94",
+          "id": "GEN-TS-CONST",
+          "rule": {
+            "kind": "protection",
+            "requires": [
+              "json_serialize"
+            ]
+          },
+          "trigger": {
+            "channel": "typescript_const",
+            "op": "sink"
+          }
+        }
+      ]
+    },
+    "corpus_source": "constructed",
+    "family": "web",
+    "generator": {
+      "condition": {
+        "equals": true,
+        "field": "feature"
+      },
+      "else": {
+        "children": [
+          {
+            "declared_obligations": [],
+            "event": {
+              "input": "request",
+              "op": "source",
+              "target": "user"
+            },
+            "kind": "emit",
+            "node": "web-html-026-other-clone-15"
+          },
+          {
+            "declared_obligations": [],
+            "event": {
+              "op": "protect",
+              "protection": "html_escape",
+              "source": "user",
+              "target": "safe0"
+            },
+            "kind": "emit",
+            "node": "web-html-026-other-clone-16"
+          },
+          {
+            "body": {
+              "declared_obligations": [
+                "CWE-79"
+              ],
+              "event": {
+                "channel": "html",
+                "op": "sink",
+                "source": "safe0"
+              },
+              "kind": "emit",
+              "node": "web-html-026-other-clone-18"
+            },
+            "count_field": "replicas",
+            "kind": "repeat",
+            "node": "web-html-026-other-clone-17"
+          }
+        ],
+        "kind": "seq",
+        "node": "web-html-026-other-clone-14"
+      },
+      "kind": "if",
+      "node": "web-html-026-guard-19",
+      "then": {
+        "children": [
+          {
+            "declared_obligations": [],
+            "event": {
+              "input": "request",
+              "op": "source",
+              "target": "user"
+            },
+            "kind": "emit",
+            "node": "web-html-026-selected-clone-11"
+          },
+          {
+            "body": {
+              "declared_obligations": [
+                "CWE-79"
+              ],
+              "event": {
+                "channel": "html",
+                "op": "sink",
+                "source": "user"
+              },
+              "kind": "emit",
+              "node": "web-html-026-selected-clone-13"
+            },
+            "count_field": "replicas",
+            "kind": "repeat",
+            "node": "web-html-026-selected-clone-12"
+          }
+        ],
+        "kind": "seq",
+        "node": "web-html-026-selected-clone-10"
+      }
+    },
+    "schema": {
+      "fields": [
+        {
+          "domain": [
+            "normal",
+            "legacy",
+            "bulk"
+          ],
+          "name": "mode"
+        },
+        {
+          "domain": [
+            false,
+            true
+          ],
+          "name": "admin"
+        },
+        {
+          "domain": [
+            false,
+            true
+          ],
+          "name": "feature"
+        },
+        {
+          "domain": [
+            1,
+            2
+          ],
+          "name": "replicas"
+        }
+      ]
+    },
+    "subtype": "html"
+  },
+  "witness": {
+    "events": [
+      {
+        "input": "request",
+        "obligations": [],
+        "op": "source",
+        "origin": "web-html-026-selected-clone-11",
+        "target": "user"
+      },
+      {
+        "channel": "html",
+        "obligations": [
+          "CWE-79"
+        ],
+        "occurrence": [
+          0
+        ],
+        "op": "sink",
+        "origin": "web-html-026-selected-clone-13",
+        "source": "user"
+      }
+    ],
+    "input": {
+      "admin": false,
+      "feature": true,
+      "mode": "normal",
+      "replicas": 1
+    },
+    "input_size": 1,
+    "monitor_steps": [
+      {
+        "after": {
+          "checks": [],
+          "protections": {},
+          "strong_rng": []
+        },
+        "before": {
+          "checks": [],
+          "protections": {},
+          "strong_rng": []
+        },
+        "event_index": 0,
+        "violations": []
+      },
+      {
+        "after": {
+          "checks": [],
+          "protections": {},
+          "strong_rng": []
+        },
+        "before": {
+          "checks": [],
+          "protections": {},
+          "strong_rng": []
+        },
+        "event_index": 1,
+        "violations": [
+          {
+            "detail": "value 'user' has [], needs ['html_escape']",
+            "event_index": 1,
+            "kind": "safety",
+            "obligation": "CWE-79",
+            "prefix_length": 2
+          }
+        ]
+      }
+    ],
+    "program": [
+      "user = input(request)",
+      "html_sink(user)"
+    ],
+    "violating_prefix": [
+      {
+        "input": "request",
+        "obligations": [],
+        "op": "source",
+        "origin": "web-html-026-selected-clone-11",
+        "target": "user"
+      },
+      {
+        "channel": "html",
+        "obligations": [
+          "CWE-79"
+        ],
+        "occurrence": [
+          0
+        ],
+        "op": "sink",
+        "origin": "web-html-026-selected-clone-13",
+        "source": "user"
+      }
+    ],
+    "violation": {
+      "detail": "value 'user' has [], needs ['html_escape']",
+      "event_index": 1,
+      "kind": "safety",
+      "obligation": "CWE-79",
+      "prefix_length": 2
+    }
+  }
+}

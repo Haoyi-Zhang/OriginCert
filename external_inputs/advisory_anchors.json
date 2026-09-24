@@ -1,0 +1,32 @@
+{
+  "scope": "Factual source-to-sink mechanisms used to construct bounded executable abstractions; no vendor source code is redistributed or executed.",
+  "records": [
+    {
+      "anchor": "python-model-factory",
+      "project": "datamodel-code-generator",
+      "record": "GHSA-386q-5hp3-95m9",
+      "cve": "CVE-2026-54653",
+      "official_url": "https://github.com/advisories/GHSA-386q-5hp3-95m9",
+      "selected_fact": "A schema default_factory value reached generated Python default_factory syntax as a raw expression; the remediation constrains accepted factory expressions.",
+      "artifact_use": "Independent bounded model of raw-expression splicing versus allowlist rejection."
+    },
+    {
+      "anchor": "php-sdk-literal",
+      "project": "Microsoft Kiota PHP generator",
+      "record": "GHSA-jqwh-526h-c92j",
+      "cve": "CVE-2026-59859",
+      "official_url": "https://github.com/advisories/GHSA-jqwh-526h-c92j",
+      "selected_fact": "OpenAPI-derived text reached PHP double-quoted literals without escaping the dollar interpolation marker; the remediation escapes dollar signs.",
+      "artifact_use": "Independent bounded model of unescaped versus escaped PHP interpolation markers."
+    },
+    {
+      "anchor": "typescript-mock-const",
+      "project": "Orval mock generator",
+      "record": "GHSA-f456-rf33-4626",
+      "cve": "CVE-2026-24132",
+      "official_url": "https://github.com/advisories/GHSA-f456-rf33-4626",
+      "selected_fact": "An OpenAPI const value reached generated TypeScript/JavaScript as an unescaped expression; the remediation serializes the value as data.",
+      "artifact_use": "Independent bounded model of raw expression splicing versus JSON serialization."
+    }
+  ]
+}

@@ -1,0 +1,291 @@
+{
+  "case_id": "php-sdk-005",
+  "catalog": {
+    "name": "CWE-derived bounded trace obligations",
+    "obligations": [
+      {
+        "id": "CWE-89",
+        "rule": {
+          "kind": "protection",
+          "requires": [
+            "sql_parameter"
+          ]
+        },
+        "trigger": {
+          "channel": "sql",
+          "op": "sink"
+        }
+      },
+      {
+        "id": "CWE-79",
+        "rule": {
+          "kind": "protection",
+          "requires": [
+            "html_escape"
+          ]
+        },
+        "trigger": {
+          "channel": "html",
+          "op": "sink"
+        }
+      },
+      {
+        "id": "CWE-78",
+        "rule": {
+          "kind": "protection",
+          "requires": [
+            "argv_exec"
+          ]
+        },
+        "trigger": {
+          "channel": "shell",
+          "op": "sink"
+        }
+      },
+      {
+        "id": "CWE-22",
+        "rule": {
+          "kind": "protection",
+          "requires": [
+            "path_normalize",
+            "base_confine"
+          ]
+        },
+        "trigger": {
+          "channel": "path",
+          "op": "sink"
+        }
+      },
+      {
+        "id": "CWE-862",
+        "rule": {
+          "capability_field": "capability",
+          "kind": "preceded"
+        },
+        "trigger": {
+          "op": "privileged"
+        }
+      },
+      {
+        "id": "CWE-330",
+        "rule": {
+          "kind": "strong_rng",
+          "source_field": "source"
+        },
+        "trigger": {
+          "op": "token"
+        }
+      },
+      {
+        "id": "CWE-798",
+        "rule": {
+          "kind": "protection",
+          "requires": [
+            "external_secret"
+          ]
+        },
+        "trigger": {
+          "op": "credential_use"
+        }
+      },
+      {
+        "cwe": "CWE-94",
+        "id": "GEN-PY-FACTORY",
+        "rule": {
+          "kind": "protection",
+          "requires": [
+            "factory_allowlist"
+          ]
+        },
+        "trigger": {
+          "channel": "python_factory",
+          "op": "sink"
+        }
+      },
+      {
+        "cwe": "CWE-94",
+        "id": "GEN-PHP-LITERAL",
+        "rule": {
+          "kind": "protection",
+          "requires": [
+            "php_dollar_escape"
+          ]
+        },
+        "trigger": {
+          "channel": "php_double_quote",
+          "op": "sink"
+        }
+      },
+      {
+        "cwe": "CWE-94",
+        "id": "GEN-TS-CONST",
+        "rule": {
+          "kind": "protection",
+          "requires": [
+            "json_serialize"
+          ]
+        },
+        "trigger": {
+          "channel": "typescript_const",
+          "op": "sink"
+        }
+      }
+    ]
+  },
+  "corpus_source": "public-advisory-abstraction",
+  "expected": "accepted",
+  "family": "php-sdk",
+  "fault_detail": "advisory-patched",
+  "fault_kind": "safe",
+  "generator": {
+    "children": [
+      {
+        "declared_obligations": [],
+        "event": {
+          "op": "noop"
+        },
+        "kind": "emit",
+        "node": "php-sdk-005-quote-mode-12"
+      },
+      {
+        "condition": {
+          "equals": true,
+          "field": "untrusted"
+        },
+        "else": {
+          "children": [
+            {
+              "declared_obligations": [],
+              "event": {
+                "input": "schema",
+                "op": "source",
+                "target": "schema_value"
+              },
+              "kind": "emit",
+              "node": "php-sdk-005-ordinary-source-03"
+            },
+            {
+              "declared_obligations": [],
+              "event": {
+                "op": "protect",
+                "protection": "php_dollar_escape",
+                "source": "schema_value",
+                "target": "safe_value"
+              },
+              "kind": "emit",
+              "node": "php-sdk-005-ordinary-protect-01"
+            },
+            {
+              "body": {
+                "declared_obligations": [
+                  "GEN-PHP-LITERAL"
+                ],
+                "event": {
+                  "channel": "php_double_quote",
+                  "op": "sink",
+                  "source": "safe_value"
+                },
+                "kind": "emit",
+                "node": "php-sdk-005-ordinary-sink-02"
+              },
+              "count_field": "copies",
+              "kind": "repeat",
+              "node": "php-sdk-005-ordinary-repeat-04"
+            }
+          ],
+          "kind": "seq",
+          "node": "php-sdk-005-ordinary-seq-05"
+        },
+        "kind": "if",
+        "node": "php-sdk-005-untrusted-guard-11",
+        "then": {
+          "children": [
+            {
+              "declared_obligations": [],
+              "event": {
+                "input": "schema",
+                "op": "source",
+                "target": "schema_value"
+              },
+              "kind": "emit",
+              "node": "php-sdk-005-selected-source-08"
+            },
+            {
+              "declared_obligations": [],
+              "event": {
+                "op": "protect",
+                "protection": "php_dollar_escape",
+                "source": "schema_value",
+                "target": "safe_value"
+              },
+              "kind": "emit",
+              "node": "php-sdk-005-selected-protect-06"
+            },
+            {
+              "body": {
+                "declared_obligations": [
+                  "GEN-PHP-LITERAL"
+                ],
+                "event": {
+                  "channel": "php_double_quote",
+                  "op": "sink",
+                  "source": "safe_value"
+                },
+                "kind": "emit",
+                "node": "php-sdk-005-selected-sink-07"
+              },
+              "count_field": "copies",
+              "kind": "repeat",
+              "node": "php-sdk-005-selected-repeat-09"
+            }
+          ],
+          "kind": "seq",
+          "node": "php-sdk-005-selected-seq-10"
+        }
+      }
+    ],
+    "kind": "seq",
+    "node": "php-sdk-005-writer-seq-13"
+  },
+  "historical_model": {
+    "anchor": "php-sdk-literal",
+    "cve": "CVE-2026-59859",
+    "record": "GHSA-jqwh-526h-c92j",
+    "scope": "independent bounded source-to-sink model; not vendor-code execution",
+    "state": "patched"
+  },
+  "schema": {
+    "fields": [
+      {
+        "domain": [
+          "description",
+          "default",
+          "wire_name"
+        ],
+        "name": "literal_site"
+      },
+      {
+        "domain": [
+          false,
+          true
+        ],
+        "name": "untrusted"
+      },
+      {
+        "domain": [
+          false,
+          true
+        ],
+        "name": "nullable"
+      },
+      {
+        "domain": [
+          1,
+          2
+        ],
+        "name": "copies"
+      }
+    ]
+  },
+  "subtype": "php-sdk-literal"
+}

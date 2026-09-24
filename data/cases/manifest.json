@@ -1,0 +1,3242 @@
+[
+  {
+    "case_id": "web-sql-001",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "web",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "sql"
+  },
+  {
+    "case_id": "web-sql-002",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "web",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "sql"
+  },
+  {
+    "case_id": "web-sql-003",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "web",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "sql"
+  },
+  {
+    "case_id": "web-sql-004",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "web",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "sql"
+  },
+  {
+    "case_id": "web-sql-005",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "web",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "sql"
+  },
+  {
+    "case_id": "web-sql-006",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "web",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "sql"
+  },
+  {
+    "case_id": "web-sql-007",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "web",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "sql"
+  },
+  {
+    "case_id": "web-sql-008",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "web",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "sql"
+  },
+  {
+    "case_id": "web-sql-009",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "web",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "sql"
+  },
+  {
+    "case_id": "web-sql-010",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "web",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "sql"
+  },
+  {
+    "case_id": "web-sql-011",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "web",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "sql"
+  },
+  {
+    "case_id": "web-sql-012",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "web",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "sql"
+  },
+  {
+    "case_id": "web-sql-013",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "web",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "sql"
+  },
+  {
+    "case_id": "web-sql-014",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "web",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "sql"
+  },
+  {
+    "case_id": "web-sql-015",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "web",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "sql"
+  },
+  {
+    "case_id": "web-sql-016",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "web",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "sql"
+  },
+  {
+    "case_id": "web-sql-017",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "web",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "sql"
+  },
+  {
+    "case_id": "web-sql-018",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "web",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "sql"
+  },
+  {
+    "case_id": "web-sql-019",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "web",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "sql"
+  },
+  {
+    "case_id": "web-sql-020",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "web",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "sql"
+  },
+  {
+    "case_id": "web-sql-021",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "web",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "sql"
+  },
+  {
+    "case_id": "web-sql-022",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "web",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "sql"
+  },
+  {
+    "case_id": "web-sql-023",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "web",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "sql"
+  },
+  {
+    "case_id": "web-sql-024",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "web",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "sql"
+  },
+  {
+    "case_id": "web-sql-025",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "web",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "sql"
+  },
+  {
+    "case_id": "web-sql-026",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "web",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "sql"
+  },
+  {
+    "case_id": "web-sql-027",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "web",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "sql"
+  },
+  {
+    "case_id": "web-sql-028",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "web",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "sql"
+  },
+  {
+    "case_id": "web-sql-029",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "web",
+    "fault_detail": "missing-obligation",
+    "fault_kind": "coverage",
+    "subtype": "sql"
+  },
+  {
+    "case_id": "web-sql-030",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "web",
+    "fault_detail": "spurious-obligation",
+    "fault_kind": "coverage",
+    "subtype": "sql"
+  },
+  {
+    "case_id": "web-sql-031",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "web",
+    "fault_detail": "missing-obligation",
+    "fault_kind": "coverage",
+    "subtype": "sql"
+  },
+  {
+    "case_id": "web-sql-032",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "web",
+    "fault_detail": "spurious-obligation",
+    "fault_kind": "coverage",
+    "subtype": "sql"
+  },
+  {
+    "case_id": "web-sql-033",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "web",
+    "fault_detail": "nonexistent-origin",
+    "fault_kind": "origin",
+    "subtype": "sql"
+  },
+  {
+    "case_id": "web-sql-034",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "web",
+    "fault_detail": "wrong-existing-origin",
+    "fault_kind": "origin",
+    "subtype": "sql"
+  },
+  {
+    "case_id": "web-sql-035",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "web",
+    "fault_detail": "nonexistent-origin",
+    "fault_kind": "origin",
+    "subtype": "sql"
+  },
+  {
+    "case_id": "web-sql-036",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "web",
+    "fault_detail": "wrong-existing-origin",
+    "fault_kind": "origin",
+    "subtype": "sql"
+  },
+  {
+    "case_id": "web-html-001",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "web",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "html"
+  },
+  {
+    "case_id": "web-html-002",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "web",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "html"
+  },
+  {
+    "case_id": "web-html-003",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "web",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "html"
+  },
+  {
+    "case_id": "web-html-004",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "web",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "html"
+  },
+  {
+    "case_id": "web-html-005",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "web",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "html"
+  },
+  {
+    "case_id": "web-html-006",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "web",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "html"
+  },
+  {
+    "case_id": "web-html-007",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "web",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "html"
+  },
+  {
+    "case_id": "web-html-008",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "web",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "html"
+  },
+  {
+    "case_id": "web-html-009",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "web",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "html"
+  },
+  {
+    "case_id": "web-html-010",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "web",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "html"
+  },
+  {
+    "case_id": "web-html-011",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "web",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "html"
+  },
+  {
+    "case_id": "web-html-012",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "web",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "html"
+  },
+  {
+    "case_id": "web-html-013",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "web",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "html"
+  },
+  {
+    "case_id": "web-html-014",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "web",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "html"
+  },
+  {
+    "case_id": "web-html-015",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "web",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "html"
+  },
+  {
+    "case_id": "web-html-016",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "web",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "html"
+  },
+  {
+    "case_id": "web-html-017",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "web",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "html"
+  },
+  {
+    "case_id": "web-html-018",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "web",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "html"
+  },
+  {
+    "case_id": "web-html-019",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "web",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "html"
+  },
+  {
+    "case_id": "web-html-020",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "web",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "html"
+  },
+  {
+    "case_id": "web-html-021",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "web",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "html"
+  },
+  {
+    "case_id": "web-html-022",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "web",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "html"
+  },
+  {
+    "case_id": "web-html-023",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "web",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "html"
+  },
+  {
+    "case_id": "web-html-024",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "web",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "html"
+  },
+  {
+    "case_id": "web-html-025",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "web",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "html"
+  },
+  {
+    "case_id": "web-html-026",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "web",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "html"
+  },
+  {
+    "case_id": "web-html-027",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "web",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "html"
+  },
+  {
+    "case_id": "web-html-028",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "web",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "html"
+  },
+  {
+    "case_id": "web-html-029",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "web",
+    "fault_detail": "missing-obligation",
+    "fault_kind": "coverage",
+    "subtype": "html"
+  },
+  {
+    "case_id": "web-html-030",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "web",
+    "fault_detail": "spurious-obligation",
+    "fault_kind": "coverage",
+    "subtype": "html"
+  },
+  {
+    "case_id": "web-html-031",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "web",
+    "fault_detail": "missing-obligation",
+    "fault_kind": "coverage",
+    "subtype": "html"
+  },
+  {
+    "case_id": "web-html-032",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "web",
+    "fault_detail": "spurious-obligation",
+    "fault_kind": "coverage",
+    "subtype": "html"
+  },
+  {
+    "case_id": "web-html-033",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "web",
+    "fault_detail": "nonexistent-origin",
+    "fault_kind": "origin",
+    "subtype": "html"
+  },
+  {
+    "case_id": "web-html-034",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "web",
+    "fault_detail": "wrong-existing-origin",
+    "fault_kind": "origin",
+    "subtype": "html"
+  },
+  {
+    "case_id": "web-html-035",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "web",
+    "fault_detail": "nonexistent-origin",
+    "fault_kind": "origin",
+    "subtype": "html"
+  },
+  {
+    "case_id": "web-html-036",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "web",
+    "fault_detail": "wrong-existing-origin",
+    "fault_kind": "origin",
+    "subtype": "html"
+  },
+  {
+    "case_id": "web-auth-001",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "web",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "web-auth-002",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "web",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "web-auth-003",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "web",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "web-auth-004",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "web",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "web-auth-005",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "web",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "web-auth-006",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "web",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "web-auth-007",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "web",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "web-auth-008",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "web",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "web-auth-009",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "web",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "web-auth-010",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "web",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "web-auth-011",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "web",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "web-auth-012",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "web",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "web-auth-013",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "web",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "web-auth-014",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "web",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "web-auth-015",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "web",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "web-auth-016",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "web",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "web-auth-017",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "web",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "web-auth-018",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "web",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "web-auth-019",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "web",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "web-auth-020",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "web",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "web-auth-021",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "web",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "web-auth-022",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "web",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "web-auth-023",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "web",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "web-auth-024",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "web",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "web-auth-025",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "web",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "web-auth-026",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "web",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "web-auth-027",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "web",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "web-auth-028",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "web",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "web-auth-029",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "web",
+    "fault_detail": "missing-obligation",
+    "fault_kind": "coverage",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "web-auth-030",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "web",
+    "fault_detail": "spurious-obligation",
+    "fault_kind": "coverage",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "web-auth-031",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "web",
+    "fault_detail": "missing-obligation",
+    "fault_kind": "coverage",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "web-auth-032",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "web",
+    "fault_detail": "spurious-obligation",
+    "fault_kind": "coverage",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "web-auth-033",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "web",
+    "fault_detail": "nonexistent-origin",
+    "fault_kind": "origin",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "web-auth-034",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "web",
+    "fault_detail": "wrong-existing-origin",
+    "fault_kind": "origin",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "web-auth-035",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "web",
+    "fault_detail": "nonexistent-origin",
+    "fault_kind": "origin",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "web-auth-036",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "web",
+    "fault_detail": "wrong-existing-origin",
+    "fault_kind": "origin",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "automation-shell-001",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "automation",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "shell"
+  },
+  {
+    "case_id": "automation-shell-002",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "automation",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "shell"
+  },
+  {
+    "case_id": "automation-shell-003",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "automation",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "shell"
+  },
+  {
+    "case_id": "automation-shell-004",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "automation",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "shell"
+  },
+  {
+    "case_id": "automation-shell-005",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "automation",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "shell"
+  },
+  {
+    "case_id": "automation-shell-006",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "automation",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "shell"
+  },
+  {
+    "case_id": "automation-shell-007",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "automation",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "shell"
+  },
+  {
+    "case_id": "automation-shell-008",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "automation",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "shell"
+  },
+  {
+    "case_id": "automation-shell-009",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "automation",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "shell"
+  },
+  {
+    "case_id": "automation-shell-010",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "automation",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "shell"
+  },
+  {
+    "case_id": "automation-shell-011",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "automation",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "shell"
+  },
+  {
+    "case_id": "automation-shell-012",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "automation",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "shell"
+  },
+  {
+    "case_id": "automation-shell-013",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "automation",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "shell"
+  },
+  {
+    "case_id": "automation-shell-014",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "automation",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "shell"
+  },
+  {
+    "case_id": "automation-shell-015",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "automation",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "shell"
+  },
+  {
+    "case_id": "automation-shell-016",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "automation",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "shell"
+  },
+  {
+    "case_id": "automation-shell-017",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "automation",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "shell"
+  },
+  {
+    "case_id": "automation-shell-018",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "automation",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "shell"
+  },
+  {
+    "case_id": "automation-shell-019",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "automation",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "shell"
+  },
+  {
+    "case_id": "automation-shell-020",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "automation",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "shell"
+  },
+  {
+    "case_id": "automation-shell-021",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "automation",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "shell"
+  },
+  {
+    "case_id": "automation-shell-022",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "automation",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "shell"
+  },
+  {
+    "case_id": "automation-shell-023",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "automation",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "shell"
+  },
+  {
+    "case_id": "automation-shell-024",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "automation",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "shell"
+  },
+  {
+    "case_id": "automation-shell-025",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "automation",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "shell"
+  },
+  {
+    "case_id": "automation-shell-026",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "automation",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "shell"
+  },
+  {
+    "case_id": "automation-shell-027",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "automation",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "shell"
+  },
+  {
+    "case_id": "automation-shell-028",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "automation",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "shell"
+  },
+  {
+    "case_id": "automation-shell-029",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "automation",
+    "fault_detail": "missing-obligation",
+    "fault_kind": "coverage",
+    "subtype": "shell"
+  },
+  {
+    "case_id": "automation-shell-030",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "automation",
+    "fault_detail": "spurious-obligation",
+    "fault_kind": "coverage",
+    "subtype": "shell"
+  },
+  {
+    "case_id": "automation-shell-031",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "automation",
+    "fault_detail": "missing-obligation",
+    "fault_kind": "coverage",
+    "subtype": "shell"
+  },
+  {
+    "case_id": "automation-shell-032",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "automation",
+    "fault_detail": "spurious-obligation",
+    "fault_kind": "coverage",
+    "subtype": "shell"
+  },
+  {
+    "case_id": "automation-shell-033",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "automation",
+    "fault_detail": "nonexistent-origin",
+    "fault_kind": "origin",
+    "subtype": "shell"
+  },
+  {
+    "case_id": "automation-shell-034",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "automation",
+    "fault_detail": "wrong-existing-origin",
+    "fault_kind": "origin",
+    "subtype": "shell"
+  },
+  {
+    "case_id": "automation-shell-035",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "automation",
+    "fault_detail": "nonexistent-origin",
+    "fault_kind": "origin",
+    "subtype": "shell"
+  },
+  {
+    "case_id": "automation-shell-036",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "automation",
+    "fault_detail": "wrong-existing-origin",
+    "fault_kind": "origin",
+    "subtype": "shell"
+  },
+  {
+    "case_id": "automation-path-001",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "automation",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "path"
+  },
+  {
+    "case_id": "automation-path-002",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "automation",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "path"
+  },
+  {
+    "case_id": "automation-path-003",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "automation",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "path"
+  },
+  {
+    "case_id": "automation-path-004",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "automation",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "path"
+  },
+  {
+    "case_id": "automation-path-005",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "automation",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "path"
+  },
+  {
+    "case_id": "automation-path-006",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "automation",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "path"
+  },
+  {
+    "case_id": "automation-path-007",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "automation",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "path"
+  },
+  {
+    "case_id": "automation-path-008",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "automation",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "path"
+  },
+  {
+    "case_id": "automation-path-009",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "automation",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "path"
+  },
+  {
+    "case_id": "automation-path-010",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "automation",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "path"
+  },
+  {
+    "case_id": "automation-path-011",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "automation",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "path"
+  },
+  {
+    "case_id": "automation-path-012",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "automation",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "path"
+  },
+  {
+    "case_id": "automation-path-013",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "automation",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "path"
+  },
+  {
+    "case_id": "automation-path-014",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "automation",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "path"
+  },
+  {
+    "case_id": "automation-path-015",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "automation",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "path"
+  },
+  {
+    "case_id": "automation-path-016",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "automation",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "path"
+  },
+  {
+    "case_id": "automation-path-017",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "automation",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "path"
+  },
+  {
+    "case_id": "automation-path-018",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "automation",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "path"
+  },
+  {
+    "case_id": "automation-path-019",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "automation",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "path"
+  },
+  {
+    "case_id": "automation-path-020",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "automation",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "path"
+  },
+  {
+    "case_id": "automation-path-021",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "automation",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "path"
+  },
+  {
+    "case_id": "automation-path-022",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "automation",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "path"
+  },
+  {
+    "case_id": "automation-path-023",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "automation",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "path"
+  },
+  {
+    "case_id": "automation-path-024",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "automation",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "path"
+  },
+  {
+    "case_id": "automation-path-025",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "automation",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "path"
+  },
+  {
+    "case_id": "automation-path-026",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "automation",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "path"
+  },
+  {
+    "case_id": "automation-path-027",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "automation",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "path"
+  },
+  {
+    "case_id": "automation-path-028",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "automation",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "path"
+  },
+  {
+    "case_id": "automation-path-029",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "automation",
+    "fault_detail": "missing-obligation",
+    "fault_kind": "coverage",
+    "subtype": "path"
+  },
+  {
+    "case_id": "automation-path-030",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "automation",
+    "fault_detail": "spurious-obligation",
+    "fault_kind": "coverage",
+    "subtype": "path"
+  },
+  {
+    "case_id": "automation-path-031",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "automation",
+    "fault_detail": "missing-obligation",
+    "fault_kind": "coverage",
+    "subtype": "path"
+  },
+  {
+    "case_id": "automation-path-032",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "automation",
+    "fault_detail": "spurious-obligation",
+    "fault_kind": "coverage",
+    "subtype": "path"
+  },
+  {
+    "case_id": "automation-path-033",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "automation",
+    "fault_detail": "nonexistent-origin",
+    "fault_kind": "origin",
+    "subtype": "path"
+  },
+  {
+    "case_id": "automation-path-034",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "automation",
+    "fault_detail": "wrong-existing-origin",
+    "fault_kind": "origin",
+    "subtype": "path"
+  },
+  {
+    "case_id": "automation-path-035",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "automation",
+    "fault_detail": "nonexistent-origin",
+    "fault_kind": "origin",
+    "subtype": "path"
+  },
+  {
+    "case_id": "automation-path-036",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "automation",
+    "fault_detail": "wrong-existing-origin",
+    "fault_kind": "origin",
+    "subtype": "path"
+  },
+  {
+    "case_id": "automation-auth-001",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "automation",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "automation-auth-002",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "automation",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "automation-auth-003",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "automation",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "automation-auth-004",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "automation",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "automation-auth-005",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "automation",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "automation-auth-006",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "automation",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "automation-auth-007",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "automation",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "automation-auth-008",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "automation",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "automation-auth-009",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "automation",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "automation-auth-010",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "automation",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "automation-auth-011",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "automation",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "automation-auth-012",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "automation",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "automation-auth-013",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "automation",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "automation-auth-014",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "automation",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "automation-auth-015",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "automation",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "automation-auth-016",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "automation",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "automation-auth-017",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "automation",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "automation-auth-018",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "automation",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "automation-auth-019",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "automation",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "automation-auth-020",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "automation",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "automation-auth-021",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "automation",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "automation-auth-022",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "automation",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "automation-auth-023",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "automation",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "automation-auth-024",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "automation",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "automation-auth-025",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "automation",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "automation-auth-026",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "automation",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "automation-auth-027",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "automation",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "automation-auth-028",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "automation",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "automation-auth-029",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "automation",
+    "fault_detail": "missing-obligation",
+    "fault_kind": "coverage",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "automation-auth-030",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "automation",
+    "fault_detail": "spurious-obligation",
+    "fault_kind": "coverage",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "automation-auth-031",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "automation",
+    "fault_detail": "missing-obligation",
+    "fault_kind": "coverage",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "automation-auth-032",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "automation",
+    "fault_detail": "spurious-obligation",
+    "fault_kind": "coverage",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "automation-auth-033",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "automation",
+    "fault_detail": "nonexistent-origin",
+    "fault_kind": "origin",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "automation-auth-034",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "automation",
+    "fault_detail": "wrong-existing-origin",
+    "fault_kind": "origin",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "automation-auth-035",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "automation",
+    "fault_detail": "nonexistent-origin",
+    "fault_kind": "origin",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "automation-auth-036",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "automation",
+    "fault_detail": "wrong-existing-origin",
+    "fault_kind": "origin",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "service-token-001",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "service",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "token"
+  },
+  {
+    "case_id": "service-token-002",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "service",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "token"
+  },
+  {
+    "case_id": "service-token-003",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "service",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "token"
+  },
+  {
+    "case_id": "service-token-004",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "service",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "token"
+  },
+  {
+    "case_id": "service-token-005",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "service",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "token"
+  },
+  {
+    "case_id": "service-token-006",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "service",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "token"
+  },
+  {
+    "case_id": "service-token-007",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "service",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "token"
+  },
+  {
+    "case_id": "service-token-008",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "service",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "token"
+  },
+  {
+    "case_id": "service-token-009",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "service",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "token"
+  },
+  {
+    "case_id": "service-token-010",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "service",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "token"
+  },
+  {
+    "case_id": "service-token-011",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "service",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "token"
+  },
+  {
+    "case_id": "service-token-012",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "service",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "token"
+  },
+  {
+    "case_id": "service-token-013",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "service",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "token"
+  },
+  {
+    "case_id": "service-token-014",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "service",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "token"
+  },
+  {
+    "case_id": "service-token-015",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "service",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "token"
+  },
+  {
+    "case_id": "service-token-016",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "service",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "token"
+  },
+  {
+    "case_id": "service-token-017",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "service",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "token"
+  },
+  {
+    "case_id": "service-token-018",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "service",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "token"
+  },
+  {
+    "case_id": "service-token-019",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "service",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "token"
+  },
+  {
+    "case_id": "service-token-020",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "service",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "token"
+  },
+  {
+    "case_id": "service-token-021",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "service",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "token"
+  },
+  {
+    "case_id": "service-token-022",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "service",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "token"
+  },
+  {
+    "case_id": "service-token-023",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "service",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "token"
+  },
+  {
+    "case_id": "service-token-024",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "service",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "token"
+  },
+  {
+    "case_id": "service-token-025",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "service",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "token"
+  },
+  {
+    "case_id": "service-token-026",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "service",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "token"
+  },
+  {
+    "case_id": "service-token-027",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "service",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "token"
+  },
+  {
+    "case_id": "service-token-028",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "service",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "token"
+  },
+  {
+    "case_id": "service-token-029",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "service",
+    "fault_detail": "missing-obligation",
+    "fault_kind": "coverage",
+    "subtype": "token"
+  },
+  {
+    "case_id": "service-token-030",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "service",
+    "fault_detail": "spurious-obligation",
+    "fault_kind": "coverage",
+    "subtype": "token"
+  },
+  {
+    "case_id": "service-token-031",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "service",
+    "fault_detail": "missing-obligation",
+    "fault_kind": "coverage",
+    "subtype": "token"
+  },
+  {
+    "case_id": "service-token-032",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "service",
+    "fault_detail": "spurious-obligation",
+    "fault_kind": "coverage",
+    "subtype": "token"
+  },
+  {
+    "case_id": "service-token-033",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "service",
+    "fault_detail": "nonexistent-origin",
+    "fault_kind": "origin",
+    "subtype": "token"
+  },
+  {
+    "case_id": "service-token-034",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "service",
+    "fault_detail": "wrong-existing-origin",
+    "fault_kind": "origin",
+    "subtype": "token"
+  },
+  {
+    "case_id": "service-token-035",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "service",
+    "fault_detail": "nonexistent-origin",
+    "fault_kind": "origin",
+    "subtype": "token"
+  },
+  {
+    "case_id": "service-token-036",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "service",
+    "fault_detail": "wrong-existing-origin",
+    "fault_kind": "origin",
+    "subtype": "token"
+  },
+  {
+    "case_id": "service-credential-001",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "service",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "credential"
+  },
+  {
+    "case_id": "service-credential-002",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "service",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "credential"
+  },
+  {
+    "case_id": "service-credential-003",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "service",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "credential"
+  },
+  {
+    "case_id": "service-credential-004",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "service",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "credential"
+  },
+  {
+    "case_id": "service-credential-005",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "service",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "credential"
+  },
+  {
+    "case_id": "service-credential-006",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "service",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "credential"
+  },
+  {
+    "case_id": "service-credential-007",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "service",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "credential"
+  },
+  {
+    "case_id": "service-credential-008",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "service",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "credential"
+  },
+  {
+    "case_id": "service-credential-009",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "service",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "credential"
+  },
+  {
+    "case_id": "service-credential-010",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "service",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "credential"
+  },
+  {
+    "case_id": "service-credential-011",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "service",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "credential"
+  },
+  {
+    "case_id": "service-credential-012",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "service",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "credential"
+  },
+  {
+    "case_id": "service-credential-013",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "service",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "credential"
+  },
+  {
+    "case_id": "service-credential-014",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "service",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "credential"
+  },
+  {
+    "case_id": "service-credential-015",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "service",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "credential"
+  },
+  {
+    "case_id": "service-credential-016",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "service",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "credential"
+  },
+  {
+    "case_id": "service-credential-017",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "service",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "credential"
+  },
+  {
+    "case_id": "service-credential-018",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "service",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "credential"
+  },
+  {
+    "case_id": "service-credential-019",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "service",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "credential"
+  },
+  {
+    "case_id": "service-credential-020",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "service",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "credential"
+  },
+  {
+    "case_id": "service-credential-021",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "service",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "credential"
+  },
+  {
+    "case_id": "service-credential-022",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "service",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "credential"
+  },
+  {
+    "case_id": "service-credential-023",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "service",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "credential"
+  },
+  {
+    "case_id": "service-credential-024",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "service",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "credential"
+  },
+  {
+    "case_id": "service-credential-025",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "service",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "credential"
+  },
+  {
+    "case_id": "service-credential-026",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "service",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "credential"
+  },
+  {
+    "case_id": "service-credential-027",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "service",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "credential"
+  },
+  {
+    "case_id": "service-credential-028",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "service",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "credential"
+  },
+  {
+    "case_id": "service-credential-029",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "service",
+    "fault_detail": "missing-obligation",
+    "fault_kind": "coverage",
+    "subtype": "credential"
+  },
+  {
+    "case_id": "service-credential-030",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "service",
+    "fault_detail": "spurious-obligation",
+    "fault_kind": "coverage",
+    "subtype": "credential"
+  },
+  {
+    "case_id": "service-credential-031",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "service",
+    "fault_detail": "missing-obligation",
+    "fault_kind": "coverage",
+    "subtype": "credential"
+  },
+  {
+    "case_id": "service-credential-032",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "service",
+    "fault_detail": "spurious-obligation",
+    "fault_kind": "coverage",
+    "subtype": "credential"
+  },
+  {
+    "case_id": "service-credential-033",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "service",
+    "fault_detail": "nonexistent-origin",
+    "fault_kind": "origin",
+    "subtype": "credential"
+  },
+  {
+    "case_id": "service-credential-034",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "service",
+    "fault_detail": "wrong-existing-origin",
+    "fault_kind": "origin",
+    "subtype": "credential"
+  },
+  {
+    "case_id": "service-credential-035",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "service",
+    "fault_detail": "nonexistent-origin",
+    "fault_kind": "origin",
+    "subtype": "credential"
+  },
+  {
+    "case_id": "service-credential-036",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "service",
+    "fault_detail": "wrong-existing-origin",
+    "fault_kind": "origin",
+    "subtype": "credential"
+  },
+  {
+    "case_id": "service-auth-001",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "service",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "service-auth-002",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "service",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "service-auth-003",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "service",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "service-auth-004",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "service",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "service-auth-005",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "service",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "service-auth-006",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "service",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "service-auth-007",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "service",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "service-auth-008",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "service",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "service-auth-009",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "service",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "service-auth-010",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "service",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "service-auth-011",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "service",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "service-auth-012",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "service",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "service-auth-013",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "service",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "service-auth-014",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "service",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "service-auth-015",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "service",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "service-auth-016",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "service",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "service-auth-017",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "service",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "service-auth-018",
+    "corpus_source": "constructed",
+    "expected": "accepted",
+    "family": "service",
+    "fault_detail": "none",
+    "fault_kind": "safe",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "service-auth-019",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "service",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "service-auth-020",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "service",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "service-auth-021",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "service",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "service-auth-022",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "service",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "service-auth-023",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "service",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "service-auth-024",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "service",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "service-auth-025",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "service",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "service-auth-026",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "service",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "service-auth-027",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "service",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "service-auth-028",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "service",
+    "fault_detail": "monitor-violation",
+    "fault_kind": "semantic",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "service-auth-029",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "service",
+    "fault_detail": "missing-obligation",
+    "fault_kind": "coverage",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "service-auth-030",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "service",
+    "fault_detail": "spurious-obligation",
+    "fault_kind": "coverage",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "service-auth-031",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "service",
+    "fault_detail": "missing-obligation",
+    "fault_kind": "coverage",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "service-auth-032",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "service",
+    "fault_detail": "spurious-obligation",
+    "fault_kind": "coverage",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "service-auth-033",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "service",
+    "fault_detail": "nonexistent-origin",
+    "fault_kind": "origin",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "service-auth-034",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "service",
+    "fault_detail": "wrong-existing-origin",
+    "fault_kind": "origin",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "service-auth-035",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "service",
+    "fault_detail": "nonexistent-origin",
+    "fault_kind": "origin",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "service-auth-036",
+    "corpus_source": "constructed",
+    "expected": "rejected",
+    "family": "service",
+    "fault_detail": "wrong-existing-origin",
+    "fault_kind": "origin",
+    "subtype": "auth"
+  },
+  {
+    "case_id": "python-model-001",
+    "corpus_source": "public-advisory-abstraction",
+    "expected": "accepted",
+    "family": "python-model",
+    "fault_detail": "advisory-patched",
+    "fault_kind": "safe",
+    "subtype": "python-model-factory"
+  },
+  {
+    "case_id": "python-model-002",
+    "corpus_source": "public-advisory-abstraction",
+    "expected": "accepted",
+    "family": "python-model",
+    "fault_detail": "advisory-patched",
+    "fault_kind": "safe",
+    "subtype": "python-model-factory"
+  },
+  {
+    "case_id": "python-model-003",
+    "corpus_source": "public-advisory-abstraction",
+    "expected": "accepted",
+    "family": "python-model",
+    "fault_detail": "advisory-patched",
+    "fault_kind": "safe",
+    "subtype": "python-model-factory"
+  },
+  {
+    "case_id": "python-model-004",
+    "corpus_source": "public-advisory-abstraction",
+    "expected": "accepted",
+    "family": "python-model",
+    "fault_detail": "advisory-patched",
+    "fault_kind": "safe",
+    "subtype": "python-model-factory"
+  },
+  {
+    "case_id": "python-model-005",
+    "corpus_source": "public-advisory-abstraction",
+    "expected": "accepted",
+    "family": "python-model",
+    "fault_detail": "advisory-patched",
+    "fault_kind": "safe",
+    "subtype": "python-model-factory"
+  },
+  {
+    "case_id": "python-model-006",
+    "corpus_source": "public-advisory-abstraction",
+    "expected": "accepted",
+    "family": "python-model",
+    "fault_detail": "advisory-patched",
+    "fault_kind": "safe",
+    "subtype": "python-model-factory"
+  },
+  {
+    "case_id": "python-model-007",
+    "corpus_source": "public-advisory-abstraction",
+    "expected": "rejected",
+    "family": "python-model",
+    "fault_detail": "advisory-vulnerable",
+    "fault_kind": "semantic",
+    "subtype": "python-model-factory"
+  },
+  {
+    "case_id": "python-model-008",
+    "corpus_source": "public-advisory-abstraction",
+    "expected": "rejected",
+    "family": "python-model",
+    "fault_detail": "advisory-vulnerable",
+    "fault_kind": "semantic",
+    "subtype": "python-model-factory"
+  },
+  {
+    "case_id": "python-model-009",
+    "corpus_source": "public-advisory-abstraction",
+    "expected": "rejected",
+    "family": "python-model",
+    "fault_detail": "advisory-vulnerable",
+    "fault_kind": "semantic",
+    "subtype": "python-model-factory"
+  },
+  {
+    "case_id": "python-model-010",
+    "corpus_source": "public-advisory-abstraction",
+    "expected": "rejected",
+    "family": "python-model",
+    "fault_detail": "advisory-vulnerable",
+    "fault_kind": "semantic",
+    "subtype": "python-model-factory"
+  },
+  {
+    "case_id": "python-model-011",
+    "corpus_source": "public-advisory-abstraction",
+    "expected": "rejected",
+    "family": "python-model",
+    "fault_detail": "advisory-vulnerable",
+    "fault_kind": "semantic",
+    "subtype": "python-model-factory"
+  },
+  {
+    "case_id": "python-model-012",
+    "corpus_source": "public-advisory-abstraction",
+    "expected": "rejected",
+    "family": "python-model",
+    "fault_detail": "advisory-vulnerable",
+    "fault_kind": "semantic",
+    "subtype": "python-model-factory"
+  },
+  {
+    "case_id": "php-sdk-001",
+    "corpus_source": "public-advisory-abstraction",
+    "expected": "accepted",
+    "family": "php-sdk",
+    "fault_detail": "advisory-patched",
+    "fault_kind": "safe",
+    "subtype": "php-sdk-literal"
+  },
+  {
+    "case_id": "php-sdk-002",
+    "corpus_source": "public-advisory-abstraction",
+    "expected": "accepted",
+    "family": "php-sdk",
+    "fault_detail": "advisory-patched",
+    "fault_kind": "safe",
+    "subtype": "php-sdk-literal"
+  },
+  {
+    "case_id": "php-sdk-003",
+    "corpus_source": "public-advisory-abstraction",
+    "expected": "accepted",
+    "family": "php-sdk",
+    "fault_detail": "advisory-patched",
+    "fault_kind": "safe",
+    "subtype": "php-sdk-literal"
+  },
+  {
+    "case_id": "php-sdk-004",
+    "corpus_source": "public-advisory-abstraction",
+    "expected": "accepted",
+    "family": "php-sdk",
+    "fault_detail": "advisory-patched",
+    "fault_kind": "safe",
+    "subtype": "php-sdk-literal"
+  },
+  {
+    "case_id": "php-sdk-005",
+    "corpus_source": "public-advisory-abstraction",
+    "expected": "accepted",
+    "family": "php-sdk",
+    "fault_detail": "advisory-patched",
+    "fault_kind": "safe",
+    "subtype": "php-sdk-literal"
+  },
+  {
+    "case_id": "php-sdk-006",
+    "corpus_source": "public-advisory-abstraction",
+    "expected": "accepted",
+    "family": "php-sdk",
+    "fault_detail": "advisory-patched",
+    "fault_kind": "safe",
+    "subtype": "php-sdk-literal"
+  },
+  {
+    "case_id": "php-sdk-007",
+    "corpus_source": "public-advisory-abstraction",
+    "expected": "rejected",
+    "family": "php-sdk",
+    "fault_detail": "advisory-vulnerable",
+    "fault_kind": "semantic",
+    "subtype": "php-sdk-literal"
+  },
+  {
+    "case_id": "php-sdk-008",
+    "corpus_source": "public-advisory-abstraction",
+    "expected": "rejected",
+    "family": "php-sdk",
+    "fault_detail": "advisory-vulnerable",
+    "fault_kind": "semantic",
+    "subtype": "php-sdk-literal"
+  },
+  {
+    "case_id": "php-sdk-009",
+    "corpus_source": "public-advisory-abstraction",
+    "expected": "rejected",
+    "family": "php-sdk",
+    "fault_detail": "advisory-vulnerable",
+    "fault_kind": "semantic",
+    "subtype": "php-sdk-literal"
+  },
+  {
+    "case_id": "php-sdk-010",
+    "corpus_source": "public-advisory-abstraction",
+    "expected": "rejected",
+    "family": "php-sdk",
+    "fault_detail": "advisory-vulnerable",
+    "fault_kind": "semantic",
+    "subtype": "php-sdk-literal"
+  },
+  {
+    "case_id": "php-sdk-011",
+    "corpus_source": "public-advisory-abstraction",
+    "expected": "rejected",
+    "family": "php-sdk",
+    "fault_detail": "advisory-vulnerable",
+    "fault_kind": "semantic",
+    "subtype": "php-sdk-literal"
+  },
+  {
+    "case_id": "php-sdk-012",
+    "corpus_source": "public-advisory-abstraction",
+    "expected": "rejected",
+    "family": "php-sdk",
+    "fault_detail": "advisory-vulnerable",
+    "fault_kind": "semantic",
+    "subtype": "php-sdk-literal"
+  },
+  {
+    "case_id": "typescript-mock-001",
+    "corpus_source": "public-advisory-abstraction",
+    "expected": "accepted",
+    "family": "typescript-mock",
+    "fault_detail": "advisory-patched",
+    "fault_kind": "safe",
+    "subtype": "typescript-mock-const"
+  },
+  {
+    "case_id": "typescript-mock-002",
+    "corpus_source": "public-advisory-abstraction",
+    "expected": "accepted",
+    "family": "typescript-mock",
+    "fault_detail": "advisory-patched",
+    "fault_kind": "safe",
+    "subtype": "typescript-mock-const"
+  },
+  {
+    "case_id": "typescript-mock-003",
+    "corpus_source": "public-advisory-abstraction",
+    "expected": "accepted",
+    "family": "typescript-mock",
+    "fault_detail": "advisory-patched",
+    "fault_kind": "safe",
+    "subtype": "typescript-mock-const"
+  },
+  {
+    "case_id": "typescript-mock-004",
+    "corpus_source": "public-advisory-abstraction",
+    "expected": "accepted",
+    "family": "typescript-mock",
+    "fault_detail": "advisory-patched",
+    "fault_kind": "safe",
+    "subtype": "typescript-mock-const"
+  },
+  {
+    "case_id": "typescript-mock-005",
+    "corpus_source": "public-advisory-abstraction",
+    "expected": "accepted",
+    "family": "typescript-mock",
+    "fault_detail": "advisory-patched",
+    "fault_kind": "safe",
+    "subtype": "typescript-mock-const"
+  },
+  {
+    "case_id": "typescript-mock-006",
+    "corpus_source": "public-advisory-abstraction",
+    "expected": "accepted",
+    "family": "typescript-mock",
+    "fault_detail": "advisory-patched",
+    "fault_kind": "safe",
+    "subtype": "typescript-mock-const"
+  },
+  {
+    "case_id": "typescript-mock-007",
+    "corpus_source": "public-advisory-abstraction",
+    "expected": "rejected",
+    "family": "typescript-mock",
+    "fault_detail": "advisory-vulnerable",
+    "fault_kind": "semantic",
+    "subtype": "typescript-mock-const"
+  },
+  {
+    "case_id": "typescript-mock-008",
+    "corpus_source": "public-advisory-abstraction",
+    "expected": "rejected",
+    "family": "typescript-mock",
+    "fault_detail": "advisory-vulnerable",
+    "fault_kind": "semantic",
+    "subtype": "typescript-mock-const"
+  },
+  {
+    "case_id": "typescript-mock-009",
+    "corpus_source": "public-advisory-abstraction",
+    "expected": "rejected",
+    "family": "typescript-mock",
+    "fault_detail": "advisory-vulnerable",
+    "fault_kind": "semantic",
+    "subtype": "typescript-mock-const"
+  },
+  {
+    "case_id": "typescript-mock-010",
+    "corpus_source": "public-advisory-abstraction",
+    "expected": "rejected",
+    "family": "typescript-mock",
+    "fault_detail": "advisory-vulnerable",
+    "fault_kind": "semantic",
+    "subtype": "typescript-mock-const"
+  },
+  {
+    "case_id": "typescript-mock-011",
+    "corpus_source": "public-advisory-abstraction",
+    "expected": "rejected",
+    "family": "typescript-mock",
+    "fault_detail": "advisory-vulnerable",
+    "fault_kind": "semantic",
+    "subtype": "typescript-mock-const"
+  },
+  {
+    "case_id": "typescript-mock-012",
+    "corpus_source": "public-advisory-abstraction",
+    "expected": "rejected",
+    "family": "typescript-mock",
+    "fault_detail": "advisory-vulnerable",
+    "fault_kind": "semantic",
+    "subtype": "typescript-mock-const"
+  }
+]
