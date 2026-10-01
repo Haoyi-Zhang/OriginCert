@@ -1,0 +1,85 @@
+{
+  "assignments": 7200,
+  "cases": 600,
+  "cases_per_seed": 75,
+  "certificates": 147,
+  "counterexamples": 453,
+  "per_seed": [
+    {
+      "assignments": 900,
+      "cases": 75,
+      "certificates": 26,
+      "counterexamples": 49,
+      "seed": 1592598567,
+      "status": "PASS"
+    },
+    {
+      "assignments": 900,
+      "cases": 75,
+      "certificates": 16,
+      "counterexamples": 59,
+      "seed": 324508639,
+      "status": "PASS"
+    },
+    {
+      "assignments": 900,
+      "cases": 75,
+      "certificates": 17,
+      "counterexamples": 58,
+      "seed": 610839776,
+      "status": "PASS"
+    },
+    {
+      "assignments": 900,
+      "cases": 75,
+      "certificates": 13,
+      "counterexamples": 62,
+      "seed": 195948557,
+      "status": "PASS"
+    },
+    {
+      "assignments": 900,
+      "cases": 75,
+      "certificates": 15,
+      "counterexamples": 60,
+      "seed": 826366246,
+      "status": "PASS"
+    },
+    {
+      "assignments": 900,
+      "cases": 75,
+      "certificates": 23,
+      "counterexamples": 52,
+      "seed": 655894552,
+      "status": "PASS"
+    },
+    {
+      "assignments": 900,
+      "cases": 75,
+      "certificates": 23,
+      "counterexamples": 52,
+      "seed": 3237998097,
+      "status": "PASS"
+    },
+    {
+      "assignments": 900,
+      "cases": 75,
+      "certificates": 14,
+      "counterexamples": 61,
+      "seed": 2779096485,
+      "status": "PASS"
+    }
+  ],
+  "seed_count": 8,
+  "seeds": [
+    1592598567,
+    324508639,
+    610839776,
+    195948557,
+    826366246,
+    655894552,
+    3237998097,
+    2779096485
+  ],
+  "status": "PASS"
+}

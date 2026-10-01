@@ -1,0 +1,43 @@
+{
+  "interpretation": "Irrelevant dimensions enlarge the concrete domain while certificate cells and symbolic leaf replays are determined by control-relevant dimensions. Timings are feasibility measurements, not cross-machine performance claims.",
+  "max_assignments": 256,
+  "rows": [
+    {
+      "assignments": 24,
+      "certificate_bytes": 6833,
+      "certificate_cells": 4,
+      "exhaustive_replay_median_ms": 2.173118,
+      "irrelevant_boolean_fields": 0,
+      "symbolic_leaf_replays": 4,
+      "symbolic_verify_median_ms": 2.080098
+    },
+    {
+      "assignments": 48,
+      "certificate_bytes": 6971,
+      "certificate_cells": 4,
+      "exhaustive_replay_median_ms": 4.559227,
+      "irrelevant_boolean_fields": 1,
+      "symbolic_leaf_replays": 4,
+      "symbolic_verify_median_ms": 2.151045
+    },
+    {
+      "assignments": 96,
+      "certificate_bytes": 7109,
+      "certificate_cells": 4,
+      "exhaustive_replay_median_ms": 8.535024,
+      "irrelevant_boolean_fields": 2,
+      "symbolic_leaf_replays": 4,
+      "symbolic_verify_median_ms": 2.371997
+    },
+    {
+      "assignments": 192,
+      "certificate_bytes": 7247,
+      "certificate_cells": 4,
+      "exhaustive_replay_median_ms": 17.028956,
+      "irrelevant_boolean_fields": 3,
+      "symbolic_leaf_replays": 4,
+      "symbolic_verify_median_ms": 2.526391
+    }
+  ],
+  "status": "PASS"
+}

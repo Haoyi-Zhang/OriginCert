@@ -1,0 +1,13 @@
+{
+  "bibliography_entries": 29,
+  "citation_commands": 33,
+  "citation_occurrences": 58,
+  "duplicate_dois": 0,
+  "duplicate_titles": 0,
+  "entries_with_doi": 25,
+  "entries_with_stable_url_only": 4,
+  "missing_keys": [],
+  "status": "PASS",
+  "unique_cited_keys": 29,
+  "unused_keys": []
+}

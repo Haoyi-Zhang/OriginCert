@@ -1,0 +1,16 @@
+{
+  "assignments": 8640,
+  "backends": [
+    "ast",
+    "template"
+  ],
+  "cases": 360,
+  "elapsed_seconds": 2.692261,
+  "emitted_statements_per_backend": 28570,
+  "roundtrips": 17280,
+  "source_bytes": {
+    "ast": 3863161,
+    "template": 3863161
+  },
+  "status": "PASS"
+}

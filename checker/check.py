@@ -16,6 +16,7 @@ MAX_GENERATOR_NODES = 2_000
 MAX_GENERATOR_DEPTH = 256
 MAX_TRACE_EVENTS = 4_096
 MAX_REPEAT_COUNT = 4
+MAX_TRAVERSAL_STEPS = 2_000_000
 MAX_JSON_BYTES = 64 * 1024 * 1024
 
 EVENT_FIELDS: dict[str, tuple[set[str], set[str]]] = {
@@ -288,12 +289,52 @@ def inspect_tree(root: Record, schema: Record) -> set[str]:
     return identities
 
 
+
+def _emission_flags(root: Record) -> tuple[dict[str, bool], int]:
+    """Independently summarize emitting subtrees with one static-node visit each."""
+    flags: dict[str, bool] = {}
+    visited = 0
+
+    def visit(node: Record) -> bool:
+        nonlocal visited
+        visited += 1
+        kind = node["kind"]
+        if kind == "emit":
+            emits = True
+        elif kind == "seq":
+            child_flags = [visit(child) for child in node["children"]]
+            emits = any(child_flags)
+        elif kind == "if":
+            then_emits = visit(node["then"])
+            else_emits = visit(node["else"])
+            emits = then_emits or else_emits
+        else:
+            emits = visit(node["body"])
+        flags[node["node"]] = emits
+        return emits
+
+    visit(root)
+    return flags, visited
+
+
+def _charge_work(counter: list[int], amount: int = 1) -> None:
+    counter[0] += amount
+    demand(
+        counter[0] <= MAX_TRAVERSAL_STEPS,
+        f"generator execution exceeds the {MAX_TRAVERSAL_STEPS}-step traversal bound",
+    )
+
 def emitted(root: Record, assignment: Record) -> tuple[list[Record], list[str]]:
     """Independently execute a generator and retain each actual emit node."""
     trace: list[Record] = []
     emitters: list[str] = []
+    emission_flags, _ = _emission_flags(root)
+    work = [0]
 
     def walk(node: Record, occurrence: Occurrence = ()) -> None:
+        _charge_work(work)
+        if not emission_flags[node["node"]]:
+            return
         kind = node["kind"]
         if kind == "seq":
             for child in node["children"]:
@@ -716,8 +757,13 @@ def symbolic_emitted(
     """
 
     State = tuple[dict[str, tuple[Any, ...]], list[Record], list[str]]
+    emission_flags, _ = _emission_flags(root)
+    work = [0]
 
     def walk(node: Record, states: list[State], occurrence: Occurrence = ()) -> list[State]:
+        _charge_work(work, max(1, len(states)))
+        if not emission_flags[node["node"]]:
+            return states
         kind = node["kind"]
         if kind == "emit":
             output: list[State] = []
@@ -814,7 +860,10 @@ def inspect_monitor_steps(value: Any) -> None:
     for index, step in enumerate(value):
         demand(isinstance(step, dict), "monitor step is not an object")
         exact_keys(step, {"event_index", "before", "after", "violations"}, set(), f"monitor_steps[{index}]")
-        demand(step["event_index"] == index, "monitor step indices are not contiguous")
+        demand(
+            type(step["event_index"]) is int and step["event_index"] == index,
+            "monitor step indices are not exact contiguous integers",
+        )
         inspect_state(step["before"], f"monitor_steps[{index}].before")
         inspect_state(step["after"], f"monitor_steps[{index}].after")
         demand(isinstance(step["violations"], list), "monitor step violations are not a list")

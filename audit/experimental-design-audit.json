@@ -1,0 +1,29 @@
+{
+  "balanced_outcomes": {
+    "certificates": 180,
+    "counterexamples": 180
+  },
+  "classic_train_test_overfitting_applicable": false,
+  "concrete_source_roundtrips": {
+    "backends": [
+      "ast",
+      "template"
+    ],
+    "roundtrips": 17280
+  },
+  "deterministic_tamper_rejections": 1440,
+  "independent_multiseed_stress": {
+    "assignments": 7200,
+    "cases": 600,
+    "seeds": 8,
+    "separate_from_frozen_corpus": true,
+    "third_concrete_oracle": true
+  },
+  "issues": [],
+  "learned_parameters_or_tuned_thresholds": false,
+  "primary_assignments": 8640,
+  "primary_controlled_cases": 360,
+  "remaining_validity_question": "benchmark-construction and external-generator correspondence, addressed by separate random stress, advisory mechanism abstractions, and explicit scope",
+  "status": "PASS",
+  "symbolic_scaling_rows": 4
+}

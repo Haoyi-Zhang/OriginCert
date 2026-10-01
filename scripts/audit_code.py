@@ -3,8 +3,10 @@
 from __future__ import annotations
 
 import ast
+import io
 import json
 import re
+import tokenize
 from pathlib import Path
 from typing import Any
 
@@ -65,8 +67,11 @@ def main() -> None:
                 isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef)) and node.name.startswith("test_")
                 for node in ast.walk(tree)
             )
-        for match in re.finditer(r"\b(?:TODO|FIXME|XXX)\b", text, flags=re.I):
-            todo_markers.append({"file": relative, "line": text.count("\n", 0, match.start()) + 1})
+        for token in tokenize.generate_tokens(io.StringIO(text).readline):
+            if token.type == tokenize.COMMENT and re.search(
+                r"\b(?:TODO|FIXME|XXX)\b", token.string, flags=re.I
+            ):
+                todo_markers.append({"file": relative, "line": token.start[0]})
         for node in ast.walk(tree):
             if isinstance(node, ast.Assert) and any(path.is_relative_to(root) for root in PRODUCTION_ROOTS):
                 production_asserts.append({"file": relative, "line": node.lineno})

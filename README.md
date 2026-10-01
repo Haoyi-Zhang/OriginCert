@@ -64,20 +64,33 @@ The command regenerates all 360 cases and results, then performs:
 - independent verification of every certificate and counterexample;
 - 1,440 deterministic record-mutation checks;
 - mechanism-specific oracle checks for all 36 advisory cases; and
-- 29 contract and regression tests.
+- 37 contract and regression tests;
+- 17,280 concrete-source round trips through two reference lowerings;
+- an eight-seed stress audit over 600 additional generators and 7,200 inputs; and
+- a four-point symbolic scaling study.
 
-Only the Python standard library is required.
-
-A separate deterministic differential stress run exercises 600 additional mixed
-generator trees and 7,200 assignments against the producer, checker, a third
-concrete oracle, and expanded symbolic cells:
+The command explicitly passes one output path to each auxiliary stage and then
+reads that same path; it removes stale auxiliary outputs before execution. The
+stress stage can also be run directly:
 
 ```bash
-python scripts/differential_stress.py
+python scripts/differential_stress.py --output results/differential_stress.json
 ```
 
-Its retained output is `results/differential_stress.json`. It is a robustness check,
-not part of the 360-case evaluation counts.
+The main reproduction requires CPython with the standard library on a POSIX
+environment that provides the Unix `resource` module (for example Linux, macOS,
+or WSL). The module is used to report peak resident memory; no network service or
+third-party Python package is used. The stress cases are a robustness check, not
+part of the 360-case evaluation counts.
+
+Paper-only reference checks are deliberately separate from scientific
+reproduction. From the complete project package, run:
+
+```bash
+python scripts/audit_references.py --paper-dir ../paper
+```
+
+The standalone artifact does not require the paper directory.
 
 Principal outputs:
 
@@ -89,6 +102,10 @@ Principal outputs:
   class;
 - `results/historical_anchor_summary.csv`: advisory-model outcomes by record;
 - `results/family_summary.csv`: per-family evidence-size and runtime summaries;
+- `results/backend_roundtrip.json`: two-backend concrete-source round trips;
+- `results/differential_stress.json`: the eight-seed independent stress audit;
+- `results/scaling_study.json` and `.csv`: symbolic-region scaling measurements;
+- `results/test_results.json`: the actual unittest runner count and outcome;
 - `results/cases/`: the checked result for each case.
 
 ## Check one result
@@ -122,9 +139,13 @@ Both producer and checker fail closed on malformed or ambiguous serialized
 subjects. The validators enforce exact object keys, finite JSON values, canonical
 JSON identity (so integer `1` and Boolean `true` remain distinct), unique node and
 obligation identifiers, operation-specific event shapes, valid trigger fields,
-bounded domains, bounded generator depth and size, and bounded trace length. The
-checker also limits input size and rejects duplicate JSON keys and non-finite
-numeric literals.
+bounded domains, bounded generator depth and size, bounded trace length, and an
+independent traversal-work budget. A one-pass static emission summary skips
+subtrees that cannot emit, so deeply nested repeats around an empty sequence do
+not expand exponentially. The event bound limits output length; it is not treated
+as a time bound. The checker also limits input size and rejects duplicate JSON
+keys, non-finite numeric literals, and Boolean or floating-point aliases for
+integer monitor indices.
 
 ## Directory map
 

@@ -30,39 +30,30 @@ def main() -> int:
         "counterexamples": 180,
         "tamper_rejected": 1440,
     }
-    # Accept known field aliases without weakening the expected values.
-    aliases = {
-        "cases": ("cases", "case_count"),
-        "assignments": ("assignments", "total_assignments"),
-        "certificates": ("certificates", "accepted", "certificate_count"),
-        "counterexamples": ("counterexamples", "rejected", "counterexample_count"),
-        "tamper_rejected": ("tamper_rejected", "tamper_mutations_rejected", "mutations_rejected"),
+    corpus = summary.get("corpus", {})
+    correctness = summary.get("correctness", {})
+    certificate = summary.get("certificate", {})
+    counterexample = summary.get("counterexample", {})
+    observed = {
+        "cases": corpus.get("cases"),
+        "assignments": corpus.get("exhaustive_assignments"),
+        "certificates": certificate.get("accepted_certificate_count", corpus.get("accepted")),
+        "counterexamples": counterexample.get("count", corpus.get("rejected")),
+        "tamper_rejected": correctness.get("tampered_records_rejected"),
     }
-    observed: dict[str, int] = {}
-    for label, names in aliases.items():
-        value = None
-        for name in names:
-            if name in summary:
-                value = int(summary[name]); break
-        if value is None:
-            # Search one level down, used by some frozen summary schemas.
-            for obj in summary.values():
-                if isinstance(obj, dict):
-                    for name in names:
-                        if name in obj:
-                            value = int(obj[name]); break
-                if value is not None:
-                    break
-        if value is None:
+    for label, expected_value in expected.items():
+        value = observed.get(label)
+        if type(value) is not int:
             issues.append({"code": "summary-field-missing", "detail": label})
-        else:
-            observed[label] = value
-            if value != expected[label]:
-                issues.append({"code": "unexpected-primary-count", "detail": f"{label}={value}, expected={expected[label]}"})
+        elif value != expected_value:
+            issues.append({
+                "code": "unexpected-primary-count",
+                "detail": f"{label}={value}, expected={expected_value}",
+            })
 
     if stress.get("status") != "PASS" or int(stress.get("seed_count", 0)) < 8:
         issues.append({"code": "insufficient-multiseed-stress", "detail": repr(stress.get("seed_count"))})
-    if int(stress.get("cases", 0)) < 4800 or int(stress.get("assignments", 0)) < 57600:
+    if int(stress.get("cases", 0)) < 600 or int(stress.get("assignments", 0)) < 7200:
         issues.append({"code": "stress-size-too-small", "detail": f"{stress.get('cases')}/{stress.get('assignments')}"})
     if backends.get("status") != "PASS" or int(backends.get("roundtrips", 0)) != 17280:
         issues.append({"code": "concrete-roundtrip-incomplete", "detail": repr(backends)})

@@ -2,6 +2,7 @@
 """Measure certificate checking as irrelevant schema dimensions grow."""
 from __future__ import annotations
 
+import argparse
 import copy
 import csv
 import json
@@ -30,12 +31,14 @@ from src.certify import make_result  # noqa: E402
 Record = dict[str, Any]
 
 
-def accepted_case() -> Record:
-    for path in sorted((ROOT / "cases").glob("*.json")):
+def accepted_case(case_directory: Path) -> Record:
+    for path in sorted(case_directory.glob("*.json")):
         case = json.loads(path.read_text(encoding="utf-8"))
-        if case.get("expected") == "accepted":
+        if not isinstance(case, dict):
+            continue
+        if case.get("expected") == "accepted" and {"case_id", "schema", "generator"}.issubset(case):
             return case
-    raise RuntimeError("no accepted frozen case")
+    raise RuntimeError(f"no accepted frozen case in {case_directory}")
 
 
 def field_container(schema: Any) -> tuple[list[Record] | None, dict[str, Any] | None]:
@@ -100,16 +103,32 @@ def median_ms(action: Callable[[], None], repetitions: int = 7) -> float:
 
 
 def main() -> None:
-    base = accepted_case()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--cases", type=Path, default=ROOT / "data" / "cases")
+    parser.add_argument(
+        "--output-json", type=Path, default=ROOT / "results" / "scaling_study.json"
+    )
+    parser.add_argument(
+        "--output-csv", type=Path, default=ROOT / "results" / "scaling_study.csv"
+    )
+    arguments = parser.parse_args()
+
+    base = accepted_case(arguments.cases)
+    base_names, base_domains = schema_domains(base["schema"])
+    base_assignments = math.prod(len(base_domains[name]) for name in base_names)
     rows: list[Record] = []
     for irrelevant in range(0, 16):
+        projected_assignments = base_assignments * (2**irrelevant)
+        if projected_assignments > MAX_ASSIGNMENTS:
+            break
+
         case = copy.deepcopy(base)
         for index in range(irrelevant):
             add_boolean_field(case["schema"], f"unused_{index}")
         names, domains = schema_domains(case["schema"])
         assignments = math.prod(len(domains[name]) for name in names)
-        if assignments > MAX_ASSIGNMENTS:
-            break
+        if assignments != projected_assignments:
+            raise AssertionError(("projected-assignment-mismatch", assignments, projected_assignments))
 
         result = make_result(case)
         if result.get("kind") != "certificate":
@@ -140,7 +159,9 @@ def main() -> None:
                 "certificate_cells": len(result["cells"]),
                 "symbolic_leaf_replays": symbolic_leaves,
                 "certificate_bytes": len(
-                    json.dumps(result, ensure_ascii=False, sort_keys=True, separators=(",", ":")).encode("utf-8")
+                    json.dumps(
+                        result, ensure_ascii=False, sort_keys=True, separators=(",", ":")
+                    ).encode("utf-8")
                 ),
                 "symbolic_verify_median_ms": median_ms(symbolic_check),
                 "exhaustive_replay_median_ms": median_ms(exhaustive_check),
@@ -159,16 +180,18 @@ def main() -> None:
             "not cross-machine performance claims."
         ),
     }
-    result_dir = ROOT / "results"
-    result_dir.mkdir(exist_ok=True)
-    (result_dir / "scaling_study.json").write_text(
-        json.dumps(report, indent=2, sort_keys=True) + "\n", encoding="utf-8"
+    arguments.output_json.parent.mkdir(parents=True, exist_ok=True)
+    temporary = arguments.output_json.with_name(f".{arguments.output_json.name}.tmp")
+    temporary.write_text(
+        json.dumps(report, indent=2, sort_keys=True, allow_nan=False) + "\n", encoding="utf-8"
     )
-    with (result_dir / "scaling_study.csv").open("w", encoding="utf-8", newline="") as handle:
+    temporary.replace(arguments.output_json)
+    arguments.output_csv.parent.mkdir(parents=True, exist_ok=True)
+    with arguments.output_csv.open("w", encoding="utf-8", newline="") as handle:
         writer = csv.DictWriter(handle, fieldnames=list(rows[0]))
         writer.writeheader()
         writer.writerows(rows)
-    print(json.dumps(report, indent=2, sort_keys=True))
+    print(json.dumps(report, indent=2, sort_keys=True, allow_nan=False))
 
 
 if __name__ == "__main__":

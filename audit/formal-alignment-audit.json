@@ -1,22 +1,11 @@
 {
   "certificate_assignment_expansion": false,
   "checker_imports_producer": false,
+  "checker_monitor_order": true,
   "construction_labels_used_for_decision": false,
-  "issues": [
-    {
-      "code": "semantic-marker-missing",
-      "detail": "core:apply"
-    },
-    {
-      "code": "semantic-marker-missing",
-      "detail": "checker:apply"
-    },
-    {
-      "code": "proof-omits-post-violation-transition",
-      "detail": "complete replay semantics"
-    }
-  ],
-  "proof_contract_covers_pre_state_and_complete_replay": false,
-  "status": "FAIL",
+  "issues": [],
+  "producer_monitor_order": true,
+  "proof_contract_covers_region_soundness_and_complete_replay": true,
+  "status": "PASS",
   "symbolic_partition_checks": true
 }

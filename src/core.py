@@ -15,6 +15,7 @@ MAX_GENERATOR_NODES = 2_000
 MAX_GENERATOR_DEPTH = 256
 MAX_TRACE_EVENTS = 4_096
 MAX_REPEAT_COUNT = 4
+MAX_TRAVERSAL_STEPS = 2_000_000
 
 EVENT_FIELDS: dict[str, tuple[set[str], set[str]]] = {
     "source": ({"target"}, {"input"}),
@@ -292,25 +293,83 @@ def _validate_rule(rule: Any, oid: str, trigger_allowed: set[str]) -> None:
         raise ModelError(f"obligation {oid} has an unsupported rule")
 
 
-def _trace_event_count(node: Json, assignment: Json, remaining: int = MAX_TRACE_EVENTS) -> int:
+
+def _emission_flags(root: Json) -> tuple[dict[str, bool], int]:
+    """Summarize whether each subtree can emit, visiting each static node once."""
+    flags: dict[str, bool] = {}
+    visited = 0
+
+    def visit(node: Json) -> bool:
+        nonlocal visited
+        visited += 1
+        kind = node["kind"]
+        if kind == "emit":
+            emits = True
+        elif kind == "seq":
+            child_flags = [visit(child) for child in node["children"]]
+            emits = any(child_flags)
+        elif kind == "if":
+            then_emits = visit(node["then"])
+            else_emits = visit(node["else"])
+            emits = then_emits or else_emits
+        else:
+            emits = visit(node["body"])
+        flags[node["node"]] = emits
+        return emits
+
+    visit(root)
+    return flags, visited
+
+
+def _charge_work(counter: list[int], amount: int = 1) -> None:
+    counter[0] += amount
+    if counter[0] > MAX_TRAVERSAL_STEPS:
+        raise ModelError(
+            f"generator execution exceeds the {MAX_TRAVERSAL_STEPS}-step traversal bound"
+        )
+
+
+def _trace_event_count(
+    node: Json,
+    assignment: Json,
+    remaining: int = MAX_TRACE_EVENTS,
+    *,
+    emission_flags: dict[str, bool] | None = None,
+    work: list[int] | None = None,
+) -> int:
+    if emission_flags is None:
+        emission_flags, _ = _emission_flags(node)
+    if work is None:
+        work = [0]
+    _charge_work(work)
+    if not emission_flags[node["node"]]:
+        return 0
     kind = node["kind"]
     if kind == "emit":
         return 1
     if kind == "seq":
         total = 0
         for child in node["children"]:
-            total += _trace_event_count(child, assignment, remaining - total)
+            total += _trace_event_count(
+                child, assignment, remaining - total,
+                emission_flags=emission_flags, work=work
+            )
             if total > remaining:
                 return total
         return total
     if kind == "if":
         condition = node["condition"]
         branch = node["then"] if same_json_value(assignment[condition["field"]], condition["equals"]) else node["else"]
-        return _trace_event_count(branch, assignment, remaining)
+        return _trace_event_count(
+            branch, assignment, remaining, emission_flags=emission_flags, work=work
+        )
     count = assignment[node["count_field"]]
     total = 0
     for _ in range(count):
-        total += _trace_event_count(node["body"], assignment, remaining - total)
+        total += _trace_event_count(
+            node["body"], assignment, remaining - total,
+            emission_flags=emission_flags, work=work
+        )
         if total > remaining:
             return total
     return total
@@ -408,8 +467,11 @@ def validate_case(case: Json) -> None:
     assignments = raw_assignments(case["schema"])
     if len(assignments) > MAX_ASSIGNMENTS:
         raise ModelError(f"schema exceeds the frozen {MAX_ASSIGNMENTS}-assignment bound")
+    emission_flags, _ = _emission_flags(case["generator"])
     for assignment in assignments:
-        if _trace_event_count(case["generator"], assignment) > MAX_TRACE_EVENTS:
+        if _trace_event_count(
+            case["generator"], assignment, emission_flags=emission_flags, work=[0]
+        ) > MAX_TRACE_EVENTS:
             raise ModelError(f"generator exceeds the {MAX_TRACE_EVENTS}-event trace bound")
     _ = ids
 
@@ -428,8 +490,13 @@ def execute_concrete_evidence(node: Json, assignment: Json) -> tuple[list[Json],
     """Execute a generator and retain the actual emit node for each public event."""
     output: list[Json] = []
     emitters: list[str] = []
+    emission_flags, _ = _emission_flags(node)
+    work = [0]
 
     def run(current: Json, occurrence: Occurrence = ()) -> None:
+        _charge_work(work)
+        if not emission_flags[current["node"]]:
+            return
         kind = current["kind"]
         if kind == "seq":
             for child in current["children"]:
@@ -470,12 +537,17 @@ def symbolic_paths(case: Json) -> list[tuple[Json, list[Json], list[str]]]:
     validate_case(case)
     ds = domains(case["schema"])
     initial = [({name: tuple(values) for name, values in ds.items()}, [], [])]
+    emission_flags, _ = _emission_flags(case["generator"])
+    work = [0]
 
     def walk(
         node: Json,
         states: list[tuple[dict[str, tuple[Any, ...]], list[Json], list[str]]],
         occurrence: Occurrence = (),
     ) -> list[tuple[dict[str, tuple[Any, ...]], list[Json], list[str]]]:
+        _charge_work(work, max(1, len(states)))
+        if not emission_flags[node["node"]]:
+            return states
         kind = node["kind"]
         if kind == "emit":
             output = []

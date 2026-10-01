@@ -10,6 +10,7 @@ from pathlib import Path
 from unittest import mock
 
 import checker.check as independent_checker
+import src.core as producer_core
 from checker.check import CheckFailure, classify_case, emitted, inspect_tree, verify
 from src.certify import load_json as producer_load_json, make_result
 from src.core import (
@@ -680,6 +681,94 @@ class ContractTests(unittest.TestCase):
                         producer_load_json(path)
                     with self.assertRaises(CheckFailure):
                         independent_checker.load(path)
+
+    def test_monitor_step_indices_reject_boolean_and_float_aliases(self) -> None:
+        certificate_case = None
+        certificate_result = None
+        certificate_cell_index = None
+        for case in self.cases:
+            if case["expected"] != "accepted":
+                continue
+            candidate = make_result(case)
+            for cell_index, cell in enumerate(candidate["cells"]):
+                if len(cell["monitor_steps"]) >= 2:
+                    certificate_case = case
+                    certificate_result = candidate
+                    certificate_cell_index = cell_index
+                    break
+            if certificate_result is not None:
+                break
+        self.assertIsNotNone(certificate_result)
+        assert certificate_case is not None and certificate_result is not None
+        assert certificate_cell_index is not None
+
+        counterexample_case = None
+        counterexample_result = None
+        for case in self.cases:
+            if case["expected"] != "rejected":
+                continue
+            candidate = make_result(case)
+            if len(candidate["witness"]["monitor_steps"]) >= 2:
+                counterexample_case = case
+                counterexample_result = candidate
+                break
+        self.assertIsNotNone(counterexample_result)
+        assert counterexample_case is not None and counterexample_result is not None
+
+        targets = [
+            (certificate_case, certificate_result, ("cells", certificate_cell_index, "monitor_steps")),
+            (counterexample_case, counterexample_result, ("witness", "monitor_steps")),
+        ]
+        for case, result, path in targets:
+            for step_index, replacement in ((0, False), (0, 0.0), (1, True), (1, 1.0)):
+                changed = copy.deepcopy(result)
+                cursor = changed
+                for component in path:
+                    cursor = cursor[component]
+                cursor[step_index]["event_index"] = replacement
+                with self.subTest(case=case["case_id"], step=step_index, replacement=repr(replacement)):
+                    with self.assertRaises(CheckFailure):
+                        verify(case, changed)
+
+    def test_deep_empty_repeats_use_static_empty_summary(self) -> None:
+        generator = {"node": "empty", "kind": "seq", "children": []}
+        depth = 20
+        for index in range(depth):
+            generator = {
+                "node": f"repeat-{index}",
+                "kind": "repeat",
+                "count_field": "c",
+                "body": generator,
+            }
+        case = {
+            "case_id": "unit-deep-empty-repeat",
+            "family": "unit",
+            "schema": {"fields": [{"name": "c", "domain": [4]}]},
+            "catalog": {
+                "obligations": [
+                    {
+                        "id": "never-triggered",
+                        "trigger": {"op": "noop"},
+                        "rule": {"kind": "forbid"},
+                    }
+                ]
+            },
+            "generator": generator,
+        }
+        producer_flags, producer_visits = producer_core._emission_flags(generator)
+        checker_flags, checker_visits = independent_checker._emission_flags(generator)
+        self.assertEqual(depth + 1, producer_visits)
+        self.assertEqual(depth + 1, checker_visits)
+        self.assertFalse(producer_flags[generator["node"]])
+        self.assertFalse(checker_flags[generator["node"]])
+
+        validate_case(case)
+        events, emitters = execute_concrete_evidence(generator, {"c": 4})
+        self.assertEqual(([], []), (events, emitters))
+        result = make_result(case)
+        self.assertEqual("certificate", result["kind"])
+        self.assertEqual(1, len(result["cells"]))
+        verify(case, result)
 
     def test_deterministic_microgrammar_cross_checks_independent_implementations(self) -> None:
         rng = random.Random(20260905)

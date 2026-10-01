@@ -29,6 +29,10 @@
       "text": "Each emitted event carries four classes of data: itemize an operation and operation-specific arguments; a claimed identifier for the emit node that created it; the exact set of declared obligation identifiers; and an optional nonempty occurrence path for nested bounded repetitions. itemize The normal claimed origin is the emit node's identifier."
     },
     {
+      "words": 49,
+      "text": "Reproduction rebuilds all 360 cases and results, classifies cases by checker-side exhaustive replay without construction labels, compares both implementations on all 8,640 inputs, checks the 36 advisory abstractions with mechanism-specific oracles, runs the mutation suite and the eight-seed differential stress audit, and executes 35 contract and regression tests."
+    },
+    {
       "words": 47,
       "text": "It is a sequence of security-relevant events, such as “protect value,” “check capability,” “declare random source,” “database query,” “HTML sink,” “command execution,” “path open,” “privileged action,” “random token,” or “credential use.” Rendering converts an event sequence to a readable pseudo-program, but the monitor consumes the structured events."
     },
@@ -38,7 +42,7 @@
     },
     {
       "words": 43,
-      "text": "Reproduction rebuilds all 360 cases and results, classifies cases by checker-side exhaustive replay without construction labels, compares both implementations on all 8,640 inputs, checks the 36 advisory abstractions with mechanism-specific oracles, runs the mutation suite, and executes 29 contract and regression tests."
+      "text": "Thirty-five contract and regression tests cover strict parsing, JSON-value identity, symbolic partition merging, nested repeat occurrences, pre-event rule semantics, post-violation state continuity, overwrite invalidation and propagation, bounds, exact origins and coverage, nonminimal but replay-valid witnesses, source-backend and result-file contracts, cross-implementation agreement, and forbid ."
     },
     {
       "words": 42,
@@ -47,10 +51,6 @@
     {
       "words": 38,
       "text": "The origin defect keeps the same operations and obligations but changes the query's origin to another claimed node; Figure [reference] uses a nonexistent identifier, while the corpus also includes identifiers that name a real but wrong generator node."
-    },
-    {
-      "words": 38,
-      "text": "Evaluation sec:evaluation Questions and methodology The evaluation asks five questions: description Can checker-side exhaustive replay classify every case without construction labels, agree with producer semantics on every input, and match independent source-to-sink oracles for the public anchors?"
     }
   ],
   "hype_terms": [],

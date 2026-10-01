@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+from collections import Counter
 import copy
 import csv
 import json
@@ -167,51 +168,51 @@ def classification_metrics(rows: list[Json], method: str) -> Json:
     }
 
 
-def mutations(result: Json) -> list[Json]:
-    items: list[Json] = []
+def mutations(result: Json) -> list[tuple[str, Json]]:
+    items: list[tuple[str, Json]] = []
     if result["kind"] == "certificate":
         a = copy.deepcopy(result)
         first_field = next(iter(a["cells"][0]["cube"]))
         del a["cells"][0]["cube"][first_field]
-        items.append(a)
+        items.append(("certificate-delete-cube-coordinate", a))
 
         b = copy.deepcopy(result)
         if b["cells"][0]["events"]:
             b["cells"][0]["events"][0]["origin"] = "tampered-origin"
         else:
             b["claim"]["origin_complete"] = False
-        items.append(b)
+        items.append(("certificate-alter-origin-or-origin-claim", b))
 
         c = copy.deepcopy(result)
         if c["cells"][0]["monitor_steps"]:
             c["cells"][0]["monitor_steps"].pop()
         else:
             c["claim"]["trace_safe"] = False
-        items.append(c)
+        items.append(("certificate-remove-monitor-step-or-safety-claim", c))
 
         d = copy.deepcopy(result)
         if len(d["cells"]) > 1:
             d["cells"].pop()
         else:
             d["claim"]["domain_partitioned"] = False
-        items.append(d)
+        items.append(("certificate-remove-cell-or-partition-claim", d))
     else:
         a = copy.deepcopy(result)
         a["witness"]["violation"]["detail"] = "tampered detail"
-        items.append(a)
+        items.append(("counterexample-alter-violation-detail", a))
 
         b = copy.deepcopy(result)
         if b["witness"]["events"]:
             b["witness"]["events"].pop()
-        items.append(b)
+        items.append(("counterexample-remove-event", b))
 
         c = copy.deepcopy(result)
         c["witness"]["input_size"] += 1
-        items.append(c)
+        items.append(("counterexample-increment-input-size", c))
 
         d = copy.deepcopy(result)
         d["subject"]["case_id"] = "tampered-case"
-        items.append(d)
+        items.append(("counterexample-alter-subject-case-id", d))
     return items
 
 
@@ -224,11 +225,14 @@ def evaluate(case_dir: Path, result_dir: Path) -> Json:
     case_rows: list[Json] = []
     tamper_total = 0
     tamper_rejected = 0
+    tamper_category_counts: Counter[str] = Counter()
+    tamper_category_rejected: Counter[str] = Counter()
     checker_passed = 0
     total_assignments = 0
     producer_times: list[float] = []
     checker_times: list[float] = []
     certificate_sizes: list[int] = []
+    certificate_cell_counts: list[int] = []
     counterexample_sizes: list[int] = []
     compression_ratios: list[float] = []
     minimal_sizes: list[int] = []
@@ -256,6 +260,7 @@ def evaluate(case_dir: Path, result_dir: Path) -> Json:
         total_assignments += len(assignments)
         if result["kind"] == "certificate":
             certificate_sizes.append(result_bytes)
+            certificate_cell_counts.append(len(result["cells"]))
             compression_ratios.append(len(assignments) / len(result["cells"]))
         else:
             counterexample_sizes.append(result_bytes)
@@ -267,12 +272,14 @@ def evaluate(case_dir: Path, result_dir: Path) -> Json:
                     branch_first_sizes.append(input_size(case["schema"], assignment))
                     break
 
-        for mutation in mutations(result):
+        for mutation_category, mutation in mutations(result):
             tamper_total += 1
+            tamper_category_counts[mutation_category] += 1
             try:
                 verify(case, mutation)
             except (CheckFailure, KeyError, TypeError, ValueError):
                 tamper_rejected += 1
+                tamper_category_rejected[mutation_category] += 1
 
         raw = raw_assignments(case["schema"])
         sample_indices = sorted({0, len(raw) // 2, len(raw) - 1})
@@ -477,6 +484,8 @@ def evaluate(case_dir: Path, result_dir: Path) -> Json:
             "independent_checker_passes": checker_passed,
             "tampered_records_tested": tamper_total,
             "tampered_records_rejected": tamper_rejected,
+            "tamper_category_counts": dict(sorted(tamper_category_counts.items())),
+            "tamper_category_rejected": dict(sorted(tamper_category_rejected.items())),
             "producer_checker_assignment_semantics_compared": semantic_comparisons,
             "historical_oracle_cases": len(historical_rows),
             "historical_oracle_matches_checker_classification": sum(
@@ -485,6 +494,11 @@ def evaluate(case_dir: Path, result_dir: Path) -> Json:
         },
         "certificate": {
             "accepted_certificate_count": len(certificate_sizes),
+            "cell_count_distribution": {
+                str(value): certificate_cell_counts.count(value)
+                for value in sorted(set(certificate_cell_counts))
+            },
+            "median_cells": statistics.median(certificate_cell_counts),
             "median_bytes": statistics.median(certificate_sizes),
             "p95_bytes": percentile([float(v) for v in certificate_sizes], 0.95),
             "median_assignment_to_cell_ratio": statistics.median(compression_ratios),

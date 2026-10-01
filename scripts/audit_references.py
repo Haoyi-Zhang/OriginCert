@@ -2,6 +2,7 @@
 """Fail-closed structural audit for the paper bibliography and citation graph."""
 from __future__ import annotations
 
+import argparse
 import csv
 import json
 import re
@@ -10,14 +11,11 @@ from pathlib import Path
 from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
-PROJECT = ROOT.parent
-PAPER = PROJECT / "paper" / "main.tex"
-BIB = PROJECT / "paper" / "references.bib"
 RESOURCES = ROOT / "external_resources.csv"
 
 ENTRY = re.compile(r"@(?P<kind>[A-Za-z]+)\s*\{(?P<key>[^,\s]+)\s*,(?P<body>.*?)(?=\n@|\Z)", re.S)
 FIELD = re.compile(r"(?mi)^\s*([A-Za-z][A-Za-z0-9_-]*)\s*=\s*(?:\{((?:[^{}]|\{[^{}]*\})*)\}|\"([^\"]*)\")\s*,?\s*$")
-CITE = re.compile(r"\\cite\w*\s*(?:\[[^\]]*\]\s*)*\{([^}]*)\}")
+CITE = re.compile(r"\\cite(?!style\b)\w*\s*(?:\[[^\]]*\]\s*)*\{([^}]*)\}")
 PLACEHOLDER = re.compile(r"example\.(?:com|org)|placeholder|anonymous|todo|tbd", re.I)
 
 
@@ -39,8 +37,20 @@ def parse_bib(text: str) -> list[dict[str, str]]:
 
 
 def main() -> None:
-    source = PAPER.read_text(encoding="utf-8")
-    bib_text = BIB.read_text(encoding="utf-8")
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--paper-dir",
+        type=Path,
+        required=True,
+        help="directory containing main.tex and references.bib",
+    )
+    arguments = parser.parse_args()
+    paper = arguments.paper_dir / "main.tex"
+    bibliography = arguments.paper_dir / "references.bib"
+    if not paper.is_file() or not bibliography.is_file():
+        raise SystemExit(f"paper inputs not found in {arguments.paper_dir}")
+    source = paper.read_text(encoding="utf-8")
+    bib_text = bibliography.read_text(encoding="utf-8")
     entries = parse_bib(bib_text)
     if not entries:
         raise SystemExit("no bibliography entries parsed")

@@ -56,7 +56,24 @@ def main() -> int:
     sys.path.insert(0, str(ROOT))
     test_suite = unittest.defaultTestLoader.discover(ROOT / "tests", pattern="test_*.py")
     test_count = test_suite.countTestCases()
+    test_started = time.perf_counter()
     run("-m", "unittest", "discover", "-s", "tests", "-p", "test_*.py")
+    (result_dir / "test_results.json").write_text(
+        json.dumps(
+            {
+                "status": "PASS",
+                "tests_run": test_count,
+                "failures": 0,
+                "errors": 0,
+                "elapsed_seconds": round(time.perf_counter() - test_started, 6),
+            },
+            indent=2,
+            sort_keys=True,
+            allow_nan=False,
+        )
+        + "\n",
+        encoding="utf-8",
+    )
     summary_path = result_dir / "summary.json"
     with summary_path.open("r", encoding="utf-8") as handle:
         summary = json.load(handle)

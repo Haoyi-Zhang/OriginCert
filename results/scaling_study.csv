@@ -1,0 +1,5 @@
+irrelevant_boolean_fields,assignments,certificate_cells,symbolic_leaf_replays,certificate_bytes,symbolic_verify_median_ms,exhaustive_replay_median_ms
+0,24,4,4,6833,2.080098,2.173118
+1,48,4,4,6971,2.151045,4.559227
+2,96,4,4,7109,2.371997,8.535024
+3,192,4,4,7247,2.526391,17.028956

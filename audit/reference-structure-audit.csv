@@ -1,0 +1,30 @@
+key,entry_type,year,title,doi,url,locator,citation_occurrences,structural_status
+zhao2025cwe,article,2025,Towards Secure Code Generation With LLMs: A Study on Common Weakness Enumeration,10.1109/tse.2025.3619281,,https://doi.org/10.1109/tse.2025.3619281,2,PASS
+dai2026rethinking,inproceedings,2026,Rethinking the Evaluation of Secure Code Generation,10.1145/3744916.3773217,,https://doi.org/10.1145/3744916.3773217,2,PASS
+pearce2022asleep,inproceedings,2022,Asleep at the Keyboard? Assessing the Security of GitHub Copilot's Code Contributions,10.1109/sp46214.2022.9833571,,https://doi.org/10.1109/sp46214.2022.9833571,2,PASS
+he2023sven,inproceedings,2023,Large Language Models for Code: Security Hardening and Adversarial Testing,10.1145/3576915.3623175,,https://doi.org/10.1145/3576915.3623175,2,PASS
+perry2023assistants,inproceedings,2023,Do Users Write More Insecure Code with AI Assistants?,10.1145/3576915.3623157,,https://doi.org/10.1145/3576915.3623157,2,PASS
+he2024instruction,inproceedings,2024,Instruction Tuning for Secure Code Generation,,https://proceedings.mlr.press/v235/he24k.html,https://proceedings.mlr.press/v235/he24k.html,2,PASS
+zhang2024seccoder,inproceedings,2024,SecCoder: Towards Generalizable and Robust Secure Code Generation,10.18653/v1/2024.emnlp-main.806,,https://doi.org/10.18653/v1/2024.emnlp-main.806,2,PASS
+necula1997pcc,inproceedings,1997,Proof-Carrying Code,10.1145/263699.263712,,https://doi.org/10.1145/263699.263712,3,PASS
+pnueli1998translation,inproceedings,1998,Translation Validation,10.1007/bfb0054170,,https://doi.org/10.1007/bfb0054170,5,PASS
+leroy2009compcert,article,2009,Formal Verification of a Realistic Compiler,10.1145/1538788.1538814,,https://doi.org/10.1145/1538788.1538814,3,PASS
+namjoshi2001certifying,inproceedings,2001,Certifying Model Checkers,10.1007/3-540-44585-4_2,,https://doi.org/10.1007/3-540-44585-4_2,3,PASS
+schneider2000enforceable,article,2000,Enforceable Security Policies,10.1145/353323.353382,,https://doi.org/10.1145/353323.353382,2,PASS
+cadar2008klee,inproceedings,2008,KLEE: Unassisted and Automatic Generation of High-Coverage Tests for Complex Systems Programs,,https://www.usenix.org/conference/osdi-08/klee-unassisted-and-automatic-generation-high-coverage-tests-complex-systems,https://www.usenix.org/conference/osdi-08/klee-unassisted-and-automatic-generation-high-coverage-tests-complex-systems,3,PASS
+biere1999bmc,inproceedings,1999,Symbolic Model Checking without BDDs,10.1007/3-540-49059-0_14,,https://doi.org/10.1007/3-540-49059-0_14,2,PASS
+claessen2000quickcheck,inproceedings,2000,QuickCheck: A Lightweight Tool for Random Testing of Haskell Programs,10.1145/351240.351266,,https://doi.org/10.1145/351240.351266,1,PASS
+runciman2008smallcheck,inproceedings,2008,SmallCheck and Lazy SmallCheck: Automatic Exhaustive Testing for Small Values,10.1145/1411286.1411292,,https://doi.org/10.1145/1411286.1411292,2,PASS
+zeller2002simplifying,article,2002,Simplifying and Isolating Failure-Inducing Input,10.1109/32.988498,,https://doi.org/10.1109/32.988498,2,PASS
+yang2011csmith,inproceedings,2011,Finding and Understanding Bugs in C Compilers,10.1145/1993498.1993532,,https://doi.org/10.1145/1993498.1993532,2,PASS
+le2014emi,inproceedings,2014,Compiler Validation via Equivalence Modulo Inputs,10.1145/2666356.2594334,,https://doi.org/10.1145/2666356.2594334,2,PASS
+fraser2011evosuite,inproceedings,2011,EvoSuite: Automatic Test Suite Generation for Object-Oriented Software,10.1145/2025113.2025179,,https://doi.org/10.1145/2025113.2025179,1,PASS
+boussaa2020metamorphic,article,2020,Leveraging Metamorphic Testing to Automatically Detect Inconsistencies in Code Generator Families,10.1002/stvr.1721,,https://doi.org/10.1002/stvr.1721,1,PASS
+watanabe2021certifying,article,2021,Certifying the Synthesis of Heap-Manipulating Programs,10.1145/3473589,,https://doi.org/10.1145/3473589,2,PASS
+amani2016cogent,inproceedings,2016,Cogent: Verifying High-Assurance File System Implementations,10.1145/2872362.2872404,,https://doi.org/10.1145/2872362.2872404,1,PASS
+aizenbud2006traceability,article,2006,Model Traceability,10.1147/sj.453.0515,,https://doi.org/10.1147/sj.453.0515,2,PASS
+mitreCWE,misc,2026,Common Weakness Enumeration,,https://cwe.mitre.org/,https://cwe.mitre.org/,2,PASS
+schumann2003certification,inproceedings,2003,Certification Support for Automatically Generated Programs,10.1109/hicss.2003.1174914,,https://doi.org/10.1109/hicss.2003.1174914,1,PASS
+denney2008verifiers,inproceedings,2008,Generating Customized Verifiers for Automatically Generated Code,10.1145/1449913.1449926,,https://doi.org/10.1145/1449913.1449926,1,PASS
+beyer2022witnesses,article,2022,Verification Witnesses,10.1145/3477579,,https://doi.org/10.1145/3477579,2,PASS
+torresarias2019intoto,inproceedings,2019,in-toto: Providing Farm-to-Table Guarantees for Bits and Bytes,,https://www.usenix.org/conference/usenixsecurity19/presentation/torres-arias,https://www.usenix.org/conference/usenixsecurity19/presentation/torres-arias,1,PASS
