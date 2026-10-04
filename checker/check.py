@@ -967,9 +967,9 @@ def verify_certificate(case: Record, result: Record) -> None:
         for _, trace, emitters in leaves:
             steps, failures = replay(case["catalog"], emitters, trace)
             demand(not failures, f"certificate cell {cell_index} contains a rejecting symbolic path")
-            demand(cell["events"] == trace, f"event replay differs in certificate cell {cell_index}")
+            demand(same_value(cell["events"], trace), f"event replay differs in certificate cell {cell_index}")
             demand(cell["program"] == pretty_program(trace), f"program replay differs in certificate cell {cell_index}")
-            demand(cell["monitor_steps"] == steps, f"monitor replay differs in certificate cell {cell_index}")
+            demand(same_value(cell["monitor_steps"], steps), f"monitor replay differs in certificate cell {cell_index}")
 
     domain_cardinality = math.prod(len(domains[name]) for name in names)
     demand(
@@ -991,11 +991,11 @@ def verify_counterexample(case: Record, result: Record) -> None:
     steps, failures = replay(case["catalog"], emitters, trace)
     demand(failures, "counterexample input satisfies the contract")
     first = failures[0]
-    demand(witness["events"] == trace, "counterexample trace differs from replay")
+    demand(same_value(witness["events"], trace), "counterexample trace differs from replay")
     demand(witness["program"] == pretty_program(trace), "counterexample program differs from replay")
-    demand(witness["monitor_steps"] == steps, "counterexample monitor trace differs from replay")
-    demand(witness["violation"] == first, "reported violation is not the first replayed violation")
-    demand(witness["violating_prefix"] == trace[: first["prefix_length"]], "counterexample prefix is incorrect")
+    demand(same_value(witness["monitor_steps"], steps), "counterexample monitor trace differs from replay")
+    demand(same_value(witness["violation"], first), "reported violation is not the first replayed violation")
+    demand(same_value(witness["violating_prefix"], trace[: first["prefix_length"]]), "counterexample prefix is incorrect")
     demand(witness["input_size"] == rank(case["schema"], assignment)[0], "counterexample input size is incorrect")
 
     for earlier in ordered[: keys.index(assignment_key)]:

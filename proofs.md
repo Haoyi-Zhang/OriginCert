@@ -1,260 +1,187 @@
-# Formal contract and proof arguments
+# Proofs for the bounded traceability contract
 
-## 1. Finite subject
+This document records mathematical proof arguments, synchronized with the journal manuscript. It is not a machine-checked proof of the Python implementation. The syntactic formal-alignment audit is a regression check, not a proof checker.
 
-A schema is an ordered tuple
-`S = <x_1:D_1, ..., x_n:D_n>`. Each `D_i` is finite, nonempty, and ordered. Domain
-members are compared by canonical JSON identity, so JSON integer `1` and Boolean
-`true` remain distinct even on a host language that equates them. The concrete
-domain is the Cartesian product `Dom(S) = D_1 x ... x D_n`. The implementation
-accepts at most 256 assignments.
+## Definitions used below
 
-The first member of each `D_i` is the default. For an assignment `d`, let `p_i(d)`
-be its value index. The structural rank is
+A subject is Q = (S, G, O): an ordered finite schema, a deterministic generator tree, and an explicit obligation catalogue. JSON identity is canonical, finite and type-sensitive: Boolean, integer and floating-point values are distinct. An assignment chooses one value from each domain. The structural rank is (number of nondefault coordinates, sum of domain indices, index vector, canonical assignment serialization); the ordered domain lists are part of the subject.
 
-`rank_S(d) = (# non-default coordinates, sum of indices, index vector, canonical JSON)`.
+The tree has literal event emission, sequence, equality-conditioned branches, and bounded repetition. Schema values control branches and repetition counts; ordinary event fields are literal. Concrete execution returns public events and separately reconstructed actual emitter identifiers. Each event also has its full nested iteration vector. The operational projection erases origin, occurrence and declaration evidence but retains ordinary operation fields and their order.
 
-Lexicographic comparison gives a total order on the finite domain.
+The monitor has protection sets P, authorization capabilities A, and strong-random facts R. At each event it checks origin, exact declaration equality and applicable safety rules in the pre-state. It then updates state **regardless of whether** a rule failed. Source/random overwrites clear stale target facts; protection copies valid source facts; a check adds its capability. Violations accumulate, so rejection is **sticky**, although post-states continue changing for diagnostic replay. This defines an observational monitor, not a blocking enforcement mechanism.
 
-A generator is a finite tree with unique node identifiers:
+All algorithmic completeness statements require well-formed subjects and completion within the declared work/output limits. Finite input alone is not a time bound. A validated subtree containing no emit node has the identity output summary and need not be expanded through a nested repetition product.
 
-- `emit(e)` appends one well-formed event;
-- `seq(g_1,...,g_k)` concatenates child executions;
-- `if x=v then g_t else g_f` selects one child; and
-- `repeat x do g` executes `g` the bounded nonnegative integer stored in `x`.
+A positive record is a disjoint Cartesian cover with common event and monitor payloads. A negative record binds an input, its complete replay, the first violation under the declared priority, and the prefix ending at that event. Acceptance of a negative record means valid evidence of a rejecting subject, not a safe subject.
 
-The frozen implementation admits repeat counts zero through four, at most 2,000
-nodes, depth at most 256, at most 4,096 emitted events per execution, and at most
-2,000,000 charged traversal steps per concrete or symbolic run. The traversal
-bound is separate from the event bound: the latter limits output length and is not
-a time bound. A static emission summary visits every generator node once and lets
-both implementations return immediately from a subtree that cannot emit, including
-deeply nested repeats around an empty sequence. Event templates have
-operation-specific exact shapes and cannot prepopulate the reserved fields
-`origin`, `obligations`, or `occurrence`.
+Bibliographic keys below resolve in the accompanying paper. The standalone code and tests do not need paper files.
 
-Concrete execution returns both public events and an actual-emitter sequence. Each
-actual emitter consists of the reached `emit` node identifier and the complete
-occurrence path through nested repeats. The path prevents two dynamic instances of
-the same nested body from collapsing into one location.
+## What the Evidence Must Preserve
 
-A cube maps every schema field to a nonempty subset of its domain and denotes their
-Cartesian product. A symbolic cell pairs a cube with one trace. The producer splits
-cubes at conditions and repeat counts, then merges equal-trace cells only when they
-differ in one coordinate and the two value subsets are disjoint. Trace comparison
-uses canonical JSON identity throughout.
+### A safe operation trace with two wrong explanations
+Figure (see the corresponding manuscript section) separates three versions of a small generated trace. The first has correct origins and declarations. The second omits the database operation's applicable obligation. The third attributes that operation to a different emit node. Both modified traces retain the sanitization operation and the database operation with the same ordinary arguments. Therefore a monitor whose inputs are only those operations returns the same safety verdict for all three.
 
-## 2. Obligation and monitor semantics
+\input{figures/motivating.tex}
 
-The catalogue is finite and explicit. Every obligation contains a unique identifier,
-a type-correct partial event trigger, and one rule. A trigger matches only when each
-named field is present and canonically JSON-equal to the trigger value. The rules are:
+Using a nonexistent node makes the origin failure visually obvious, but existence is not the contract. Replacing the correct identifier with that of a different, real emit node is also a failure. An origin-membership check cannot distinguish this case. Exact traversal-derived equality can. Similarly, declaration coverage is not a count: replacing one required obligation with a different obligation can preserve the number of declared items while breaking the relation.
 
-1. `protection`: a referenced value must already carry every named protection;
-2. `preceded`: a referenced capability must already have been checked;
-3. `strong_rng`: a referenced source must already be known as strong; and
-4. `forbid`: the triggering event is disallowed.
+The safety monitor must not use declarations as an instruction to decide which rules to run. It derives triggers from ordinary event fields. This means the omitted-declaration trace can be operationally safe and simultaneously fail coverage, rather than becoming artificially safe because the missing rule was never checked. The distinction also provides a useful fault classification: a coverage rejection need not imply an unsafe operation, and an unsafe operation need not imply a broken origin map.
 
-The monitor state `sigma = <P,A,R>` contains value protections, checked
-capabilities, and strong-random sources. At event position `i`, replay proceeds in
-this order:
+### Observation sufficiency
+The general reasoning is elementary but useful for selecting a baseline. Let $X$ be a set of full evidence objects, $P:X\to\{0,1\}$ the desired predicate, and $h:X\to Y$ the observation available to a validator. An $h$-only validator has the form $f\circ h$ for some $f:Y\to\{0,1\}$.
 
-1. compare claimed and actual emitter identities;
-2. require the declared obligation set to equal the triggered set;
-3. evaluate every triggered rule against `sigma_i` and record all violations; and
-4. apply the event's deterministic state transition to obtain `sigma_{i+1}`,
-   regardless of whether step 3 recorded a violation.
+**Proposition 1 (observation criterion).**
+There is an $h$-only validator deciding $P$ exactly if and only if $P$ is constant on every nonempty fiber $h^{-1}(y)$.
 
-The acceptance verdict is sticky: once a violation is recorded, later transitions
-do not erase it. Unconditional transitions preserve the complete diagnostic trace,
-so a later event has a well-defined pre-state even after an earlier rejection. The
-pre-event rule order is essential: a check, protection, or RNG declaration cannot
-satisfy an obligation on itself. Assignment-like events also obey overwrite
-semantics. A fresh source or RNG assignment clears stale facts for its target.
-Protection copies source facts to the target and adds its named protection. A
-strong-random fact propagates only from a source already in `R`.
+*Proof.* If $P=f\circ h$ and $h(x)=h(x')$, then $P(x)=f(h(x))=f(h(x'))=P(x')$. Conversely, suppose $P$ is constant on each fiber. For each $y$ in the image of $h$, define $f(y)$ to be that common value. This is well defined. Values outside the image may be chosen arbitrarily. Then $f(h(x))=P(x)$ for every $x$. This is an existence criterion for exact decisions, not a claim that computing $f$ is efficient. ∎
 
-## 3. Producer partition and merge
+Apply the proposition to a fixed generator execution augmented with origin and declaration claims. Take $h=\pi_{\mathrm{op}}$ and $P$ to be the complete event-trace contract relative to the supplied actual emitters and catalogue. If a valid trace contains a triggered obligation, deleting its declaration preserves $h$ while changing $P$. If an event's emitter claim can be replaced by a different identifier, that edit provides another such pair. These are same-observation objects with different correct verdicts.
 
-**Lemma 1 (producer partition).** The unmerged producer interpreter returns
-pairwise-disjoint cubes whose union is `Dom(S)`, and every assignment in a cube
-produces the cell's trace.
+**Corollary 1 (operation-only insufficiency).**
+On this family of full-contract objects, a validator that observes only $\pi_{\mathrm{op}}$ cannot be both sound and complete for the complete traceability contract.
 
-**Proof.** By structural induction. `emit` appends the same event to each incoming
-cell. `seq` composes children and preserves the invariant. A conditional replaces
-an incoming cube by its intersections with `x=v` and `x!=v`; the pieces are
-disjoint and cover the original cube, and the induction hypothesis applies to the
-selected children. A repeat splits the count coordinate into singleton values and
-applies the body a fixed finite number of times, preserving coverage, disjointness,
-and trace agreement. Therefore the invariant holds at the root. QED.
+*Proof.* The two objects in either pair have the same observation, so the validator must return the same answer. Returning acceptance is unsound for the invalid object; returning rejection is incomplete for the valid object. ∎
 
-**Lemma 2 (merge preservation).** Replacing two equal-trace cells that are equal on
-all but one coordinate and have disjoint subsets on that coordinate by their union
-preserves coverage, disjointness, and trace agreement.
+This statement does not rule out a sound validator that always rejects. It also does not apply to a tool that receives and interprets the entire generator, schema, catalogue, and evidence in addition to the operation trace. Such a tool has a richer observation than $h$ and could reconstruct the missing relations. The evaluation's operation-only controls intentionally lack those relations; they establish an observation boundary, not a defect in all existing static analyzers.
 
-**Proof.** The merged Cartesian product is exactly the union of the two prior
-products. Both have the same trace, and neither overlapped any third cell. QED.
+The universal subject property compares a family of executions, while the example above already establishes an ambiguity in a single evidence-rich trace. Hyperproperties provide a general vocabulary for sets of traces [clarkson2010hyperproperties], but the argument here does not require that machinery. It requires only that evidence erased by the observation can affect the desired predicate. Calling the origin field ``metadata'' does not make it irrelevant to a predicate explicitly defined over it.
 
-## 4. Checker region semantics
+### Three conjuncts and the role of the catalogue
+The complete contract is neither an alternative definition of output safety nor a claim that every provenance relation is security-sensitive. Its origin conjunct checks a chosen immediate source relation. Its coverage conjunct checks the agreement between two representations of requirements: the catalogue's trigger semantics and the event's explicit declarations. Its safety conjunct evaluates the catalogue's rules over the ordinary trace. This decomposition makes the trust in the catalogue visible.
 
-The checker does not enumerate assignments while validating a positive
-certificate. For every submitted cube it validates that each coordinate is a
-nonempty in-domain subset in schema order, rejects overlap with every earlier cube,
-and adds the cube's Cartesian cardinality. Since every checked cube is a subset of
-`Dom(S)`, pairwise disjointness together with a total cardinality equal to
-`|Dom(S)|` proves exact coverage.
+A catalogue with no relevant trigger may certify a trace that a stronger policy would reject. Such an outcome is not a false theorem: the subject asked a weaker question. It would be misleading, however, to describe it as assurance against every weakness represented by a CWE name. The catalogue is an input to the claim, not a learned inventory or a complete formalization of the taxonomy. Changing its trigger or rule changes the contract even if its human-readable CWE label is unchanged.
 
-The checker then symbolically traverses the generator over the whole cube. A
-condition partitions only the named coordinate; a repeat partitions only its count
-coordinate. The traversal can therefore return several subcubes, but every returned
-subcube remains Cartesian.
+These choices also distinguish our origins from broader provenance models. Why- and where-provenance recover different aspects of data derivation [buneman2001why]; provenance semirings retain algebraic information about contributions to query results [green2007semirings]. Our immediate emitter relation answers a narrower question: which static emission node, in which repetition occurrence, produced this event? It does not recover all input dependencies or establish the authenticity of the build environment. Keeping that granularity explicit allows exact checking without implying a complete causal history.
 
-**Lemma 3 (checker symbolic coverage and homogeneity).** Given an input cube `C`,
-the checker-side symbolic traversal returns pairwise-disjoint subcubes whose union
-is `C`. For every returned subcube `L` and every assignment `d` in `L`, concrete
-checker execution emits the symbolic trace and actual-emitter sequence stored for
-`L`.
+## Independent Checking and Correctness Arguments
 
-**Proof.** By structural induction on the generator. `emit` appends one fixed event
-and emitter to every incoming region. `seq` composes the induction invariant.
-A condition partitions the affected coordinate into values equal and not equal to
-the tested value, selects the corresponding child, and leaves all other coordinates
-unchanged. A repeat partitions the count coordinate into singleton values and
-composes the body exactly that many times, extending the occurrence path with the
-iteration index. Each case preserves disjointness, coverage, and equality with
-concrete execution. QED.
+The checker implements its own JSON validation, schema handling, tree traversal, symbolic interpreter, catalogue matching, monitor, rendering, and witness order. It does not call the producer's executable semantics. This arrangement reduces direct code sharing on the acceptance path, but implementation diversity is not a correctness theorem. The proofs in this section concern the mathematical algorithms given here. Their correspondence to the Python implementation is tested and inspected, not established by a proof assistant.
 
-For a submitted certificate cell, the checker requires every symbolic leaf returned
-from that cell's cube to equal the cell's stored event trace, rendered program, and
-actual-emitter sequence. This establishes cell homogeneity without selecting a
-representative assignment. Monitor replay is deterministic and depends only on the
-catalogue and trace, so one replay of that common trace establishes identical
-pre-states, violations, and post-states for every assignment in the leaf.
+### Checker-side symbolic traversal
+For a cube $C$ and current occurrence vector $\omega$, write
+$$
+ \mathrm{Sym}(G,C,\omega)=\{(C_1,t_1,a_1),\ldots,(C_k,t_k,a_k)\}.
+$$
+The braces denote a finite collection of leaf records; iteration order is not its semantic content. Its intended invariant has two parts: the leaf cubes partition $C$, and each assignment in a leaf concretely produces that leaf's trace and actual-emitter sequence. The implementation carries trace prefixes through a sequence; below, concatenation of prefixes with suffixes is made explicit.
 
-## 5. Accepted-certificate soundness
+The checker uses the following rules. Emit yields $(C,[e],[n])$, attaching the current occurrence and the subject's origin/declaration claims to $e$. For a condition $x=v$, form $C^=$ and $C^\ne$ by intersecting its $x$ coordinate with $\{v\}$ and its complement; recurse on each nonempty side. For a sequence, start with $(C,\varepsilon,\varepsilon)$ and, for each child, replace every current record $(D,t,a)$ by all $(E,t\cdot u,a\cdot b)$ obtained from that child's traversal on $D$. For a repeat, first split the count coordinate into its singleton values and apply the body that many times, appending each iteration index to $\omega$.
 
-**Theorem 1.** If the checker accepts a certificate for `(S, O, G)`, then for every
-`d` in `Dom(S)`:
+The output-empty summary is an additional identity rule. It returns $(C,\varepsilon,\varepsilon)$ without recursive expansion when the validated subtree contains no emit node. Structural induction on that subtree proves its concrete execution emits nothing: an empty sequence contributes nothing; sequences concatenate empty results; either branch of a condition remains empty; and a finite repeat concatenates only empty results. The optimization thus preserves the same invariant as the ordinary rules.
 
-1. `d` belongs to exactly one certificate cube;
-2. checker-side concrete execution of `G` yields that cell's events and rendered
-   program;
-3. each claimed emitter, including its occurrence path, equals the actual emitter;
-4. each declaration set equals the obligations triggered by the ordinary event
-   fields; and
-5. the deterministic monitor accepts the complete trace.
+**Lemma 1 (checker-region equivalence).**
+For every well-formed $G$, nonempty cube $C\subseteq\mathcal{D}(S)$, and occurrence prefix $\omega$, an in-budget checker symbolic traversal returns nonempty leaf cubes satisfying: (i) pairwise disjointness, (ii) union $C$, and (iii) for every leaf $(D,t,a)$ and $d\in D$, $\mathrm{Exec}(G,d,\omega)=(t,a)$.
 
-**Proof.** Every accepted cube is a subset of the schema domain. Pairwise overlap
-checks and equality between the sum of cube cardinalities and `|Dom(S)|` establish
-(1). Lemma 3 and the requirement that every symbolic leaf equal the stored cell
-payload establish (2) for every assignment, not merely a representative. The
-symbolic traversal retains the actual emit node and full occurrence path and the
-checker requires equality with each claimed origin, giving (3). Trigger matching is
-recomputed from ordinary event fields and compared by exact set equality, giving
-(4). Finally, deterministic replay uses the pre-event semantics of Section 2 and
-acceptance requires an empty violation list, giving (5). QED.
+*Proof.* We use structural induction on $G$, with an inner induction over sequence children or repeat iterations. The induction statement includes arbitrary incoming occurrence prefixes; otherwise the repeat case would not establish the full dynamic path.
 
-The theorem is relative to the supplied schema, generator semantics, event
-abstraction, and catalogue. It does not assert that these inputs capture every
-behavior of a separate concrete implementation.
+For emit, the event template and declarations are fixed by the node. For a fixed $\omega$, so is the occurrence vector. The actual emitter is its static node identifier. The single leaf $C$ therefore covers the incoming cube, is trivially disjoint, and agrees with concrete execution for every member.
 
-## 6. Counterexample validity and minimality
+For a condition, canonical equality splits the tested coordinate into a selected subset and its complement. The two products are disjoint and their union is $C$. Empty products are discarded. On each nonempty product, concrete execution selects precisely the corresponding branch. By the induction hypothesis, the recursive leaves partition that product and have concrete agreement. Leaves from different branches cannot overlap because they disagree on membership in the selected coordinate subset. Combining the branch leaves proves all three properties.
 
-**Theorem 2 (validity).** If the checker accepts a counterexample, its input is in
-the schema, replay yields the recorded events and program, the reported violation
-is the first violation, and the stored prefix ends at that event.
+For a sequence, the base collection $(C,\varepsilon,\varepsilon)$ has the desired prefix invariant. Suppose the collection after $i$ children partitions $C$ and each record contains the exact execution prefix of those children for all its members. Apply the induction hypothesis to child $i+1$ separately within each record's cube. Its subcubes partition that cube and have exact suffix traces. Concatenation produces the correct execution prefix through child $i+1$. Different parent cubes were disjoint; refining each cannot introduce overlap between them. Their union remains $C$. Induction over the finite child list proves the sequence case.
 
-**Proof.** The checker tests domain membership, exact replay, monitor-state equality,
-first-violation equality, and equality with the corresponding trace slice. QED.
+For a repeat over $x$, products restricted to each value $r\in C_x$ partition $C$. Every member of such a product has exactly $r$ iterations. For $r=0$, the one empty trace is exact. For $r>0$, apply the body induction hypothesis successively with occurrence prefixes $\omega\cdot\langle0\rangle,\ldots,\omega\cdot\langle r-1\rangle$. The same prefix-composition argument as for sequence proves exactness after each iteration and preserves a disjoint partition. Combining all singleton-count products proves the result. Finally, the output-empty identity rule is correct by the structural argument above. All recursion and iteration are finite, and the in-budget premise ensures the algorithm returns instead of reporting resource exhaustion. ∎
 
-**Theorem 3 (structural minimality).** If the checker accepts witness input `d`, no
-rejecting input has smaller `rank_S`.
+### Coverage and monitor lemmas
+**Lemma 2 (finite Cartesian coverage).**
+Let $C_1,\ldots,C_m$ be nonempty in-domain Cartesian cubes. If they are pairwise disjoint and $\sum_i |C_i|=|\mathcal{D}(S)|$, then they partition $\mathcal{D}(S)$ exactly.
 
-**Proof.** The checker enumerates every lower-ranked assignment and replays all
-origin, coverage, and monitor checks. Acceptance requires every such assignment to
-be non-rejecting. QED.
+*Proof.* In-domain membership gives $\bigcup_i C_i\subseteq\mathcal{D}(S)$. Pairwise disjointness gives $|\bigcup_i C_i|=\sum_i|C_i|$. A proper subset of a finite set has strictly smaller cardinality. The equality therefore implies full coverage. Two cubes overlap exactly when their coordinate subsets intersect in every dimension, so the check can be performed without enumerating their assignments. ∎
 
-## 7. Relative completeness and termination
+Cardinality without disjointness would be insufficient. For example, repeating the same half-domain cell twice reaches the full numerical cardinality while leaving the other half uncovered. Disjointness without the cardinality equality would accept incomplete evidence. In-domain membership is the third necessary premise: otherwise outside points could compensate numerically for missing inside points.
 
-**Theorem 4.** For every well-formed subject whose concrete and symbolic
-traversals remain within the frozen work bounds, the abstract producer algorithm
-terminates and returns either a checker-acceptable certificate when every input
-satisfies the contract, or a checker-acceptable counterexample at the least
-rejecting input.
+**Lemma 3 (monitor connection).**
+If two concrete executions have the same complete public event sequence and actual-emitter sequence, monitoring them from the same initial state under the same catalogue gives identical pre-states, ordered violations, and post-states. When a checker leaf agrees with a submitted cell's trace and its replay has no violations, every assignment in that leaf satisfies the complete contract.
 
-**Proof.** The schema, generator, operation vocabulary, and repeat counts are
-finite. Every traversal is charged against the explicit work budget, and the
-one-pass no-emission summary prevents an output-empty subtree from being expanded
-by nested repeat products. Lemmas 1 and 2 yield a finite producer partition. The
-producer and checker symbolic rules are both structural implementations of the same
-generator semantics: emit appends one event, sequence composes, condition partitions
-one coordinate, and repeat fixes one bounded count. Lemma 3 therefore validates
-every homogeneous producer cell against all assignments it denotes. If every cell
-is accepted, the serialized partition satisfies Theorem 1's checker predicates.
-Otherwise at least one concrete input rejects; enumeration in the total structural
-order reaches its least member, whose replay and minimality satisfy Theorems 2 and
-3. QED.
+*Proof.* Induct on event position. The initial states agree. At position $j$, the event and actual emitter agree, so origin comparison agrees. The trigger function sees equal ordinary fields and the same catalogue; the required identifier list and declaration comparison therefore agree. Every safety rule is evaluated in equal pre-states, so its outcome and diagnostic agree. Stable ordering yields the same local violation list. The deterministic transition is then applied unconditionally and produces equal post-states, including after a violation. This establishes the induction invariant. Combine the resulting replay equality with Lemma 1 for the second claim. ∎
 
-This theorem is about the mathematical algorithms. The implementation tests compare
-producer and checker records on all frozen assignments and on additional random
-subjects, but that agreement is validation evidence rather than a premise of the
-proof.
+The unconditional transition is part of this lemma. A proof that updated only after a successful rule check would describe a different diagnostic trace. Sticky rejection follows because the accumulated list is extended but never cleared; it does not require post-states to stop changing.
 
-## 8. Traceability is not operation-only safety
+### Positive certificate acceptance
+A positive checker first validates the result and its subject binding. For every submitted cell, it validates its cube, compares it with earlier cubes for overlap, and adds its cardinality to a total. It symbolically traverses the entire generator over that cube. Every returned leaf must reproduce the recorded event list and pseudo-program, and its freshly computed monitor steps must equal those recorded in the cell. Every leaf must have an empty violation list. Finally, the sum of cube cardinalities must equal the schema cardinality.
 
-Let `pi_op(t)` erase event origins, declarations, and certificate-only monitor
-records while retaining the ordered operations and their ordinary arguments.
+This procedure checks every symbolic leaf, not one representative assignment. A submitted cell may cross multiple syntactic branches that happen to have the same evidence. Such a cell is acceptable only when all resulting leaves agree with its record. A cell crossing branches with different emitter claims, occurrence paths, or monitor states is rejected even when both branches are operationally safe.
 
-**Theorem 5 (traceability separation).** Let an accepted trace contain an event
-with a nonempty triggered-obligation set, and let `n'` differ from its actual
-emitter. There are two traces with the same `pi_op` projection and the same
-operation-safety verdict such that exact coverage rejects one and origin integrity
-rejects the other.
+**Theorem 1 (positive-certificate soundness).**
+If this checker accepts a positive certificate for $Q=\langle S,G,\mathcal{O}\rangle$, then every $d\in\mathcal{D}(S)$ belongs to exactly one submitted cell and its concrete execution agrees with that cell's event trace, pseudo-program, and monitor steps. Every event's origin and occurrence are correct, every declaration set equals the triggered set, and the complete trace is safe under $\mathcal{O}$.
 
-**Proof.** In the first trace, delete one required declaration. In the second,
-replace the event's emitter claim by `n'`. Neither edit changes an ordinary event
-field, so the projection, monitor transitions, and operation-safety verdict are
-unchanged. Exact-set equality fails in the first trace and emitter equality fails
-in the second. QED.
+*Proof.* The cube checks and final cardinality test satisfy Lemma 2, establishing unique membership. Fix any assignment $d$ and its unique cell $C$. Lemma 1 supplies a symbolic leaf of the checker traversal containing $d$, whose trace and actual emitters are its concrete execution. The checker compares that leaf's trace and rendered view with the submitted cell. Replay is required to have no origin mismatch, no declaration mismatch, and no safety failure. Event equality includes the reconstructed occurrence vector. Lemma 3 connects the same replay and recorded monitor steps to $d$. The assignment was arbitrary, so the conclusions hold over the whole domain. ∎
 
-**Corollary.** No validator whose verdict depends only on `pi_op(t)` can be both
-sound and complete for the full certificate contract. Equivalently, operation-only
-observation cannot decide that contract exactly.
+This proof places no trust in the producer's cell order, merge choices, branch exploration order, or saved classification label. It also does not use producer/checker agreement on a test corpus as a premise. Its remaining implementation assumption is that the checker carries out the stated parsing, traversal, comparison, and monitoring rules correctly.
 
-**Proof.** Theorem 5 gives accepted and rejected full-contract traces with the same
-projection. Any projection-only validator must return the same verdict for both,
-which creates either a false acceptance or a false rejection. QED.
+### Negative evidence and diagnostic order
+**Theorem 2 (negative-evidence validity).**
+If the checker accepts a counterexample record, its input $d$ belongs to $\mathcal{D}(S)$, its event and monitor records equal independent concrete replay, and its reported violation is the first violation in that replay. The recorded prefix is precisely the trace through that event.
 
-## 9. Serialization and implementation boundary
+*Proof.* Schema membership is checked by canonical identity. The checker derives the trace and actual emitters from $G$ at $d$, computes monitoring, and requires a nonempty violation list. It compares the complete event list, rendered view, monitor steps, and first violation to the record. It then compares the prefix with the trace slice whose length is the first violation's index plus one. These predicates establish each conclusion directly. The result-shape checks require exact integer indices, preventing Boolean or floating-point aliases from passing numeric equality. ∎
 
-The checker imports no producer module and separately implements schema handling,
-structural rank, generator traversal, symbolic certificate validation, concrete
-counterexample replay, rendering, trigger matching, monitor execution, and
-minimality checking. This removes shared executable semantics from the acceptance
-path, but both programs still implement the same written contract; agreement is not
-an external oracle.
+**Theorem 3 (least counterexample).**
+An accepted counterexample input is the least rejecting member of $\mathcal{D}(S)$ under $\rank_S$.
 
-Both sides validate exact serialized shapes and finite JSON before interpretation.
-Duplicate object keys, non-finite numbers, unknown fields, malformed operation
-arguments, invalid catalogue references, oversized domains or traces, and ambiguous
-condition/repeat values are rejected. Result validation likewise checks exact
-certificate, cell, step, state, violation, and witness shapes before use.
+*Proof.* The checker constructs the ordered finite assignment list and locates $d$ using canonical identity. For every preceding assignment, it independently executes all origin, coverage, and safety checks and requires an empty violation list. By Theorem 2, $d$ itself rejects. Since the rank is total, there is no other smaller rejecting assignment. ∎
 
-The test suite targets errors that simple producer/checker agreement could miss:
-pre-event self-satisfaction, post-violation state continuity, stale state after
-overwrite, strong-random propagation, nested occurrence paths, JSON Boolean/integer
-identity, symbolic merge identity, subject aliasing, unknown declarations,
-malformed triggers, resource limits, output-file contracts, and record tampering.
-A deterministic eight-seed mixed-grammar stress audit additionally compares the
-producer, checker, a third concrete semantic oracle, and the symbolic partition on
-600 cases and 7,200 assignments; all four views agree. This stress audit is a
-robustness check rather than part of the reported 360-case evaluation.
+Theorem 3 does not assert that the chosen prefix is a minimal generator fragment. Replacing or deleting statements can change occurrence positions and triggers, so a separate reduction relation would be needed for that claim. Our record reports an exact least input and a deterministic first failure, which are sufficient for reproducing the subject's contract violation.
 
-## 10. Advisory abstractions
+### Producer completeness within the bounded contract
+The producer uses its own symbolic traversal. Its corresponding partition invariant is proved by the same four language cases as Lemma 1, but with the producer's state representation. This is a separate algorithmic argument, not an inference from matching outputs. The permitted merge preserves its invariant: the two merged products differ in exactly one coordinate, so replacing that coordinate with the union yields exactly their union. Equal payloads preserve homogeneity, and a third cell cannot overlap the union unless it overlapped an original cell.
 
-Each advisory family retains only a public source field, generated-code sink
-context, and mitigation pattern. The artifact encodes that mechanism twice: as a
-bounded event generator consumed by the generic certificate machinery and as a
-separately written context-specific string oracle. Agreement checks the selected
-transformation. It does not establish behavior of a full vendor frontend, release,
-build, or runtime, and no generated payload is executed.
+**Theorem 4 (relative completeness and termination).**
+For a well-formed subject on which the stated concrete and symbolic algorithms remain within the work and output bounds, the producer terminates. If $\mathrm{Contract}(Q)$ holds, it returns a checker-acceptable positive certificate. Otherwise it returns a checker-acceptable counterexample at the least rejecting input.
+
+*Proof.* The tree and all input domains are finite; repetitions use finite counts. The symbolic partition rules terminate with finitely many nonempty cubes. Repeated permitted merging terminates because each successful merge strictly decreases the number of cells. If every input satisfies the contract, every producer cell has an accepting common trace. Its partition is in-domain, disjoint, and complete. Applying Lemma 1 to the checker's traversal over such a cell yields concrete-equal leaf payloads. Those equal the cell's common payload, and Lemma 3 gives the same accepting monitor record. Therefore all positive checker predicates hold.
+
+Otherwise, some assignment fails. The finite total ordering has a least such assignment. Concrete evaluation in that order reaches it, and the producer records its exact trace and first diagnostic. The checker reconstructs those values by the concrete semantics and verifies all earlier assignments, satisfying Theorems 2 and 3. The in-budget premise excludes operational aborts on either path. It cannot be dropped merely because the mathematical input is finite. ∎
+
+### What has, and has not, been proved
+Theorem 1 certifies the complete supplied generator-to-event relation through checker-side regions. Theorem 4 relates the mathematical producer and checker definitions. Neither is a machine-checked proof of the Python source. This difference is substantive: Alkassar et al. combine verified checker implementations with higher-level mathematical proofs [alkassar2014framework]; Noschinski et al. connect certifying computations with verification infrastructures for C [noschinski2014autocorres]. Our work retains the Python checker and its runtime in the trusted implementation base.
+
+The practical benefit of separate code is that a producer fault cannot automatically be accepted by calling the same faulty routine in the consumer. Shared requirements mistakes remain possible. Foundational proof-carrying code explicitly addresses the size of the trusted foundations [appel2001foundational]; our domain-specific checker is not a foundational proof kernel. The bounded exhaustive, differential, transformation, and mutation evidence in Section (see the corresponding manuscript section) complements the mathematical argument at this implementation boundary.
+
+## Consequences for Partitioning, Evolution, and Diagnostics
+
+The contract has consequences that are useful when changing the producer or maintaining a generator specification. We state them separately from the soundness theorem because they specify which edits preserve evidence and which require new evidence. They are algebraic consequences of the model, not a claim that certificate reuse has already been integrated with a build system.
+
+### Refinement and order of positive cells
+**Proposition 2 (refinement closure).**
+Suppose a positive certificate is accepted and one of its cells $C$ is replaced by a finite disjoint Cartesian partition $D_1,\ldots,D_k$ of $C$. Copy the original cell's trace, program, and monitor payload to every replacement. If the replacement traversals remain within the bounds, the resulting certificate is accepted.
+
+*Proof.* Every $D_i$ remains in-domain. Replacement cells are disjoint from one another by hypothesis and from all unchanged cells because they are subsets of $C$. Their cardinalities sum to $|C|$, so the global total remains the schema cardinality. By Theorem 1, every assignment of $C$ has the recorded payload and satisfies the contract. Lemma 1 partitions each $D_i$ into checker leaves with exactly those concrete executions, and Lemma 3 reproduces the copied monitor record. All acceptance predicates are therefore preserved. ∎
+
+Cell permutation also preserves acceptance: it changes neither overlap, total cardinality, nor the checks local to a cell. These statements explain why a positive certificate is not tied to one producer traversal order. They also give a direct negative test. Duplicating a cell without removing its original violates disjointness; deleting one without replacing its assignments violates coverage. Both can leave every surviving local trace perfectly safe.
+
+The converse---that any grouping of cells with a common safety verdict is valid---is false. Two cells can both be safe while emitting different operations or different occurrences. Even equal complete traces do not imply their union is Cartesian. The admissible merge in Section (see the corresponding manuscript section) is a sufficient geometric condition, not a license to draw a bounding rectangle around an arbitrary group. Figure (see the corresponding manuscript section) makes this distinction visible.
+
+### Schema restriction
+**Proposition 3 (admissible restriction).**
+Let $S'$ retain the same field names and replace each $D_i$ by a nonempty ordered subdomain $D'_i\subseteq D_i$. Suppose $G$ and $\mathcal{O}$ remain well formed under $S'$ and all relevant checks remain in budget. Intersect every accepted certificate cube with $\mathcal{D}(S')$, discard empty intersections, and bind the resulting record to $\langle S',G,\mathcal{O}\rangle$. The restricted positive certificate is accepted.
+
+*Proof.* The intersection of two Cartesian products is the product of coordinate intersections. Thus each nonempty intersection is an admissible cube. Intersections preserve pairwise disjointness. For any assignment in $\mathcal{D}(S')$, the original certificate has exactly one containing cube; the corresponding intersection contains it. Hence the intersections partition the restricted domain. Restriction does not change the concrete execution for any retained assignment, because the generator reads the same field values and the catalogue is unchanged. Lemmas 1 and 3 establish its old payload and monitor record over each intersection. ∎
+
+The well-formedness condition is essential in the implementation. For example, it requires a conditional's compared value to occur in the declared domain. Removing that value can make a syntactically unchanged generator invalid even though the condition would simply be false on the remaining mathematical assignments. The proposition applies only when the new subject passes its own validation; it does not bypass that validation. The experiment chooses a legal nonempty restriction for each positive subject and records which one was used.
+
+Extension behaves differently. Enlarging a domain can introduce an input whose branch was absent from the old domain. Reusing an old certificate without accounting for the new assignments then fails cardinality coverage. Copying an old trace over them is justified only if the checker proves the larger region homogeneous. Thus narrowing and widening a subject have different obligations even when they seem like symmetric changes in a configuration editor.
+
+### Catalogue changes and exact coverage
+Suppose an event triggers obligation $o$, and extend the catalogue with a new identifier $o'$ having exactly the same trigger and rule. If the old trace satisfied $o$, it also satisfies the safety predicate of $o'$. Yet its old declaration set omits $o'$. Exact coverage must now reject that trace.
+
+**Proposition 4 (coverage sensitivity).**
+There are accepted subjects for which adding a semantically redundant obligation changes an unchanged generated trace from full-contract acceptance to coverage rejection without changing operation-safety acceptance.
+
+*Proof.* Use any accepted subject with a nonempty triggered set and add the fresh-identifier duplicate just described. On an input reaching the trigger, the safety conditions are duplicated, so their truth values remain true. The required identifier set strictly grows while the declaration set does not. Their equality fails. The event operations and origins are unchanged. ∎
+
+This is a feature of explicit obligations, not an anomaly to be normalized away. A maintainer who adds a requirement may want every affected emission to acknowledge it. Treating requirements only as anonymous logical formulas would lose that traceability obligation. Conversely, adding a trigger that matches no reachable event leaves existing per-event coverage unchanged. An implementation can distinguish these cases only by considering both the catalogue and the generator-to-event relation.
+
+A changed catalogue invalidates the old subject binding even when its final truth value happens to be the same. Rebinding is not itself a proof of correctness: the new record must still pass the checker. The construction in Proposition 4 deliberately rebinds the record and generates a negative witness to demonstrate the coverage change, rather than accepting any serialized header edit as sufficient evidence.
+
+### Renaming and order-sensitive diagnostics
+A bijection on node identifiers preserves the complete contract when it is applied consistently to node definitions, correct origin claims, and wrong-but-existing origin claims. A wrong identifier must remain wrong after renaming. If an absent identifier is mapped to a real node accidentally, the transformation is not a semantics-preserving renaming of the full subject. The metamorphic test therefore constructs one consistent mapping and keeps absent identifiers outside its image.
+
+Object-key permutation is another representational change: canonical JSON identity ignores dictionary insertion order. Schema field lists and domain lists, however, are ordered data. Reversing a JSON object's keys is not the same operation as reversing the list of domain values. A subject's universal verdict is unchanged by a domain-value permutation that preserves all values and well-formedness, but the least counterexample can change because the rank uses domain indices.
+
+Consider a field with domain $[0,1,2]$ and a generator that is safe only at $0$. Under this order, $1$ precedes $2$. Under domain order $[0,2,1]$, the least failure becomes $2$, while the failing set remains $\{1,2\}$. This example prevents the term ``minimum'' from being mistaken for an order-independent semantic optimum. The positive contract quantifies over a set of assignments; the negative diagnostic additionally uses an order on that set.
+
+### Observation, preservation, and invalidation together
+Table (see the corresponding manuscript section) summarizes these consequences. The distinction between preservation and invalidation is more informative than asking whether an edit leaves the operation trace unchanged. Origin edits can invalidate traceability without changing operations. Catalogue additions can invalidate declarations without changing the safety truth value. Input restrictions can preserve a positive result but alter which negative input would be least. Partition refinements can preserve all semantics while increasing certificate size.
+
+
+
+These principles do not eliminate the need to recheck a changed subject. They explain what a proposed evidence transformation must preserve. In particular, proving that an edit preserves the operation projection establishes only one part of the contract; it does not supply a missing declaration or source relation. This is the same observation boundary that motivated the original problem, now expressed as conditions on maintenance operations.

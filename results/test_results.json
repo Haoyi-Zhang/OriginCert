@@ -1,7 +1,10 @@
 {
-  "elapsed_seconds": 9.244462,
+  "elapsed_seconds": 8.351911,
   "errors": 0,
+  "expected_failures": 0,
   "failures": 0,
+  "skipped": 0,
   "status": "PASS",
-  "tests_run": 37
+  "tests_run": 51,
+  "unexpected_successes": 0
 }

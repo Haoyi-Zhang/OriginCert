@@ -1,14 +1,15 @@
-"""Two small, executable-syntax reference lowerings for event traces.
+"""Two structurally distinct, syntax-only reference encodings for event traces.
 
-These are deliberately independent of the certificate checker.  They turn the
-bounded event language into concrete Python source without executing that
-source.  A separate extractor in ``checker/source_extract.py`` recovers the
-trace from syntax alone.
+The call backend emits one restricted Python call per event with adjacent JSON
+metadata.  The record backend emits one module-level literal table.  Neither
+backend executes generated source.  Paired decoders in ``checker/source_extract``
+recover the complete event records from the two different surface syntaxes.
 """
 from __future__ import annotations
 
 import ast
 import json
+import math
 import re
 from typing import Any, Iterable
 
@@ -35,6 +36,16 @@ def _payload(event: Record) -> Record:
     }
 
 
+def _record(event: Record) -> Record:
+    operation = event.get("op")
+    if not isinstance(operation, str) or not operation:
+        raise ValueError(f"event operation is invalid: {operation!r}")
+    record: Record = {"op": operation}
+    record.update(_payload(event))
+    record.update(_evidence(event))
+    return record
+
+
 def _comment(event: Record) -> str:
     return "# cg-evidence " + json.dumps(
         _evidence(event), ensure_ascii=True, sort_keys=True, separators=(",", ":")
@@ -42,14 +53,34 @@ def _comment(event: Record) -> str:
 
 
 def _call_name(event: Record) -> str:
-    op = event.get("op")
-    if not isinstance(op, str) or not _NAME.fullmatch(op):
-        raise ValueError(f"event operation is not a safe identifier: {op!r}")
-    return f"cg_{op}"
+    operation = event.get("op")
+    if not isinstance(operation, str) or not _NAME.fullmatch(operation):
+        raise ValueError(f"event operation is not a safe identifier: {operation!r}")
+    return f"cg_{operation}"
+
+
+def _json_literal(value: Any) -> ast.expr:
+    """Build a Python AST expression for strict JSON data only."""
+    if value is None or type(value) in (str, bool, int):
+        return ast.Constant(value=value)
+    if type(value) is float:
+        if not math.isfinite(value):
+            raise ValueError("non-finite JSON number")
+        return ast.Constant(value=value)
+    if type(value) is list:
+        return ast.List(elts=[_json_literal(item) for item in value], ctx=ast.Load())
+    if type(value) is dict:
+        if not all(type(key) is str for key in value):
+            raise ValueError("JSON object keys must be strings")
+        return ast.Dict(
+            keys=[ast.Constant(value=key) for key in value],
+            values=[_json_literal(item) for item in value.values()],
+        )
+    raise ValueError(f"unsupported non-JSON literal: {value!r}")
 
 
 def lower_template(events: Iterable[Record]) -> str:
-    """Lower by deterministic string templating."""
+    """Lower by deterministic call-statement templating plus evidence comments."""
     lines: list[str] = []
     for event in events:
         arguments = ", ".join(
@@ -59,31 +90,21 @@ def lower_template(events: Iterable[Record]) -> str:
     return "\n".join(lines) + ("\n" if lines else "")
 
 
-def _literal(value: Any) -> ast.expr:
-    # ``ast.Constant`` cannot directly contain lists/dicts.  Parsing repr gives
-    # a compact, deterministic literal while still avoiding code execution.
-    expression = ast.parse(repr(value), mode="eval").body
-    if not isinstance(
-        expression,
-        (ast.Constant, ast.List, ast.Tuple, ast.Dict, ast.Set, ast.UnaryOp),
-    ):
-        raise ValueError(f"unsupported literal payload: {value!r}")
-    return expression
-
-
 def lower_ast(events: Iterable[Record]) -> str:
-    """Lower through Python's AST and unparser, preserving evidence comments."""
-    lines: list[str] = []
-    for event in events:
-        call = ast.Call(
-            func=ast.Name(id=_call_name(event), ctx=ast.Load()),
-            args=[],
-            keywords=[
-                ast.keyword(arg=key, value=_literal(value))
-                for key, value in _payload(event).items()
-            ],
-        )
-        statement = ast.Expr(value=call)
-        ast.fix_missing_locations(statement)
-        lines.extend((_comment(event), ast.unparse(statement)))
-    return "\n".join(lines) + ("\n" if lines else "")
+    """Lower through an AST-built literal trace table.
+
+    This surface form is intentionally different from ``lower_template``: all
+    event and evidence fields live in a single ``TRACE_EVENTS`` list of literal
+    dictionaries, with no call statements and no evidence comments.
+    """
+    records = [_record(event) for event in events]
+    assignment = ast.Assign(
+        targets=[ast.Name(id="TRACE_EVENTS", ctx=ast.Store())],
+        value=ast.List(
+            elts=[_json_literal(record) for record in records],
+            ctx=ast.Load(),
+        ),
+    )
+    module = ast.Module(body=[assignment], type_ignores=[])
+    ast.fix_missing_locations(module)
+    return ast.unparse(module) + "\n"

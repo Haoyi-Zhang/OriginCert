@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Round-trip every frozen trace through two concrete reference lowerings."""
+"""Round-trip every frozen trace through two distinct reference codecs."""
 from __future__ import annotations
 
 import argparse
@@ -7,17 +7,19 @@ import json
 import sys
 import time
 from pathlib import Path
-from typing import Any, Iterator
+from typing import Any, Callable, Iterator
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 from checker.check import assignment_list  # noqa: E402
-from checker.source_extract import extract_events  # noqa: E402
+from checker.source_extract import extract_call_events, extract_record_events  # noqa: E402
 from src.core import execute_concrete_evidence  # noqa: E402
 from src.reference_backends import lower_ast, lower_template  # noqa: E402
 
 Record = dict[str, Any]
+Lower = Callable[[list[Record]], str]
+Extract = Callable[[str], list[Record]]
 
 
 def packed(value: Any) -> str:
@@ -62,8 +64,12 @@ def main() -> None:
     started = time.perf_counter()
     assignments = 0
     statements = 0
-    source_bytes = {"template": 0, "ast": 0}
-    backends = {"template": lower_template, "ast": lower_ast}
+    distinct_source_forms = 0
+    source_bytes = {"template_calls": 0, "ast_record_table": 0}
+    codecs: dict[str, tuple[Lower, Extract]] = {
+        "template_calls": (lower_template, extract_call_events),
+        "ast_record_table": (lower_ast, extract_record_events),
+    }
 
     for _, case in selected:
         for assignment in assignment_list(case["schema"], structural_order=False):
@@ -71,24 +77,37 @@ def main() -> None:
             assignments += 1
             statements += len(events)
             expected = packed(events)
-            for name, lower in backends.items():
+            sources: dict[str, str] = {}
+            for name, (lower, extract) in codecs.items():
                 source = lower(events)
+                sources[name] = source
                 source_bytes[name] += len(source.encode("utf-8"))
-                recovered = extract_events(source)
+                recovered = extract(source)
                 if packed(recovered) != expected:
                     raise AssertionError(
-                        f"{name} backend round-trip mismatch in {case['case_id']} at {packed(assignment)}"
+                        f"{name} round-trip mismatch in {case['case_id']} at {packed(assignment)}"
                     )
+            if len(set(sources.values())) != len(sources):
+                raise AssertionError(
+                    f"reference codecs emitted identical source in {case['case_id']} at {packed(assignment)}"
+                )
+            distinct_source_forms += 1
 
     report: Record = {
         "status": "PASS",
         "cases": len(selected),
         "assignments": assignments,
-        "backends": sorted(backends),
-        "roundtrips": assignments * len(backends),
+        "backends": sorted(codecs),
+        "decoders": sorted(codecs),
+        "roundtrips": assignments * len(codecs),
+        "distinct_source_forms": distinct_source_forms,
         "emitted_statements_per_backend": statements,
         "source_bytes": source_bytes,
         "elapsed_seconds": round(time.perf_counter() - started, 6),
+        "interpretation": (
+            "The two codecs use different restricted Python surface grammars and paired syntax-only decoders; "
+            "they remain reference transports for the same event relation, not independent product integrations."
+        ),
     }
     atomic_write_json(arguments.output, report)
     print(json.dumps(report, indent=2, sort_keys=True, allow_nan=False))

@@ -31,7 +31,7 @@ def function_source(path: Path, name: str) -> str:
     tree = ast.parse(source)
     for node in tree.body:
         if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef)) and node.name == name:
-            return ast.get_source_segment(source, node) or ""
+            return "\n".join(source.splitlines()[node.lineno - 1:node.end_lineno])
     raise ValueError(f"function not found: {path}:{name}")
 
 
@@ -105,7 +105,7 @@ def main() -> int:
     tests_text = "\n".join(path.read_text(encoding="utf-8") for path in sorted(TESTS.glob("test_*.py")))
     required_test_markers = {
         "symbolic_non_enumeration": "test_certificate_checking_does_not_enumerate_schema_assignments",
-        "source_roundtrip": "test_both_reference_backends_round_trip_without_execution",
+        "source_roundtrip": "test_two_distinct_reference_codecs_round_trip_without_execution",
         "json_type_identity": "test_json_value_identity_is_unambiguous",
         "occurrence_path": "test_nested_repeat_occurrences_are_complete_paths",
         "stress_output_contract": "test_differential_stress_writes_the_requested_report",
@@ -117,6 +117,7 @@ def main() -> int:
 
     report = {
         "status": "PASS" if not issues else "FAIL",
+        "interpretation": "Syntactic alignment regression checks only; this report is not a proof or mechanized verification.",
         "checker_imports_producer": bool(forbidden_imports),
         "certificate_assignment_expansion": "assignment_list" in verify_source or "cube_members" in verify_source,
         "construction_labels_used_for_decision": any(

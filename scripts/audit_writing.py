@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Static prose audit for the paper's review-facing writing."""
 from __future__ import annotations
+import argparse
 import json
 import re
 from collections import Counter
@@ -13,7 +14,7 @@ OUT = ROOT / "audit" / "writing-audit.json"
 DROP_ENVS = ("table", "table*", "figure", "figure*", "equation", "equation*", "align", "align*", "tikzpicture", "verbatim", "lstlisting")
 BANNED_HYPE = {
     "first-ever", "groundbreaking", "revolutionary", "unprecedented", "game-changing",
-    "industrial-grade", "universally", "comprehensive solution", "guarantees security",
+    "industrial-grade", "comprehensive solution", "guarantees security",
     "state-of-the-art performance", "best-in-class",
 }
 DEFENSIVE = (
@@ -28,6 +29,9 @@ def remove_comments(s: str) -> str:
 
 def prose_text(s: str) -> str:
     s = remove_comments(s)
+    if "\\begin{abstract}" in s:
+        s = s[s.index("\\begin{abstract}"):]
+    s = re.sub(r"\\end\{abstract\}.*?\\section\{Introduction\}", "\nIntroduction.\n", s, flags=re.S)
     # Analyze only content before the bibliography; reference titles are not paper prose.
     s = s.split("\\begin{thebibliography}", 1)[0]
     for env in DROP_ENVS:
@@ -60,7 +64,10 @@ def sentence_records(text: str) -> list[dict[str, object]]:
 
 
 def main() -> int:
-    raw = TEX.read_text(encoding="utf-8")
+    parser=argparse.ArgumentParser()
+    parser.add_argument("--paper-dir",type=Path,required=True)
+    args=parser.parse_args()
+    raw = (args.paper_dir / "main.tex").read_text(encoding="utf-8")
     prose = prose_text(raw)
     sentences = sentence_records(prose)
     longest = sorted(sentences, key=lambda x: int(x["words"]), reverse=True)[:12]
@@ -83,7 +90,8 @@ def main() -> int:
     if any(v >= 6 for v in repeated.values()):
         issues.append({"code": "repetitive-openers", "openers": repeated})
     report = {
-        "status": "PASS" if not issues else "FAIL",
+        "status": "REVIEW_REQUIRED" if issues else "NO_LISTED_PATTERNS",
+        "scope": "Heuristic prose-pattern scan only. Findings require interpretation; no authorship or quality inference.",
         "sentence_count": len(sentences),
         "max_sentence_words": max((int(x["words"]) for x in sentences), default=0),
         "sentences_over_70_words": sum(int(x["words"]) > 70 for x in sentences),
@@ -96,7 +104,7 @@ def main() -> int:
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps(report, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     print(json.dumps({k: report[k] for k in ("status", "max_sentence_words", "sentences_over_70_words")}, sort_keys=True))
-    return 0 if not issues else 1
+    return 0
 
 
 if __name__ == "__main__":

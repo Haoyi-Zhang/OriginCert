@@ -1,60 +1,63 @@
 {
-  "status": "PASS",
-  "sentence_count": 340,
-  "max_sentence_words": 93,
-  "sentences_over_70_words": 2,
+  "status": "NO_LISTED_PATTERNS",
+  "scope": "Heuristic prose-pattern scan only. Findings require interpretation; no authorship or quality inference.",
+  "sentence_count": 778,
+  "max_sentence_words": 46,
+  "sentences_over_70_words": 0,
   "longest_sentences": [
     {
-      "words": 93,
-      "text": "acmart =1 =15 [citation] booktabs array multirow tikz arrows.meta,positioning,fit,calc,shapes.geometric,backgrounds pgfplots compat=1.18 xspace L [1] > p #1 pdfcreator= ,pdfproducer= none printacmref=false The ACM International Conference on the Foundations of Software Engineering July 12--16, 2027 Shenzhen, China 2027 2027 TraceCert G D O T C rank emit seq if repeat safe origin decl trig document Origin-Complete Traceability Certificates for Bounded Code Generators Anonymous Author(s) Anonymous Author(s) abstract A generated program can execute safely while carrying a broken explanation of how it was produced."
-    },
-    {
-      "words": 86,
-      "text": "This work contributes: itemize a finite generator-to-event contract that separates semantic safety from exact obligation coverage and exact emit-node origin; certificate and minimum-counterexample constructions, with proof arguments for partition preservation, checker soundness, relative completeness, termination, and a formal separation from operation-only observation; and a separately implemented checker and reproducible evaluation over 360 cases, including three public-advisory abstractions, with exhaustive controls, component ablations, and mutation tests. itemize Motivating Failure and Design Requirements sec:motivation A safe trace with broken evidence Consider a generator for a database-backed endpoint."
-    },
-    {
-      "words": 63,
-      "text": "Parsing, scanning, testing, and execution are valuable, but they do not by themselves distinguish three properties: enumerate semantic safety : the emitted operations satisfy a declared monitor; obligation coverage : every security-sensitive operation declares exactly the checks that apply to it; and origin integrity : every emitted operation claims the exact generator emit node that created it. enumerate The distinction appears even in a two-node generator."
-    },
-    {
-      "words": 58,
-      "text": "If the independent checker accepts a certificate for , then for every : enumerate belongs to exactly one certificate cube; independent concrete execution produces that cell's event trace and rendered program; every event's claimed origin equals the actual emit node reached at that event position; the event's declared obligations equal ; and the deterministic monitor accepts the complete trace. enumerate Proof."
-    },
-    {
-      "words": 53,
-      "text": "The result isolates traceability as a checkable property distinct from output safety. abstract Software and its engineering Formal software verification Security and privacy Software security engineering code generation, software traceability, security obligations, symbolic execution, certificates, program analysis pdfcreator= ,pdfproducer= Introduction Build tools, protocol compilers, and model-driven frameworks turn compact inputs into executable artifacts."
-    },
-    {
-      "words": 51,
-      "text": "Each emitted event carries four classes of data: itemize an operation and operation-specific arguments; a claimed identifier for the emit node that created it; the exact set of declared obligation identifiers; and an optional nonempty occurrence path for nested bounded repetitions. itemize The normal claimed origin is the emit node's identifier."
-    },
-    {
-      "words": 49,
-      "text": "Reproduction rebuilds all 360 cases and results, classifies cases by checker-side exhaustive replay without construction labels, compares both implementations on all 8,640 inputs, checks the 36 advisory abstractions with mechanism-specific oracles, runs the mutation suite and the eight-seed differential stress audit, and executes 35 contract and regression tests."
-    },
-    {
-      "words": 47,
-      "text": "It is a sequence of security-relevant events, such as “protect value,” “check capability,” “declare random source,” “database query,” “HTML sink,” “command execution,” “path open,” “privileged action,” “random token,” or “credential use.” Rendering converts an event sequence to a readable pseudo-program, but the monitor consumes the structured events."
-    },
-    {
-      "words": 43,
-      "text": "In the event abstraction, a query is safe when its data value has acquired an SQL-sanitization protection; an HTML sink is safe when its value has acquired HTML encoding; a privileged action is safe when the required capability appeared in an earlier check."
-    },
-    {
-      "words": 43,
-      "text": "Thirty-five contract and regression tests cover strict parsing, JSON-value identity, symbolic partition merging, nested repeat occurrences, pre-event rule semantics, post-violation state continuity, overwrite invalidation and propagation, bounds, exact origins and coverage, nonminimal but replay-valid witnesses, source-backend and result-file contracts, cross-implementation agreement, and forbid ."
-    },
-    {
-      "words": 42,
-      "text": "Running python scripts/reproduce.py regenerates the corpus and results, compares both semantics on 8,640 inputs, checks all 36 advisory abstractions with mechanism-specific oracles, performs 1,440 mutation checks, and runs the complete test suite using only the Python standard library."
+      "words": 46,
+      "text": "We study this distinction for deterministic generator trees over finite input schemas, a security-event intermediate representation, and an explicit obligation catalogue. produces either a positive certificate covering the input domain with Cartesian cells or a counterexample at the least rejecting input under a declared structural order."
     },
     {
       "words": 38,
-      "text": "The origin defect keeps the same operations and obligations but changes the query's origin to another claimed node; Figure [reference] uses a nonexistent identifier, while the corpus also includes identifiers that name a real but wrong generator node."
+      "text": "An emit node contains one literal event template; a sequence concatenates child outputs; a condition uses canonical equality with a value in the tested field's domain; a repetition reads an exact integer count from a domain contained in ."
+    },
+    {
+      "words": 38,
+      "text": "What a concrete integration would need A real generator integration would need a mapping from its accepted inputs to , from its control and emission behavior to , and from the relevant source or runtime behavior to the event IR."
+    },
+    {
+      "words": 36,
+      "text": "Therefore a monitor whose inputs are only those operations returns the same safety verdict for all three. figures/motivating.tex Using a nonexistent node makes the origin failure visually obvious, but existence is not the contract."
+    },
+    {
+      "words": 36,
+      "text": "Implementation and the Concrete-Syntax Boundary sec:implementation Separate semantics and shared assumptions The implementation consists of a producer library, a separate checker, a case constructor, two reference source codecs with paired decoders, and deterministic experimental drivers."
+    },
+    {
+      "words": 36,
+      "text": "Conclusion A safe operation trace can have an incorrect generation explanation. makes this distinction checkable for deterministic bounded generators by treating exact origins, exact obligation declarations, and trace safety as separate parts of one finite relation."
+    },
+    {
+      "words": 35,
+      "text": "Structural induction on that subtree proves its concrete execution emits nothing: an empty sequence contributes nothing; sequences concatenate empty results; either branch of a condition remains empty; and a finite repeat concatenates only empty results."
+    },
+    {
+      "words": 35,
+      "text": "Data Availability The accompanying artifact contains the complete generator and checker implementations, case constructors, proof arguments, both reference codecs and decoders, tests, all retained subject/result records, and the commands that regenerate the scientific results."
+    },
+    {
+      "words": 34,
+      "text": "The contribution is the combination of a precisely separated generator traceability contract, positive and negative evidence whose checking algorithms match that contract, and an executable account of the assumptions needed to interpret the result."
+    },
+    {
+      "words": 34,
+      "text": "Pearce et al. examine weaknesses in code contributions from an assistant [citation] ; Perry et al. study security outcomes when participants use an assistant [citation] ; Zhao et al. organize generated-code security through CWE categories [citation] ."
+    },
+    {
+      "words": 33,
+      "text": "Greedy repeated merging reduces the number of records but makes no claim to find a minimum-cardinality cube cover. figures/partition.tex Figure [reference] illustrates why trace groups and Cartesian cells are not interchangeable."
+    },
+    {
+      "words": 33,
+      "text": "Its failure on origin and coverage is not a missed operational violation; those predicates are absent from its input observation. figures/recall.tex Figure [reference] aggregates these counts over the 180 rejecting subjects."
     }
   ],
   "hype_terms": [],
-  "defensive_phrase_counts": {},
+  "defensive_phrase_counts": {
+    "cannot establish": 2
+  },
   "repeated_openers": {},
   "issues": []
 }

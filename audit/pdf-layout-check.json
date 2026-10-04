@@ -1,0 +1,43 @@
+{
+  "status": "PASS",
+  "main": {
+    "pages": 32,
+    "page_size_pt": [
+      486,
+      720
+    ],
+    "all_fonts_embedded": true,
+    "font_count": 17,
+    "raster_image_instances": 0,
+    "overfull_warnings": 0,
+    "undefined_references": false,
+    "affiliation_city_warnings": 0,
+    "encrypted": false,
+    "form_fields": 0,
+    "attachments": 0,
+    "javascript": false
+  },
+  "review": {
+    "pages": 32,
+    "page_size_pt": [
+      612,
+      792
+    ],
+    "all_fonts_embedded": true,
+    "font_count": 17,
+    "raster_image_instances": 0,
+    "overfull_warnings": 0,
+    "undefined_references": false,
+    "affiliation_city_warnings": 0,
+    "encrypted": false,
+    "form_fields": 0,
+    "attachments": 0,
+    "javascript": false,
+    "line_numbers": true
+  },
+  "visual_review": "All 32 pages of each rendering were rendered; complete contact sheets and individually inspected title, proof/contract, source-boundary, public-case, evaluation, conclusion/data-availability, and reference pages showed no clipping, overlap, broken glyphs, or anomalous blank pages.",
+  "notes": [
+    "Underfull vbox messages remain ordinary page-breaking diagnostics; neither build has overfull or unresolved-reference warnings.",
+    "The two PDFs share one manuscript source and differ only in class mode and review line numbering."
+  ]
+}

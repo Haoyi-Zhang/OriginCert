@@ -57,6 +57,16 @@ def main() -> int:
         issues.append({"code": "stress-size-too-small", "detail": f"{stress.get('cases')}/{stress.get('assignments')}"})
     if backends.get("status") != "PASS" or int(backends.get("roundtrips", 0)) != 17280:
         issues.append({"code": "concrete-roundtrip-incomplete", "detail": repr(backends)})
+    if int(backends.get("distinct_source_forms", 0)) != 8640:
+        issues.append({
+            "code": "reference-codecs-not-surface-distinct",
+            "detail": repr(backends.get("distinct_source_forms")),
+        })
+    if len(backends.get("decoders", [])) != 2:
+        issues.append({
+            "code": "reference-decoder-count",
+            "detail": repr(backends.get("decoders")),
+        })
     rows = scaling.get("rows", [])
     if scaling.get("status") != "PASS" or len(rows) < 3:
         issues.append({"code": "scaling-study-incomplete", "detail": str(len(rows))})
@@ -65,14 +75,16 @@ def main() -> int:
     # construction bias, handled by evidence layers rather than train/test split.
     report = {
         "status": "PASS" if not issues else "FAIL",
-        "primary_controlled_cases": observed.get("cases"),
+        "primary_cases": observed.get("cases"),
+        "primary_controlled_cases": corpus.get("constructed_cases"),
+        "public_advisory_abstractions": corpus.get("historical_anchor_cases"),
         "primary_assignments": observed.get("assignments"),
         "balanced_outcomes": {
             "certificates": observed.get("certificates"),
             "counterexamples": observed.get("counterexamples"),
         },
         "deterministic_tamper_rejections": observed.get("tamper_rejected"),
-        "independent_multiseed_stress": {
+        "multiseed_stress": {
             "seeds": stress.get("seed_count"),
             "cases": stress.get("cases"),
             "assignments": stress.get("assignments"),
@@ -80,8 +92,10 @@ def main() -> int:
             "third_concrete_oracle": True,
         },
         "concrete_source_roundtrips": {
-            "backends": backends.get("backends", ["template", "python_ast"]),
+            "backends": backends.get("backends", []),
+            "decoders": backends.get("decoders", []),
             "roundtrips": backends.get("roundtrips"),
+            "distinct_source_forms": backends.get("distinct_source_forms"),
         },
         "symbolic_scaling_rows": len(rows),
         "learned_parameters_or_tuned_thresholds": False,

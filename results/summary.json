@@ -196,8 +196,8 @@
   },
   "correctness": {
     "construction_labels_match_checker_classification": 360,
-    "contract_tests_passed": 37,
-    "contract_tests_run": 37,
+    "contract_tests_passed": 51,
+    "contract_tests_run": 51,
     "historical_oracle_cases": 36,
     "historical_oracle_matches_checker_classification": 36,
     "independent_checker_passes": 360,
@@ -267,6 +267,9 @@
   ],
   "independent_validation": {
     "certificate_checker_enumerates_assignments": false,
+    "journal_certificates": 180,
+    "journal_pointwise_inputs": 4320,
+    "metamorphic_records": 720,
     "reference_backend_assignments": 8640,
     "reference_backend_count": 2,
     "reference_backend_roundtrips": 17280,
@@ -276,15 +279,15 @@
     "stress_seed_count": 8
   },
   "performance": {
-    "checker_median_ms": 3.0073869999999996,
-    "checker_p95_ms": 4.173045,
-    "complete_reproduction_peak_rss_kib": 114856,
-    "complete_reproduction_wall_seconds": 37.281376,
-    "evaluation_peak_rss_kib": 95532,
-    "evaluation_wall_seconds": 14.921288904999983,
-    "producer_median_ms": 2.5150185,
-    "producer_p95_ms": 4.215258,
-    "reproduction_peak_rss_kib": 114856,
-    "reproduction_wall_seconds": 25.958882528999993
+    "checker_median_ms": 3.192308,
+    "checker_p95_ms": 4.97606,
+    "complete_reproduction_peak_rss_kib": 123824,
+    "complete_reproduction_wall_seconds": 51.797312,
+    "evaluation_peak_rss_kib": 98220,
+    "evaluation_wall_seconds": 15.671926946999974,
+    "producer_median_ms": 2.5412549999999996,
+    "producer_p95_ms": 4.354195,
+    "reproduction_peak_rss_kib": 123824,
+    "reproduction_wall_seconds": 26.44707057300002
   }
 }

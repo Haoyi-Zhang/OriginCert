@@ -1,0 +1,113 @@
+{
+  "elapsed_seconds": 51.797312,
+  "environment": {
+    "os": "Linux",
+    "python": "3.13.5",
+    "python_implementation": "CPython",
+    "rss_unit": "KiB",
+    "workers": 1
+  },
+  "peak_rss_kib": 123824,
+  "scope": "Scientific reproduction. Paper compilation and reference-content checks are separate.",
+  "stages": [
+    {
+      "command": [
+        "scripts/reproduce_core.py"
+      ],
+      "elapsed_seconds": 27.050026,
+      "exit_code": 0,
+      "stage": "core",
+      "status": "PASS"
+    },
+    {
+      "command": [
+        "scripts/backend_roundtrip.py",
+        "--cases",
+        "data/cases",
+        "--output",
+        "results/backend_roundtrip.json"
+      ],
+      "elapsed_seconds": 4.204229,
+      "exit_code": 0,
+      "stage": "backend",
+      "status": "PASS"
+    },
+    {
+      "command": [
+        "scripts/differential_stress.py",
+        "--output",
+        "results/differential_stress.json"
+      ],
+      "elapsed_seconds": 4.587345,
+      "exit_code": 0,
+      "stage": "stress",
+      "status": "PASS"
+    },
+    {
+      "command": [
+        "scripts/scaling_study.py",
+        "--cases",
+        "data/cases",
+        "--output-json",
+        "results/scaling_study.json",
+        "--output-csv",
+        "results/scaling_study.csv"
+      ],
+      "elapsed_seconds": 0.983088,
+      "exit_code": 0,
+      "stage": "scaling",
+      "status": "PASS"
+    },
+    {
+      "command": [
+        "scripts/metamorphic_suite.py",
+        "--output",
+        "results/metamorphic_suite.json"
+      ],
+      "elapsed_seconds": 7.209671,
+      "exit_code": 0,
+      "stage": "metamorphic",
+      "status": "PASS"
+    },
+    {
+      "command": [
+        "scripts/journal_validation.py",
+        "--output",
+        "results/journal_validation.json"
+      ],
+      "elapsed_seconds": 5.907011,
+      "exit_code": 0,
+      "stage": "journal",
+      "status": "PASS"
+    },
+    {
+      "command": [
+        "scripts/audit_code.py"
+      ],
+      "elapsed_seconds": 0.729004,
+      "exit_code": 0,
+      "stage": "code",
+      "status": "PASS"
+    },
+    {
+      "command": [
+        "scripts/audit_formal_alignment.py"
+      ],
+      "elapsed_seconds": 0.592541,
+      "exit_code": 0,
+      "stage": "formal",
+      "status": "PASS"
+    },
+    {
+      "command": [
+        "scripts/audit_experimental_design.py"
+      ],
+      "elapsed_seconds": 0.528424,
+      "exit_code": 0,
+      "stage": "design",
+      "status": "PASS"
+    }
+  ],
+  "status": "PASS",
+  "tests_run": 51
+}

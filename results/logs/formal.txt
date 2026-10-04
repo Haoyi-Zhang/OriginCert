@@ -1,0 +1,2 @@
+{"certificate_assignment_expansion": false, "checker_imports_producer": false, "checker_monitor_order": true, "construction_labels_used_for_decision": false, "interpretation": "Syntactic alignment regression checks only; this report is not a proof or mechanized verification.", "issues": [], "producer_monitor_order": true, "proof_contract_covers_region_soundness_and_complete_replay": true, "status": "PASS", "symbolic_partition_checks": true}
+

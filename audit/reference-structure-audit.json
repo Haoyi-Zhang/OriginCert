@@ -1,13 +1,13 @@
 {
-  "bibliography_entries": 29,
-  "citation_commands": 33,
-  "citation_occurrences": 58,
+  "bibliography_entries": 63,
+  "citation_commands": 70,
+  "citation_occurrences": 71,
   "duplicate_dois": 0,
   "duplicate_titles": 0,
-  "entries_with_doi": 25,
-  "entries_with_stable_url_only": 4,
+  "entries_with_doi": 57,
+  "entries_with_stable_url_only": 6,
   "missing_keys": [],
   "status": "PASS",
-  "unique_cited_keys": 29,
+  "unique_cited_keys": 63,
   "unused_keys": []
 }
