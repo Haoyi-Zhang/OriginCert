@@ -1,0 +1,64 @@
+name: Bounded scientific reproduction
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  finite-offline-models:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    env:
+      PYTHONUTF8: '1'
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+      - name: Run reviewed Python model stages in a fresh copy
+        timeout-minutes: 26
+        shell: python
+        run: |
+          import json, os, pathlib, shutil, subprocess, sys, time
+          root = pathlib.Path(os.environ['GITHUB_WORKSPACE'])
+          out = pathlib.Path(os.environ['RUNNER_TEMP']) / ('P017-scientific-' + os.environ['GITHUB_RUN_ID'] + '-' + os.environ['GITHUB_RUN_ATTEMPT'])
+          out.mkdir(exist_ok=False)
+          start = time.perf_counter()
+          report = {'status': 'RUNNING', 'command': [sys.executable, '-B', 'scripts/reproduce.py'], 'timeout_seconds': 1500}
+          code = 1
+          try:
+              work = out / 'artifact'
+              work.mkdir()
+              # Copy only reviewed scientific inputs; never delete checkout results.
+              for name in ('src', 'checker', 'scripts', 'tests', 'external_inputs'):
+                  shutil.copytree(root / name, work / name, ignore=shutil.ignore_patterns('__pycache__'))
+              for name in ('proofs.md', 'LICENSE', 'README.md'):
+                  shutil.copy2(root / name, work / name)
+              with (out / 'runner.log').open('w', encoding='utf-8') as log:
+                  completed = subprocess.run(report['command'], cwd=work, stdout=log, stderr=subprocess.STDOUT, timeout=1500)
+              code = completed.returncode
+              report.update(status='PASS' if code == 0 else 'FAIL', exit_code=code)
+              if code == 0:
+                  result = json.loads((work / 'results/reproduction.json').read_text(encoding='utf-8'))
+                  if result.get('status') != 'PASS':
+                      raise RuntimeError('scientific runner did not report PASS')
+          except Exception as error:
+              report.update(status='FAIL', error=str(error))
+              with (out / 'runner.log').open('a', encoding='utf-8') as log:
+                  log.write('\n' + str(error) + '\n')
+              code = 1
+          finally:
+              report['elapsed_seconds'] = round(time.perf_counter() - start, 6)
+              (out / 'workflow-result.json').write_text(json.dumps(report, indent=2) + '\n', encoding='utf-8')
+          sys.exit(code)
+      - name: Retain raw results and logs even on failure
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: P017-scientific-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/P017-scientific-${{ github.run_id }}-${{ github.run_attempt }}/
+          if-no-files-found: warn

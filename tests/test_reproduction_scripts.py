@@ -7,11 +7,50 @@ import sys
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
+
+from scripts import reproduce
 
 ROOT = Path(__file__).resolve().parents[1]
 
 
 class ReproductionScriptTests(unittest.TestCase):
+    def test_stage_zero_exit_requires_successful_fresh_output(self) -> None:
+        for body in (None, '{"status":"FAIL"}', '{"status":"PASS"}'):
+            with self.subTest(body=body), tempfile.TemporaryDirectory() as directory:
+                root = Path(directory)
+                output = root / "report.json"
+                output.write_text('{"status":"PASS"}', encoding="utf-8")
+                stages = []
+                command = ["-c", "print('benign stage')"]
+                if body is not None:
+                    command = ["-c", "from pathlib import Path; Path('report.json').write_text(" + repr(body) + ", encoding='utf-8')"]
+                with patch.object(reproduce, "ROOT", root), patch.object(reproduce, "RESULTS", root):
+                    if body == '{"status":"PASS"}':
+                        reproduce.run_stage("output", command, [output], dict(os.environ), stages)
+                    else:
+                        with self.assertRaises(RuntimeError):
+                            reproduce.run_stage("output", command, [output], dict(os.environ), stages)
+                self.assertEqual(0, stages[0]["exit_code"])
+                self.assertEqual("PASS" if body == '{"status":"PASS"}' else "FAIL", stages[0]["status"])
+                self.assertTrue((root / stages[0]["log"]).is_file())
+
+    def test_stage_timeout_retains_partial_log_and_execution_record(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            stages = []
+            command = ["-c", "import time; print('benign timeout', flush=True); time.sleep(2)"]
+            with patch.object(reproduce, "ROOT", root), patch.object(reproduce, "RESULTS", root), \
+                    patch.object(reproduce, "STAGE_TIMEOUT_SECONDS", 0.5):
+                with self.assertRaises(RuntimeError):
+                    reproduce.run_stage("timeout", command, [], dict(os.environ), stages)
+            row = stages[0]
+            self.assertEqual("TIMEOUT", row["status"])
+            self.assertEqual(command, row["command"])
+            self.assertIsNone(row["exit_code"])
+            self.assertGreater(row["elapsed_seconds"], 0)
+            self.assertIn("benign timeout", (root / row["log"]).read_text(encoding="utf-8"))
+
     def run_script(self, *arguments: str) -> subprocess.CompletedProcess[str]:
         environment = dict(os.environ)
         environment["PYTHONDONTWRITEBYTECODE"] = "1"

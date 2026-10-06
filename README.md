@@ -24,6 +24,8 @@ python scripts/reproduce.py
 
 This rebuilds `data/cases/` and `results/cases/`, runs the evaluation, then explicitly runs source round trips, stress, scaling, metamorphic transformations, theorem-directed transformations and syntactic audits. It deletes each auxiliary report before invoking its producer and checks that a new successful JSON is written at the exact requested path. Every subprocess has a 240-second stage timeout. The retained complete run reports 51 actual unittest executions; source definition counts are not used as a substitute.
 
+Run that rebuilding command only in a fresh copy if prior results must be preserved. The supplied `Bounded scientific reproduction` workflow does so on a `main` push or manual dispatch, with a 30-minute job bound and raw result/log upload even on failure. It runs only the reviewed offline Python models; it does not run a vendor product or generated source. The workflow is a prepared reproduction route, not evidence that a remote run has occurred. Stage status becomes `PASS` only after both process success and fresh-output validation; timeouts and failed output checks retain a non-PASS execution record and a log.
+
 The full outputs include 8,640 frozen inputs; 1,440 record mutants; 17,280 source round trips; **600 total** stress trees and 7,200 inputs across eight seeds; 720 metamorphic records; four scaling points; and transformations of all 180 positive certificates. Stress is not 600 cases per seed. The call-statement and AST-built record-table codecs use different surface grammars and paired syntax-only decoders. Their output is parsed, never imported or executed; the codecs remain reference transports for one event contract, not independent product integrations.
 
 ## Focused commands
@@ -45,6 +47,8 @@ The case loader skips `manifest.json`; subject identity is `case_id`. Stress and
 `evaluation_wall_seconds` measures the 360-subject evaluation; `reproduction_wall_seconds` inside the performance block is the core stage (including construction/tests); `complete_reproduction_wall_seconds` includes all scientific stages. Fresh runs legitimately change elapsed time and RSS. Scientific comparisons must not discard classification, case count, size, violation or oracle fields when normalizing those performance fields.
 
 The accepted-certificate cell distribution is 3 cells: 3 records; 4 cells: 98; 6 cells: 74; 8 cells: 5. Its median is 4, and the median 24-input/cell ratio is 6.0. Region compression is not claimed to be a globally minimal cover or a uniform speedup.
+
+`results/local_validation_20261006.json` records a separate finite check on CPython 3.12.14/Windows: 54 tests passed, the 360 regenerated subjects and records matched the retained corpus, all 8,640 input-level comparisons and 1,440 record mutations agreed, and the full codec, stress, metamorphic, scaling and theorem-directed checks passed. A supplemental check compared both implementations' symbolic leaf payloads at all 7,200 fixed stress inputs. This is not a new Linux RSS measurement or an execution of the complete Linux runner. The 51-test Linux run and its cost exports remain unchanged.
 
 ## Paper-only operations
 

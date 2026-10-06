@@ -497,6 +497,46 @@ class ContractTests(unittest.TestCase):
                 self.assertEqual(0, result["witness"]["violation"]["event_index"])
                 verify(case, result)
 
+    def test_failed_state_updates_continue_without_erasing_rejection(self) -> None:
+        pairs = [
+            ({"op": "check", "capability": "admin"},
+             {"op": "privileged", "capability": "admin"}, {"kind": "preceded"}, "checks", "admin"),
+            ({"op": "protect", "target": "safe", "source": "raw", "protection": "sql_parameter"},
+             {"op": "sink", "channel": "sql", "source": "safe"},
+             {"kind": "protection", "requires": ["sql_parameter"]}, "protections", "safe"),
+            ({"op": "rng", "target": "nonce", "strength": "strong"},
+             {"op": "token", "source": "nonce"}, {"kind": "strong_rng"}, "strong_rng", "nonce"),
+        ]
+        for first, second, rule, state_field, fact in pairs:
+            with self.subTest(operation=first["op"]):
+                case = {
+                    "case_id": "unit-sticky-" + first["op"], "family": "unit",
+                    "schema": {"fields": [{"name": "enabled", "domain": [True]}]},
+                    "catalog": {"obligations": [
+                        {"id": "forbidden-update", "trigger": {"op": first["op"]}, "rule": {"kind": "forbid"}},
+                        {"id": "required-fact", "trigger": {"op": second["op"]}, "rule": rule},
+                    ]},
+                    "generator": {"node": "root", "kind": "seq", "children": [
+                        {"node": "first", "kind": "emit", "event": first, "declared_obligations": ["forbidden-update"]},
+                        {"node": "second", "kind": "emit", "event": second, "declared_obligations": ["required-fact"]},
+                    ]},
+                }
+                validate_case(case)
+                events, actual = execute_concrete_evidence(case["generator"], {"enabled": True})
+                steps, failures = analyze_events(case["catalog"], actual, events)
+                checked_events, checked_actual = emitted(case["generator"], {"enabled": True})
+                self.assertEqual((steps, failures), independent_checker.replay(case["catalog"], checked_actual, checked_events))
+                self.assertEqual(1, len(failures))
+                self.assertEqual(0, failures[0]["event_index"])
+                self.assertIn(fact, steps[0]["after"][state_field])
+                self.assertEqual(steps[0]["after"], steps[1]["before"])
+                self.assertEqual([], steps[1]["violations"])
+                result = make_result(case)
+                self.assertEqual("counterexample", result["kind"])
+                self.assertEqual(steps, result["witness"]["monitor_steps"])
+                self.assertEqual(events[:1], result["witness"]["violating_prefix"])
+                verify(case, result)
+
     def test_overwrites_invalidate_stale_value_properties(self) -> None:
         token_catalog = {"obligations": [{
             "id": "strong-token",

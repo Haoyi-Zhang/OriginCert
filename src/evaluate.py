@@ -5,7 +5,6 @@ from collections import Counter
 import copy
 import csv
 import json
-import resource
 import statistics
 import time
 from pathlib import Path
@@ -217,6 +216,10 @@ def mutations(result: Json) -> list[tuple[str, Json]]:
 
 
 def evaluate(case_dir: Path, result_dir: Path) -> Json:
+    # Only this Linux measurement entry needs resource; pure comparison helpers
+    # and their regression tests remain importable on other platforms.
+    import resource
+
     full_start = time.perf_counter()
     case_paths = sorted(path for path in case_dir.glob("*.json") if path.name != "manifest.json")
     result_case_dir = result_dir / "cases"

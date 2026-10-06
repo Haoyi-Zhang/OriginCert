@@ -5,7 +5,6 @@ import json
 import os
 from pathlib import Path
 import platform
-import resource
 import subprocess
 import sys
 import time
@@ -29,38 +28,57 @@ def write(path:Path,value:dict[str,Any])->None:
     temp.replace(path)
 
 
-def main()->int:
-    if sys.version_info<(3,10):raise SystemExit('CPython 3.10 or later is required')
-    if not sys.platform.startswith('linux'):
-        raise SystemExit('The retained resource measurements and runner require Linux (resource RSS in KiB).')
-    started=time.perf_counter()
-    stages=[]
-    environment=dict(os.environ)
-    environment['PYTHONDONTWRITEBYTECODE']='1'
-    environment['PYTHONPATH']=str(ROOT)
-    def run(name:str,command:list[str],outputs:list[Path])->None:
+def run_stage(name:str,command:list[str],outputs:list[Path],
+              environment:dict[str,str],stages:list[dict[str,Any]])->None:
+    begin=time.perf_counter()
+    row={'stage':name,'command':command,'exit_code':None,'status':'FAIL'}
+    log=''
+    log_path=RESULTS/'logs'/f'{name}.txt'
+    try:
         for path in outputs:path.unlink(missing_ok=True)
-        begin=time.perf_counter()
         print(f'[reproduce] {name}',flush=True)
-        try:
-            completed=subprocess.run([sys.executable,*command],cwd=ROOT,env=environment,
-                                     capture_output=True,text=True,timeout=STAGE_TIMEOUT_SECONDS)
-        except subprocess.TimeoutExpired as error:
-            stages.append({'stage':name,'status':'TIMEOUT','timeout_seconds':STAGE_TIMEOUT_SECONDS})
-            raise RuntimeError(f'{name} exceeded its time budget') from error
+        completed=subprocess.run([sys.executable,'-B',*command],cwd=ROOT,env=environment,
+                                 capture_output=True,text=True,timeout=STAGE_TIMEOUT_SECONDS)
+        row['exit_code']=completed.returncode
         log=completed.stdout+'\n'+completed.stderr
-        log=log.replace(str(ROOT)+os.sep,'')
-        (RESULTS/'logs').mkdir(parents=True,exist_ok=True)
-        (RESULTS/'logs'/f'{name}.txt').write_text(log,encoding='utf-8')
-        row={'stage':name,'command':command,'exit_code':completed.returncode,
-             'elapsed_seconds':round(time.perf_counter()-begin,6),
-             'status':'PASS' if completed.returncode==0 else 'FAIL'}
-        stages.append(row)
-        if completed.returncode:raise RuntimeError(f'{name} failed; see results/logs/{name}.txt')
+        if completed.returncode:raise RuntimeError(f'{name} failed; see {log_path}')
         for path in outputs:
             if not path.is_file():raise RuntimeError(f'{name} did not write {path.name}')
             if path.suffix=='.json' and load(path).get('status')!='PASS':
                 raise RuntimeError(f'{name}: {path.name} did not report PASS')
+        row['status']='PASS'
+    except subprocess.TimeoutExpired as error:
+        def decoded(value:Any)->str:
+            return value.decode('utf-8',errors='replace') if isinstance(value,bytes) else (value or '')
+        log=decoded(error.stdout)+'\n'+decoded(error.stderr)
+        row.update(status='TIMEOUT',timeout_seconds=STAGE_TIMEOUT_SECONDS)
+        row['error']=f'{name} exceeded its time budget'
+        raise RuntimeError(row['error']) from error
+    except Exception as error:
+        row['error']=str(error)
+        raise
+    finally:
+        row['elapsed_seconds']=round(time.perf_counter()-begin,6)
+        row['log']=f'logs/{name}.txt'
+        stages.append(row)
+        log_path.parent.mkdir(parents=True,exist_ok=True)
+        log_path.write_text((log+'\n'+str(row.get('error',''))+'\n').replace(str(ROOT)+os.sep,''),
+                            encoding='utf-8')
+
+
+def main()->int:
+    if sys.version_info<(3,10):raise SystemExit('CPython 3.10 or later is required')
+    if not sys.platform.startswith('linux'):
+        raise SystemExit('The retained resource measurements and runner require Linux (resource RSS in KiB).')
+    import resource
+    started=time.perf_counter()
+    stages=[]
+    environment=dict(os.environ)
+    environment['PYTHONDONTWRITEBYTECODE']='1'
+    environment['PYTHONUTF8']='1'
+    environment['PYTHONPATH']=str(ROOT)
+    def run(name:str,command:list[str],outputs:list[Path])->None:
+        run_stage(name,command,outputs,environment,stages)
     try:
         run('core',['scripts/reproduce_core.py'],[])
         run('backend',['scripts/backend_roundtrip.py','--cases','data/cases','--output','results/backend_roundtrip.json'],[RESULTS/'backend_roundtrip.json'])

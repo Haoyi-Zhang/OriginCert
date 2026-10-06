@@ -1,0 +1,631 @@
+{
+  "backend": {
+    "assignments": 8640,
+    "backends": [
+      "ast_record_table",
+      "template_calls"
+    ],
+    "cases": 360,
+    "decoders": [
+      "ast_record_table",
+      "template_calls"
+    ],
+    "distinct_source_forms": 8640,
+    "elapsed_seconds": 3.331346,
+    "emitted_statements_per_backend": 28570,
+    "interpretation": "The two codecs use different restricted Python surface grammars and paired syntax-only decoders; they remain reference transports for the same event relation, not independent product integrations.",
+    "roundtrips": 17280,
+    "source_bytes": {
+      "ast_record_table": 4069168,
+      "template_calls": 3863161
+    },
+    "status": "PASS"
+  },
+  "elapsed_seconds": 40.67423,
+  "environment": {
+    "os": "Windows",
+    "python": "3.12.14",
+    "rss": null,
+    "workers": 1
+  },
+  "journal": {
+    "admissible_restriction_checks": 180,
+    "catalogue_sensitivity_checks": 180,
+    "cell_permutation_checks": 180,
+    "certificates": 180,
+    "concrete_inputs_compared": 4320,
+    "interpretation": "Tests of stated algebraic consequences, not an independent proof or new industrial sample.",
+    "refinement_checks": 180,
+    "restriction_unavailable": 0,
+    "status": "PASS"
+  },
+  "metamorphic": {
+    "cases": 360,
+    "scope": "Consistent node/origin renaming and JSON object-key permutation; ordered field/domain lists preserved.",
+    "status": "PASS",
+    "transformed_records": 720
+  },
+  "primary": {
+    "ablations": [
+      {
+        "coverage_detected": 36,
+        "coverage_total": 36,
+        "method": "certificate_method",
+        "origin_detected": 36,
+        "origin_total": 36,
+        "semantic_detected": 108,
+        "semantic_total": 108
+      },
+      {
+        "coverage_detected": 0,
+        "coverage_total": 36,
+        "method": "global_template_lint",
+        "origin_detected": 0,
+        "origin_total": 36,
+        "semantic_detected": 0,
+        "semantic_total": 108
+      },
+      {
+        "coverage_detected": 0,
+        "coverage_total": 36,
+        "method": "default_trace_safety",
+        "origin_detected": 0,
+        "origin_total": 36,
+        "semantic_detected": 0,
+        "semantic_total": 108
+      },
+      {
+        "coverage_detected": 0,
+        "coverage_total": 36,
+        "method": "three_trace_tests",
+        "origin_detected": 0,
+        "origin_total": 36,
+        "semantic_detected": 99,
+        "semantic_total": 108
+      },
+      {
+        "coverage_detected": 0,
+        "coverage_total": 36,
+        "method": "exhaustive_trace_safety",
+        "origin_detected": 0,
+        "origin_total": 36,
+        "semantic_detected": 108,
+        "semantic_total": 108
+      },
+      {
+        "coverage_detected": 36,
+        "coverage_total": 36,
+        "method": "coverage_plus_safety",
+        "origin_detected": 0,
+        "origin_total": 36,
+        "semantic_detected": 108,
+        "semantic_total": 108
+      },
+      {
+        "coverage_detected": 0,
+        "coverage_total": 36,
+        "method": "origin_plus_safety",
+        "origin_detected": 36,
+        "origin_total": 36,
+        "semantic_detected": 108,
+        "semantic_total": 108
+      },
+      {
+        "coverage_detected": 36,
+        "coverage_total": 36,
+        "method": "origin_plus_coverage",
+        "origin_detected": 36,
+        "origin_total": 36,
+        "semantic_detected": 0,
+        "semantic_total": 108
+      }
+    ],
+    "baselines": [
+      {
+        "accuracy": 1.0,
+        "false_negative": 0,
+        "false_positive": 0,
+        "method": "certificate_method",
+        "precision": 1.0,
+        "recall": 1.0,
+        "true_negative": 180,
+        "true_positive": 180
+      },
+      {
+        "accuracy": 0.5,
+        "false_negative": 180,
+        "false_positive": 0,
+        "method": "global_template_lint",
+        "precision": 0.0,
+        "recall": 0.0,
+        "true_negative": 180,
+        "true_positive": 0
+      },
+      {
+        "accuracy": 0.5,
+        "false_negative": 180,
+        "false_positive": 0,
+        "method": "default_trace_safety",
+        "precision": 0.0,
+        "recall": 0.0,
+        "true_negative": 180,
+        "true_positive": 0
+      },
+      {
+        "accuracy": 0.775,
+        "false_negative": 81,
+        "false_positive": 0,
+        "method": "three_trace_tests",
+        "precision": 1.0,
+        "recall": 0.55,
+        "true_negative": 180,
+        "true_positive": 99
+      },
+      {
+        "accuracy": 0.8,
+        "false_negative": 72,
+        "false_positive": 0,
+        "method": "exhaustive_trace_safety",
+        "precision": 1.0,
+        "recall": 0.6,
+        "true_negative": 180,
+        "true_positive": 108
+      },
+      {
+        "accuracy": 0.9,
+        "false_negative": 36,
+        "false_positive": 0,
+        "method": "coverage_plus_safety",
+        "precision": 1.0,
+        "recall": 0.8,
+        "true_negative": 180,
+        "true_positive": 144
+      },
+      {
+        "accuracy": 0.9,
+        "false_negative": 36,
+        "false_positive": 0,
+        "method": "origin_plus_safety",
+        "precision": 1.0,
+        "recall": 0.8,
+        "true_negative": 180,
+        "true_positive": 144
+      },
+      {
+        "accuracy": 0.7,
+        "false_negative": 108,
+        "false_positive": 0,
+        "method": "origin_plus_coverage",
+        "precision": 1.0,
+        "recall": 0.4,
+        "true_negative": 180,
+        "true_positive": 72
+      }
+    ],
+    "certificates": {
+      "accepted_certificate_count": 180,
+      "cell_count_distribution": {
+        "3": 3,
+        "4": 98,
+        "6": 74,
+        "8": 5
+      },
+      "median_assignment_to_cell_ratio": 6.0,
+      "median_bytes": 19771.0,
+      "median_cells": 4.0,
+      "p95_assignment_to_cell_ratio": 6.0,
+      "p95_bytes": 33234.0
+    },
+    "counterexamples": {
+      "count": 180,
+      "mean_size_reduction": 2.5,
+      "median_bytes": 9077.0,
+      "median_minimal_input_size": 1.0,
+      "median_reverse_branch_first_size": 4.0
+    },
+    "elapsed_seconds": 11.982356,
+    "fresh_records_equal_retained": 360,
+    "generated_subjects_equal_retained": 360,
+    "historical_models": [
+      {
+        "anchor": "php-sdk-literal",
+        "case_id": "php-sdk-001",
+        "state": "patched",
+        "unsafe_inputs": 0
+      },
+      {
+        "anchor": "php-sdk-literal",
+        "case_id": "php-sdk-002",
+        "state": "patched",
+        "unsafe_inputs": 0
+      },
+      {
+        "anchor": "php-sdk-literal",
+        "case_id": "php-sdk-003",
+        "state": "patched",
+        "unsafe_inputs": 0
+      },
+      {
+        "anchor": "php-sdk-literal",
+        "case_id": "php-sdk-004",
+        "state": "patched",
+        "unsafe_inputs": 0
+      },
+      {
+        "anchor": "php-sdk-literal",
+        "case_id": "php-sdk-005",
+        "state": "patched",
+        "unsafe_inputs": 0
+      },
+      {
+        "anchor": "php-sdk-literal",
+        "case_id": "php-sdk-006",
+        "state": "patched",
+        "unsafe_inputs": 0
+      },
+      {
+        "anchor": "php-sdk-literal",
+        "case_id": "php-sdk-007",
+        "state": "vulnerable",
+        "unsafe_inputs": 12
+      },
+      {
+        "anchor": "php-sdk-literal",
+        "case_id": "php-sdk-008",
+        "state": "vulnerable",
+        "unsafe_inputs": 12
+      },
+      {
+        "anchor": "php-sdk-literal",
+        "case_id": "php-sdk-009",
+        "state": "vulnerable",
+        "unsafe_inputs": 12
+      },
+      {
+        "anchor": "php-sdk-literal",
+        "case_id": "php-sdk-010",
+        "state": "vulnerable",
+        "unsafe_inputs": 12
+      },
+      {
+        "anchor": "php-sdk-literal",
+        "case_id": "php-sdk-011",
+        "state": "vulnerable",
+        "unsafe_inputs": 12
+      },
+      {
+        "anchor": "php-sdk-literal",
+        "case_id": "php-sdk-012",
+        "state": "vulnerable",
+        "unsafe_inputs": 12
+      },
+      {
+        "anchor": "python-model-factory",
+        "case_id": "python-model-001",
+        "state": "patched",
+        "unsafe_inputs": 0
+      },
+      {
+        "anchor": "python-model-factory",
+        "case_id": "python-model-002",
+        "state": "patched",
+        "unsafe_inputs": 0
+      },
+      {
+        "anchor": "python-model-factory",
+        "case_id": "python-model-003",
+        "state": "patched",
+        "unsafe_inputs": 0
+      },
+      {
+        "anchor": "python-model-factory",
+        "case_id": "python-model-004",
+        "state": "patched",
+        "unsafe_inputs": 0
+      },
+      {
+        "anchor": "python-model-factory",
+        "case_id": "python-model-005",
+        "state": "patched",
+        "unsafe_inputs": 0
+      },
+      {
+        "anchor": "python-model-factory",
+        "case_id": "python-model-006",
+        "state": "patched",
+        "unsafe_inputs": 0
+      },
+      {
+        "anchor": "python-model-factory",
+        "case_id": "python-model-007",
+        "state": "vulnerable",
+        "unsafe_inputs": 12
+      },
+      {
+        "anchor": "python-model-factory",
+        "case_id": "python-model-008",
+        "state": "vulnerable",
+        "unsafe_inputs": 12
+      },
+      {
+        "anchor": "python-model-factory",
+        "case_id": "python-model-009",
+        "state": "vulnerable",
+        "unsafe_inputs": 12
+      },
+      {
+        "anchor": "python-model-factory",
+        "case_id": "python-model-010",
+        "state": "vulnerable",
+        "unsafe_inputs": 12
+      },
+      {
+        "anchor": "python-model-factory",
+        "case_id": "python-model-011",
+        "state": "vulnerable",
+        "unsafe_inputs": 12
+      },
+      {
+        "anchor": "python-model-factory",
+        "case_id": "python-model-012",
+        "state": "vulnerable",
+        "unsafe_inputs": 12
+      },
+      {
+        "anchor": "typescript-mock-const",
+        "case_id": "typescript-mock-001",
+        "state": "patched",
+        "unsafe_inputs": 0
+      },
+      {
+        "anchor": "typescript-mock-const",
+        "case_id": "typescript-mock-002",
+        "state": "patched",
+        "unsafe_inputs": 0
+      },
+      {
+        "anchor": "typescript-mock-const",
+        "case_id": "typescript-mock-003",
+        "state": "patched",
+        "unsafe_inputs": 0
+      },
+      {
+        "anchor": "typescript-mock-const",
+        "case_id": "typescript-mock-004",
+        "state": "patched",
+        "unsafe_inputs": 0
+      },
+      {
+        "anchor": "typescript-mock-const",
+        "case_id": "typescript-mock-005",
+        "state": "patched",
+        "unsafe_inputs": 0
+      },
+      {
+        "anchor": "typescript-mock-const",
+        "case_id": "typescript-mock-006",
+        "state": "patched",
+        "unsafe_inputs": 0
+      },
+      {
+        "anchor": "typescript-mock-const",
+        "case_id": "typescript-mock-007",
+        "state": "vulnerable",
+        "unsafe_inputs": 12
+      },
+      {
+        "anchor": "typescript-mock-const",
+        "case_id": "typescript-mock-008",
+        "state": "vulnerable",
+        "unsafe_inputs": 12
+      },
+      {
+        "anchor": "typescript-mock-const",
+        "case_id": "typescript-mock-009",
+        "state": "vulnerable",
+        "unsafe_inputs": 12
+      },
+      {
+        "anchor": "typescript-mock-const",
+        "case_id": "typescript-mock-010",
+        "state": "vulnerable",
+        "unsafe_inputs": 12
+      },
+      {
+        "anchor": "typescript-mock-const",
+        "case_id": "typescript-mock-011",
+        "state": "vulnerable",
+        "unsafe_inputs": 12
+      },
+      {
+        "anchor": "typescript-mock-const",
+        "case_id": "typescript-mock-012",
+        "state": "vulnerable",
+        "unsafe_inputs": 12
+      }
+    ],
+    "inputs": 8640,
+    "mutants_rejected": 1440,
+    "mutation_categories": {
+      "certificate-alter-origin-or-origin-claim": 180,
+      "certificate-delete-cube-coordinate": 180,
+      "certificate-remove-cell-or-partition-claim": 180,
+      "certificate-remove-monitor-step-or-safety-claim": 180,
+      "counterexample-alter-subject-case-id": 180,
+      "counterexample-alter-violation-detail": 180,
+      "counterexample-increment-input-size": 180,
+      "counterexample-remove-event": 180
+    },
+    "mutation_category_rejections": {
+      "certificate-alter-origin-or-origin-claim": 180,
+      "certificate-delete-cube-coordinate": 180,
+      "certificate-remove-cell-or-partition-claim": 180,
+      "certificate-remove-monitor-step-or-safety-claim": 180,
+      "counterexample-alter-subject-case-id": 180,
+      "counterexample-alter-violation-detail": 180,
+      "counterexample-increment-input-size": 180,
+      "counterexample-remove-event": 180
+    },
+    "record_mutants": 1440,
+    "rss": null,
+    "scope": "Windows finite semantic verification; not the Linux resource-measured full runner.",
+    "status": "PASS",
+    "subjects": 360
+  },
+  "scaling": {
+    "interpretation": "Irrelevant dimensions enlarge the concrete domain while certificate cells and symbolic leaf replays are determined by control-relevant dimensions. Timings are feasibility measurements, not cross-machine performance claims.",
+    "max_assignments": 256,
+    "rows": [
+      {
+        "assignments": 24,
+        "certificate_bytes": 6833,
+        "certificate_cells": 4,
+        "exhaustive_replay_median_ms": 2.4461,
+        "irrelevant_boolean_fields": 0,
+        "symbolic_leaf_replays": 4,
+        "symbolic_verify_median_ms": 2.2269
+      },
+      {
+        "assignments": 48,
+        "certificate_bytes": 6971,
+        "certificate_cells": 4,
+        "exhaustive_replay_median_ms": 4.8793,
+        "irrelevant_boolean_fields": 1,
+        "symbolic_leaf_replays": 4,
+        "symbolic_verify_median_ms": 2.3126
+      },
+      {
+        "assignments": 96,
+        "certificate_bytes": 7109,
+        "certificate_cells": 4,
+        "exhaustive_replay_median_ms": 9.7598,
+        "irrelevant_boolean_fields": 2,
+        "symbolic_leaf_replays": 4,
+        "symbolic_verify_median_ms": 2.621
+      },
+      {
+        "assignments": 192,
+        "certificate_bytes": 7247,
+        "certificate_cells": 4,
+        "exhaustive_replay_median_ms": 19.5719,
+        "irrelevant_boolean_fields": 3,
+        "symbolic_leaf_replays": 4,
+        "symbolic_verify_median_ms": 2.6149
+      }
+    ],
+    "status": "PASS"
+  },
+  "scope": "Separate finite Windows verification of the bounded Python model; no vendor or generated code execution. The Linux full-run timing/RSS exports are not replaced.",
+  "stage_elapsed_seconds": {
+    "backend": 3.427025,
+    "journal": 5.220759,
+    "metamorphic": 6.289736,
+    "primary": 13.874297,
+    "scaling": 0.432941,
+    "stress": 3.606471,
+    "tests": 7.778667
+  },
+  "status": "PASS",
+  "stress": {
+    "assignments": 7200,
+    "cases": 600,
+    "cases_per_seed": 75,
+    "certificates": 147,
+    "counterexamples": 453,
+    "per_seed": [
+      {
+        "assignments": 900,
+        "cases": 75,
+        "certificates": 26,
+        "counterexamples": 49,
+        "seed": 1592598567,
+        "status": "PASS"
+      },
+      {
+        "assignments": 900,
+        "cases": 75,
+        "certificates": 16,
+        "counterexamples": 59,
+        "seed": 324508639,
+        "status": "PASS"
+      },
+      {
+        "assignments": 900,
+        "cases": 75,
+        "certificates": 17,
+        "counterexamples": 58,
+        "seed": 610839776,
+        "status": "PASS"
+      },
+      {
+        "assignments": 900,
+        "cases": 75,
+        "certificates": 13,
+        "counterexamples": 62,
+        "seed": 195948557,
+        "status": "PASS"
+      },
+      {
+        "assignments": 900,
+        "cases": 75,
+        "certificates": 15,
+        "counterexamples": 60,
+        "seed": 826366246,
+        "status": "PASS"
+      },
+      {
+        "assignments": 900,
+        "cases": 75,
+        "certificates": 23,
+        "counterexamples": 52,
+        "seed": 655894552,
+        "status": "PASS"
+      },
+      {
+        "assignments": 900,
+        "cases": 75,
+        "certificates": 23,
+        "counterexamples": 52,
+        "seed": 3237998097,
+        "status": "PASS"
+      },
+      {
+        "assignments": 900,
+        "cases": 75,
+        "certificates": 14,
+        "counterexamples": 61,
+        "seed": 2779096485,
+        "status": "PASS"
+      }
+    ],
+    "seed_count": 8,
+    "seeds": [
+      1592598567,
+      324508639,
+      610839776,
+      195948557,
+      826366246,
+      655894552,
+      3237998097,
+      2779096485
+    ],
+    "status": "PASS"
+  },
+  "symbolic_pointwise_stress": {
+    "elapsed_seconds": 1.792856,
+    "inputs_per_implementation": 7200,
+    "payload_checks": 14400,
+    "status": "PASS",
+    "subjects": 600
+  },
+  "tests": {
+    "elapsed_seconds": 7.707262,
+    "errors": 0,
+    "expected_failures": 0,
+    "failures": 0,
+    "skipped": 0,
+    "status": "PASS",
+    "tests_run": 54,
+    "unexpected_successes": 0
+  }
+}
