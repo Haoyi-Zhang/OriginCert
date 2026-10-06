@@ -1,0 +1,9 @@
+method,semantic_detected,semantic_total,coverage_detected,coverage_total,origin_detected,origin_total
+certificate_method,108,108,36,36,36,36
+global_template_lint,0,108,0,36,0,36
+default_trace_safety,0,108,0,36,0,36
+three_trace_tests,99,108,0,36,0,36
+exhaustive_trace_safety,108,108,0,36,0,36
+coverage_plus_safety,108,108,36,36,0,36
+origin_plus_safety,108,108,0,36,36,36
+origin_plus_coverage,0,108,36,36,36,36

@@ -1,0 +1,4 @@
+anchor,record,cases,patched_cases,vulnerable_cases,assignments,unsafe_assignments,oracle_checker_agreements
+python-model-factory,GHSA-386q-5hp3-95m9,12,6,6,288,72,12
+php-sdk-literal,GHSA-jqwh-526h-c92j,12,6,6,288,72,12
+typescript-mock-const,GHSA-f456-rf33-4626,12,6,6,288,72,12

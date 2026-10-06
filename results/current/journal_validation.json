@@ -1,0 +1,1633 @@
+{
+  "admissible_restriction_checks": 180,
+  "catalogue_sensitivity_checks": 180,
+  "cell_permutation_checks": 180,
+  "certificates": 180,
+  "concrete_inputs_compared": 4320,
+  "interpretation": "Tests of stated algebraic consequences, not an independent proof or new industrial sample.",
+  "records": [
+    {
+      "case_id": "automation-auth-001",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "automation-auth-002",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "automation-auth-003",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 6,
+      "refined_cells": 12,
+      "restricted_inputs": 12,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "automation-auth-004",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 6,
+      "refined_cells": 12,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "automation-auth-005",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "automation-auth-006",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "automation-auth-007",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 6,
+      "refined_cells": 12,
+      "restricted_inputs": 12,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "automation-auth-008",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 6,
+      "refined_cells": 12,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "automation-auth-009",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "automation-auth-010",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "automation-auth-011",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 6,
+      "refined_cells": 12,
+      "restricted_inputs": 12,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "automation-auth-012",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 6,
+      "refined_cells": 12,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "automation-auth-013",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "automation-auth-014",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "automation-auth-015",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 6,
+      "refined_cells": 12,
+      "restricted_inputs": 12,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "automation-auth-016",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 6,
+      "refined_cells": 12,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "automation-auth-017",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "automation-auth-018",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "automation-path-001",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "automation-path-002",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "automation-path-003",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 6,
+      "refined_cells": 12,
+      "restricted_inputs": 12,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "automation-path-004",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 6,
+      "refined_cells": 12,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "automation-path-005",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "automation-path-006",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "automation-path-007",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 6,
+      "refined_cells": 12,
+      "restricted_inputs": 12,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "automation-path-008",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 6,
+      "refined_cells": 12,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "automation-path-009",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "automation-path-010",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "automation-path-011",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 6,
+      "refined_cells": 12,
+      "restricted_inputs": 12,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "automation-path-012",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 6,
+      "refined_cells": 12,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "automation-path-013",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "automation-path-014",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "automation-path-015",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 6,
+      "refined_cells": 12,
+      "restricted_inputs": 12,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "automation-path-016",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 6,
+      "refined_cells": 12,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "automation-path-017",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "automation-path-018",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "automation-shell-001",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "automation-shell-002",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "automation-shell-003",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 6,
+      "refined_cells": 12,
+      "restricted_inputs": 12,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "automation-shell-004",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 6,
+      "refined_cells": 12,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "automation-shell-005",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "automation-shell-006",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "automation-shell-007",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 6,
+      "refined_cells": 12,
+      "restricted_inputs": 12,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "automation-shell-008",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 6,
+      "refined_cells": 12,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "automation-shell-009",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "automation-shell-010",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "automation-shell-011",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 6,
+      "refined_cells": 12,
+      "restricted_inputs": 12,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "automation-shell-012",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 6,
+      "refined_cells": 12,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "automation-shell-013",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "automation-shell-014",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "automation-shell-015",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 6,
+      "refined_cells": 12,
+      "restricted_inputs": 12,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "automation-shell-016",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 6,
+      "refined_cells": 12,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "automation-shell-017",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "automation-shell-018",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "php-sdk-001",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "php-sdk-002",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "php-sdk-003",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 8,
+      "refined_cells": 16,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "php-sdk-004",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 8,
+      "refined_cells": 16,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "php-sdk-005",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "php-sdk-006",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 8,
+      "refined_cells": 16,
+      "restricted_inputs": 12,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "python-model-001",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 3,
+      "refined_cells": 6,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "python-model-002",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 3,
+      "refined_cells": 6,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "python-model-003",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 6,
+      "refined_cells": 12,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "python-model-004",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 6,
+      "refined_cells": 12,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "python-model-005",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 3,
+      "refined_cells": 6,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "python-model-006",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "service-auth-001",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "service-auth-002",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "service-auth-003",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 6,
+      "refined_cells": 12,
+      "restricted_inputs": 12,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "service-auth-004",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 6,
+      "refined_cells": 12,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "service-auth-005",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "service-auth-006",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "service-auth-007",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 6,
+      "refined_cells": 12,
+      "restricted_inputs": 12,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "service-auth-008",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 6,
+      "refined_cells": 12,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "service-auth-009",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "service-auth-010",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "service-auth-011",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 6,
+      "refined_cells": 12,
+      "restricted_inputs": 12,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "service-auth-012",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 6,
+      "refined_cells": 12,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "service-auth-013",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "service-auth-014",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "service-auth-015",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 6,
+      "refined_cells": 12,
+      "restricted_inputs": 12,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "service-auth-016",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 6,
+      "refined_cells": 12,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "service-auth-017",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "service-auth-018",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "service-credential-001",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "service-credential-002",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "service-credential-003",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 6,
+      "refined_cells": 12,
+      "restricted_inputs": 12,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "service-credential-004",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 6,
+      "refined_cells": 12,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "service-credential-005",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "service-credential-006",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "service-credential-007",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 6,
+      "refined_cells": 12,
+      "restricted_inputs": 12,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "service-credential-008",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 6,
+      "refined_cells": 12,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "service-credential-009",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "service-credential-010",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "service-credential-011",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 6,
+      "refined_cells": 12,
+      "restricted_inputs": 12,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "service-credential-012",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 6,
+      "refined_cells": 12,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "service-credential-013",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "service-credential-014",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "service-credential-015",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 6,
+      "refined_cells": 12,
+      "restricted_inputs": 12,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "service-credential-016",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 6,
+      "refined_cells": 12,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "service-credential-017",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "service-credential-018",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "service-token-001",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "service-token-002",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "service-token-003",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 6,
+      "refined_cells": 12,
+      "restricted_inputs": 12,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "service-token-004",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 6,
+      "refined_cells": 12,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "service-token-005",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "service-token-006",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "service-token-007",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 6,
+      "refined_cells": 12,
+      "restricted_inputs": 12,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "service-token-008",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 6,
+      "refined_cells": 12,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "service-token-009",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "service-token-010",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "service-token-011",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 6,
+      "refined_cells": 12,
+      "restricted_inputs": 12,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "service-token-012",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 6,
+      "refined_cells": 12,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "service-token-013",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "service-token-014",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "service-token-015",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 6,
+      "refined_cells": 12,
+      "restricted_inputs": 12,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "service-token-016",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 6,
+      "refined_cells": 12,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "service-token-017",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "service-token-018",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "typescript-mock-001",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "typescript-mock-002",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 8,
+      "refined_cells": 16,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "typescript-mock-003",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 8,
+      "refined_cells": 16,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "typescript-mock-004",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "typescript-mock-005",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "typescript-mock-006",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "web-auth-001",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "web-auth-002",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "web-auth-003",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 6,
+      "refined_cells": 12,
+      "restricted_inputs": 12,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "web-auth-004",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 6,
+      "refined_cells": 12,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "web-auth-005",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "web-auth-006",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "web-auth-007",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 6,
+      "refined_cells": 12,
+      "restricted_inputs": 12,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "web-auth-008",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 6,
+      "refined_cells": 12,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "web-auth-009",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "web-auth-010",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "web-auth-011",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 6,
+      "refined_cells": 12,
+      "restricted_inputs": 12,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "web-auth-012",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 6,
+      "refined_cells": 12,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "web-auth-013",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "web-auth-014",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "web-auth-015",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 6,
+      "refined_cells": 12,
+      "restricted_inputs": 12,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "web-auth-016",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 6,
+      "refined_cells": 12,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "web-auth-017",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "web-auth-018",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "web-html-001",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "web-html-002",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "web-html-003",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 6,
+      "refined_cells": 12,
+      "restricted_inputs": 12,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "web-html-004",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 6,
+      "refined_cells": 12,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "web-html-005",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "web-html-006",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "web-html-007",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 6,
+      "refined_cells": 12,
+      "restricted_inputs": 12,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "web-html-008",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 6,
+      "refined_cells": 12,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "web-html-009",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "web-html-010",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "web-html-011",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 6,
+      "refined_cells": 12,
+      "restricted_inputs": 12,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "web-html-012",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 6,
+      "refined_cells": 12,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "web-html-013",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "web-html-014",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "web-html-015",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 6,
+      "refined_cells": 12,
+      "restricted_inputs": 12,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "web-html-016",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 6,
+      "refined_cells": 12,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "web-html-017",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "web-html-018",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "web-sql-001",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "web-sql-002",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "web-sql-003",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 6,
+      "refined_cells": 12,
+      "restricted_inputs": 12,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "web-sql-004",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 6,
+      "refined_cells": 12,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "web-sql-005",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "web-sql-006",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "web-sql-007",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 6,
+      "refined_cells": 12,
+      "restricted_inputs": 12,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "web-sql-008",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 6,
+      "refined_cells": 12,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "web-sql-009",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "web-sql-010",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "web-sql-011",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 6,
+      "refined_cells": 12,
+      "restricted_inputs": 12,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "web-sql-012",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 6,
+      "refined_cells": 12,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "web-sql-013",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "web-sql-014",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "web-sql-015",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 6,
+      "refined_cells": 12,
+      "restricted_inputs": 12,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "web-sql-016",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 6,
+      "refined_cells": 12,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "web-sql-017",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    },
+    {
+      "case_id": "web-sql-018",
+      "catalogue_coverage_counterexample": true,
+      "concrete_inputs": 24,
+      "original_cells": 4,
+      "refined_cells": 8,
+      "restricted_inputs": 16,
+      "restriction_checked": true
+    }
+  ],
+  "refinement_checks": 180,
+  "restriction_unavailable": 0,
+  "status": "PASS"
+}

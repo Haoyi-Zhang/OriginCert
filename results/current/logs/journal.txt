@@ -1,0 +1,4 @@
+{"admissible_restriction_checks": 180, "catalogue_sensitivity_checks": 180, "cell_permutation_checks": 180, "certificates": 180, "concrete_inputs_compared": 4320, "interpretation": "Tests of stated algebraic consequences, not an independent proof or new industrial sample.", "refinement_checks": 180, "restriction_unavailable": 0, "status": "PASS"}
+
+
+

@@ -1,0 +1,7 @@
+family,cases,accepted,rejected,median_certificate_cells,median_certificate_bytes,median_counterexample_bytes,median_producer_ms,median_checker_ms
+automation,108,54,54,4.0,19932.0,9717.0,2.4546504999999996,3.2952565
+php-sdk,12,6,6,6.0,29528.0,10586.5,2.7968425,3.4370095
+python-model,12,6,6,3.5,18158.5,9760.0,2.5106585,3.329884
+service,108,54,54,4.0,19458.0,8836.0,2.252233,3.2974699999999997
+typescript-mock,12,6,6,4.0,24974.0,10117.0,2.9994484999999997,3.4584405
+web,108,54,54,4.0,19771.0,9322.0,2.40814,3.3509469999999997

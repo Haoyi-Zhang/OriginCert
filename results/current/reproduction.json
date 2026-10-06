@@ -1,0 +1,122 @@
+{
+  "elapsed_seconds": 46.065633,
+  "environment": {
+    "os": "Linux",
+    "python": "3.12.14",
+    "python_implementation": "CPython",
+    "rss_unit": "KiB",
+    "workers": 1
+  },
+  "peak_rss_kib": 53280,
+  "scope": "Scientific reproduction. Paper compilation and reference-content checks are separate.",
+  "stages": [
+    {
+      "command": [
+        "scripts/reproduce_core.py"
+      ],
+      "elapsed_seconds": 25.102515,
+      "exit_code": 0,
+      "log": "logs/core.txt",
+      "stage": "core",
+      "status": "PASS"
+    },
+    {
+      "command": [
+        "scripts/backend_roundtrip.py",
+        "--cases",
+        "data/cases",
+        "--output",
+        "results/backend_roundtrip.json"
+      ],
+      "elapsed_seconds": 3.592225,
+      "exit_code": 0,
+      "log": "logs/backend.txt",
+      "stage": "backend",
+      "status": "PASS"
+    },
+    {
+      "command": [
+        "scripts/differential_stress.py",
+        "--output",
+        "results/differential_stress.json"
+      ],
+      "elapsed_seconds": 4.033449,
+      "exit_code": 0,
+      "log": "logs/stress.txt",
+      "stage": "stress",
+      "status": "PASS"
+    },
+    {
+      "command": [
+        "scripts/scaling_study.py",
+        "--cases",
+        "data/cases",
+        "--output-json",
+        "results/scaling_study.json",
+        "--output-csv",
+        "results/scaling_study.csv"
+      ],
+      "elapsed_seconds": 0.446204,
+      "exit_code": 0,
+      "log": "logs/scaling.txt",
+      "stage": "scaling",
+      "status": "PASS"
+    },
+    {
+      "command": [
+        "scripts/metamorphic_suite.py",
+        "--output",
+        "results/metamorphic_suite.json"
+      ],
+      "elapsed_seconds": 6.833136,
+      "exit_code": 0,
+      "log": "logs/metamorphic.txt",
+      "stage": "metamorphic",
+      "status": "PASS"
+    },
+    {
+      "command": [
+        "scripts/journal_validation.py",
+        "--output",
+        "results/journal_validation.json"
+      ],
+      "elapsed_seconds": 5.749982,
+      "exit_code": 0,
+      "log": "logs/journal.txt",
+      "stage": "journal",
+      "status": "PASS"
+    },
+    {
+      "command": [
+        "scripts/audit_code.py"
+      ],
+      "elapsed_seconds": 0.201233,
+      "exit_code": 0,
+      "log": "logs/code.txt",
+      "stage": "code",
+      "status": "PASS"
+    },
+    {
+      "command": [
+        "scripts/audit_formal_alignment.py"
+      ],
+      "elapsed_seconds": 0.084909,
+      "exit_code": 0,
+      "log": "logs/formal.txt",
+      "stage": "formal",
+      "status": "PASS"
+    },
+    {
+      "command": [
+        "scripts/audit_experimental_design.py"
+      ],
+      "elapsed_seconds": 0.019639,
+      "exit_code": 0,
+      "log": "logs/design.txt",
+      "stage": "design",
+      "status": "PASS"
+    }
+  ],
+  "status": "PASS",
+  "tests_run": 54
+}

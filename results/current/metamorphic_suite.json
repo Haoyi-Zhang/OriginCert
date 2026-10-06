@@ -1,0 +1,3608 @@
+{
+  "cases": 360,
+  "records": [
+    {
+      "case_id": "automation-auth-001",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-auth-001",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-auth-002",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-auth-002",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-auth-003",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-auth-003",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-auth-004",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-auth-004",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-auth-005",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-auth-005",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-auth-006",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-auth-006",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-auth-007",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-auth-007",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-auth-008",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-auth-008",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-auth-009",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-auth-009",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-auth-010",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-auth-010",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-auth-011",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-auth-011",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-auth-012",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-auth-012",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-auth-013",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-auth-013",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-auth-014",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-auth-014",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-auth-015",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-auth-015",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-auth-016",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-auth-016",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-auth-017",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-auth-017",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-auth-018",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-auth-018",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-auth-019",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-auth-019",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-auth-020",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-auth-020",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-auth-021",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-auth-021",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-auth-022",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-auth-022",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-auth-023",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-auth-023",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-auth-024",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-auth-024",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-auth-025",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-auth-025",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-auth-026",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-auth-026",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-auth-027",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-auth-027",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-auth-028",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-auth-028",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-auth-029",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-auth-029",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-auth-030",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-auth-030",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-auth-031",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-auth-031",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-auth-032",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-auth-032",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-auth-033",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-auth-033",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-auth-034",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-auth-034",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-auth-035",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-auth-035",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-auth-036",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-auth-036",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-path-001",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-path-001",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-path-002",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-path-002",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-path-003",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-path-003",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-path-004",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-path-004",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-path-005",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-path-005",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-path-006",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-path-006",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-path-007",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-path-007",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-path-008",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-path-008",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-path-009",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-path-009",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-path-010",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-path-010",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-path-011",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-path-011",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-path-012",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-path-012",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-path-013",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-path-013",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-path-014",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-path-014",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-path-015",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-path-015",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-path-016",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-path-016",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-path-017",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-path-017",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-path-018",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-path-018",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-path-019",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-path-019",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-path-020",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-path-020",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-path-021",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-path-021",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-path-022",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-path-022",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-path-023",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-path-023",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-path-024",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-path-024",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-path-025",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-path-025",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-path-026",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-path-026",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-path-027",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-path-027",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-path-028",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-path-028",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-path-029",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-path-029",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-path-030",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-path-030",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-path-031",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-path-031",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-path-032",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-path-032",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-path-033",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-path-033",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-path-034",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-path-034",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-path-035",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-path-035",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-path-036",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-path-036",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-shell-001",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-shell-001",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-shell-002",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-shell-002",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-shell-003",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-shell-003",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-shell-004",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-shell-004",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-shell-005",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-shell-005",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-shell-006",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-shell-006",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-shell-007",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-shell-007",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-shell-008",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-shell-008",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-shell-009",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-shell-009",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-shell-010",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-shell-010",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-shell-011",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-shell-011",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-shell-012",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-shell-012",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-shell-013",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-shell-013",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-shell-014",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-shell-014",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-shell-015",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-shell-015",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-shell-016",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-shell-016",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-shell-017",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-shell-017",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-shell-018",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-shell-018",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-shell-019",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-shell-019",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-shell-020",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-shell-020",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-shell-021",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-shell-021",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-shell-022",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-shell-022",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-shell-023",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-shell-023",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-shell-024",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-shell-024",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-shell-025",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-shell-025",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-shell-026",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-shell-026",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-shell-027",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-shell-027",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-shell-028",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-shell-028",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-shell-029",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-shell-029",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-shell-030",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-shell-030",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-shell-031",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-shell-031",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-shell-032",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-shell-032",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-shell-033",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-shell-033",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-shell-034",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-shell-034",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-shell-035",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-shell-035",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "automation-shell-036",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "automation-shell-036",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "php-sdk-001",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "php-sdk-001",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "php-sdk-002",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "php-sdk-002",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "php-sdk-003",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "php-sdk-003",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "php-sdk-004",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "php-sdk-004",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "php-sdk-005",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "php-sdk-005",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "php-sdk-006",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "php-sdk-006",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "php-sdk-007",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "php-sdk-007",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "php-sdk-008",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "php-sdk-008",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "php-sdk-009",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "php-sdk-009",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "php-sdk-010",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "php-sdk-010",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "php-sdk-011",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "php-sdk-011",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "php-sdk-012",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "php-sdk-012",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "python-model-001",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "python-model-001",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "python-model-002",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "python-model-002",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "python-model-003",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "python-model-003",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "python-model-004",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "python-model-004",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "python-model-005",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "python-model-005",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "python-model-006",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "python-model-006",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "python-model-007",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "python-model-007",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "python-model-008",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "python-model-008",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "python-model-009",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "python-model-009",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "python-model-010",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "python-model-010",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "python-model-011",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "python-model-011",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "python-model-012",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "python-model-012",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-auth-001",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-auth-001",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-auth-002",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-auth-002",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-auth-003",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-auth-003",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-auth-004",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-auth-004",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-auth-005",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-auth-005",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-auth-006",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-auth-006",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-auth-007",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-auth-007",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-auth-008",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-auth-008",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-auth-009",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-auth-009",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-auth-010",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-auth-010",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-auth-011",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-auth-011",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-auth-012",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-auth-012",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-auth-013",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-auth-013",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-auth-014",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-auth-014",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-auth-015",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-auth-015",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-auth-016",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-auth-016",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-auth-017",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-auth-017",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-auth-018",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-auth-018",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-auth-019",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-auth-019",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-auth-020",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-auth-020",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-auth-021",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-auth-021",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-auth-022",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-auth-022",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-auth-023",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-auth-023",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-auth-024",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-auth-024",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-auth-025",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-auth-025",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-auth-026",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-auth-026",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-auth-027",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-auth-027",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-auth-028",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-auth-028",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-auth-029",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-auth-029",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-auth-030",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-auth-030",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-auth-031",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-auth-031",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-auth-032",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-auth-032",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-auth-033",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-auth-033",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-auth-034",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-auth-034",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-auth-035",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-auth-035",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-auth-036",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-auth-036",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-credential-001",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-credential-001",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-credential-002",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-credential-002",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-credential-003",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-credential-003",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-credential-004",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-credential-004",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-credential-005",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-credential-005",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-credential-006",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-credential-006",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-credential-007",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-credential-007",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-credential-008",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-credential-008",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-credential-009",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-credential-009",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-credential-010",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-credential-010",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-credential-011",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-credential-011",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-credential-012",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-credential-012",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-credential-013",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-credential-013",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-credential-014",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-credential-014",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-credential-015",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-credential-015",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-credential-016",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-credential-016",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-credential-017",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-credential-017",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-credential-018",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-credential-018",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-credential-019",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-credential-019",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-credential-020",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-credential-020",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-credential-021",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-credential-021",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-credential-022",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-credential-022",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-credential-023",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-credential-023",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-credential-024",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-credential-024",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-credential-025",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-credential-025",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-credential-026",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-credential-026",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-credential-027",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-credential-027",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-credential-028",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-credential-028",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-credential-029",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-credential-029",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-credential-030",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-credential-030",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-credential-031",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-credential-031",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-credential-032",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-credential-032",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-credential-033",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-credential-033",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-credential-034",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-credential-034",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-credential-035",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-credential-035",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-credential-036",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-credential-036",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-token-001",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-token-001",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-token-002",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-token-002",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-token-003",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-token-003",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-token-004",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-token-004",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-token-005",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-token-005",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-token-006",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-token-006",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-token-007",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-token-007",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-token-008",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-token-008",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-token-009",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-token-009",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-token-010",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-token-010",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-token-011",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-token-011",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-token-012",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-token-012",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-token-013",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-token-013",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-token-014",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-token-014",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-token-015",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-token-015",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-token-016",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-token-016",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-token-017",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-token-017",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-token-018",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-token-018",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-token-019",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-token-019",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-token-020",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-token-020",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-token-021",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-token-021",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-token-022",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-token-022",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-token-023",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-token-023",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-token-024",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-token-024",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-token-025",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-token-025",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-token-026",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-token-026",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-token-027",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-token-027",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-token-028",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-token-028",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-token-029",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-token-029",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-token-030",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-token-030",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-token-031",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-token-031",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-token-032",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-token-032",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-token-033",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-token-033",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-token-034",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-token-034",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-token-035",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-token-035",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "service-token-036",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "service-token-036",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "typescript-mock-001",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "typescript-mock-001",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "typescript-mock-002",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "typescript-mock-002",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "typescript-mock-003",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "typescript-mock-003",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "typescript-mock-004",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "typescript-mock-004",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "typescript-mock-005",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "typescript-mock-005",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "typescript-mock-006",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "typescript-mock-006",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "typescript-mock-007",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "typescript-mock-007",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "typescript-mock-008",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "typescript-mock-008",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "typescript-mock-009",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "typescript-mock-009",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "typescript-mock-010",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "typescript-mock-010",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "typescript-mock-011",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "typescript-mock-011",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "typescript-mock-012",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "typescript-mock-012",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-auth-001",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-auth-001",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-auth-002",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-auth-002",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-auth-003",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-auth-003",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-auth-004",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-auth-004",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-auth-005",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-auth-005",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-auth-006",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-auth-006",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-auth-007",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-auth-007",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-auth-008",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-auth-008",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-auth-009",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-auth-009",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-auth-010",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-auth-010",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-auth-011",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-auth-011",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-auth-012",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-auth-012",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-auth-013",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-auth-013",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-auth-014",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-auth-014",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-auth-015",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-auth-015",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-auth-016",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-auth-016",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-auth-017",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-auth-017",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-auth-018",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-auth-018",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-auth-019",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-auth-019",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-auth-020",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-auth-020",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-auth-021",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-auth-021",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-auth-022",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-auth-022",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-auth-023",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-auth-023",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-auth-024",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-auth-024",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-auth-025",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-auth-025",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-auth-026",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-auth-026",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-auth-027",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-auth-027",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-auth-028",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-auth-028",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-auth-029",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-auth-029",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-auth-030",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-auth-030",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-auth-031",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-auth-031",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-auth-032",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-auth-032",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-auth-033",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-auth-033",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-auth-034",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-auth-034",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-auth-035",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-auth-035",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-auth-036",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-auth-036",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-html-001",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-html-001",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-html-002",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-html-002",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-html-003",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-html-003",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-html-004",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-html-004",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-html-005",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-html-005",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-html-006",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-html-006",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-html-007",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-html-007",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-html-008",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-html-008",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-html-009",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-html-009",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-html-010",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-html-010",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-html-011",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-html-011",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-html-012",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-html-012",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-html-013",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-html-013",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-html-014",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-html-014",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-html-015",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-html-015",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-html-016",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-html-016",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-html-017",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-html-017",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-html-018",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-html-018",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-html-019",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-html-019",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-html-020",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-html-020",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-html-021",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-html-021",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-html-022",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-html-022",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-html-023",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-html-023",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-html-024",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-html-024",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-html-025",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-html-025",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-html-026",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-html-026",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-html-027",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-html-027",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-html-028",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-html-028",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-html-029",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-html-029",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-html-030",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-html-030",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-html-031",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-html-031",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-html-032",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-html-032",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-html-033",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-html-033",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-html-034",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-html-034",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-html-035",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-html-035",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-html-036",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-html-036",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-sql-001",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-sql-001",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-sql-002",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-sql-002",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-sql-003",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-sql-003",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-sql-004",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-sql-004",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-sql-005",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-sql-005",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-sql-006",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-sql-006",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-sql-007",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-sql-007",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-sql-008",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-sql-008",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-sql-009",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-sql-009",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-sql-010",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-sql-010",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-sql-011",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-sql-011",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-sql-012",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-sql-012",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-sql-013",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-sql-013",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-sql-014",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-sql-014",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-sql-015",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-sql-015",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-sql-016",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-sql-016",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-sql-017",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-sql-017",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-sql-018",
+      "kind": "certificate",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-sql-018",
+      "kind": "certificate",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-sql-019",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-sql-019",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-sql-020",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-sql-020",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-sql-021",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-sql-021",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-sql-022",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-sql-022",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-sql-023",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-sql-023",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-sql-024",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-sql-024",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-sql-025",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-sql-025",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-sql-026",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-sql-026",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-sql-027",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-sql-027",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-sql-028",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-sql-028",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-sql-029",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-sql-029",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-sql-030",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-sql-030",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-sql-031",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-sql-031",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-sql-032",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-sql-032",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-sql-033",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-sql-033",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-sql-034",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-sql-034",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-sql-035",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-sql-035",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    },
+    {
+      "case_id": "web-sql-036",
+      "kind": "counterexample",
+      "transformation": "consistent-node-renaming"
+    },
+    {
+      "case_id": "web-sql-036",
+      "kind": "counterexample",
+      "transformation": "object-key-permutation"
+    }
+  ],
+  "scope": "Consistent node/origin renaming and JSON object-key permutation; ordered field/domain lists preserved.",
+  "status": "PASS",
+  "transformed_records": 720
+}

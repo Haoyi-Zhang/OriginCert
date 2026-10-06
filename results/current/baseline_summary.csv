@@ -1,0 +1,9 @@
+method,accuracy,precision,recall,true_positive,true_negative,false_positive,false_negative
+certificate_method,1.0,1.0,1.0,180,180,0,0
+global_template_lint,0.5,0.0,0.0,0,180,0,180
+default_trace_safety,0.5,0.0,0.0,0,180,0,180
+three_trace_tests,0.775,1.0,0.55,99,180,0,81
+exhaustive_trace_safety,0.8,1.0,0.6,108,180,0,72
+coverage_plus_safety,0.9,1.0,0.8,144,180,0,36
+origin_plus_safety,0.9,1.0,0.8,144,180,0,36
+origin_plus_coverage,0.7,1.0,0.4,72,180,0,108

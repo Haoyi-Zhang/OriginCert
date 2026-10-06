@@ -1,0 +1,22 @@
+{
+  "assignments": 8640,
+  "backends": [
+    "ast_record_table",
+    "template_calls"
+  ],
+  "cases": 360,
+  "decoders": [
+    "ast_record_table",
+    "template_calls"
+  ],
+  "distinct_source_forms": 8640,
+  "elapsed_seconds": 3.512646,
+  "emitted_statements_per_backend": 28570,
+  "interpretation": "The two codecs use different restricted Python surface grammars and paired syntax-only decoders; they remain reference transports for the same event relation, not independent product integrations.",
+  "roundtrips": 17280,
+  "source_bytes": {
+    "ast_record_table": 4069168,
+    "template_calls": 3863161
+  },
+  "status": "PASS"
+}

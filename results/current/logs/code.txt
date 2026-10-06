@@ -1,0 +1,18 @@
+{
+  "bare_excepts": [],
+  "dangerous_calls": [],
+  "production_asserts": [],
+  "scope": "All distributed Python files; asserts are prohibited in src/ and checker/ because -O removes them.",
+  "statistics": {
+    "classes": 11,
+    "files": 29,
+    "functions": 279,
+    "logical_lines": 6067,
+    "tests": 54
+  },
+  "status": "PASS",
+  "todo_markers": []
+}
+
+
+
