@@ -606,15 +606,22 @@ def merge_equivalent_paths(
 ) -> list[tuple[Json, list[Json], list[str]]]:
     ds = domains(schema)
     working = [(dict(cube), list(events), list(emitters)) for cube, events, emitters in paths]
+    # Payloads survive a merge unchanged. Populate lazily at the original
+    # comparison sites so malformed-input validation keeps its encounter order.
+    signatures: list[str | None] = [None] * len(working)
     changed = True
     while changed:
         changed = False
         for i in range(len(working)):
             cube_a, events_a, emitters_a = working[i]
-            sig_a = canonical_json({"events": events_a, "emitters": emitters_a})
+            if signatures[i] is None:
+                signatures[i] = canonical_json({"events": events_a, "emitters": emitters_a})
+            sig_a = signatures[i]
             for j in range(i + 1, len(working)):
                 cube_b, events_b, emitters_b = working[j]
-                if canonical_json({"events": events_b, "emitters": emitters_b}) != sig_a:
+                if signatures[j] is None:
+                    signatures[j] = canonical_json({"events": events_b, "emitters": emitters_b})
+                if signatures[j] != sig_a:
                     continue
                 differing = [
                     name
@@ -634,6 +641,7 @@ def merge_equivalent_paths(
                 merged[name] = tuple(union)
                 working[i] = (merged, events_a, emitters_a)
                 del working[j]
+                del signatures[j]
                 changed = True
                 break
             if changed:

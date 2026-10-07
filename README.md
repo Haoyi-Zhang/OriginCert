@@ -40,6 +40,14 @@ python scripts/journal_validation.py --output results/journal_validation.json
 
 The case loader skips `manifest.json`; subject identity is `case_id`. Stress and other experiments write the report requested by their caller instead of only printing JSON. Running any command updates its own outputs. Re-run the complete command before interpreting summary values across stages.
 
+For a portable pure-computation regression without rewriting saved results:
+
+```bash
+python -B -m unittest discover -s tests -p test_merge_signatures.py -v
+```
+
+The test uses authored finite inputs, an independent domain-index rectangle reference and a literal Cartesian interpreter/oracle; it also exercises the independent checker. Full test discovery in the scientific workflow includes it. The producer retains a lazily computed exact payload signature per working record within one greedy merge call; merges change only the cube, not the payload. Encounter order, type-sensitive JSON identity and the final cube order are unchanged. The retained 51- and 54-test receipts and runtime measurements predate this regression and signature reuse; neither is evidence of a measured improvement for this implementation. No minimum-cover claim is added.
+
 ## Results and measurement scope
 
 `results/summary.json` aggregates the scientific counts, bytes and evaluation measurements. `results/case_results.csv` has one row per subject. `results/reproduction.json` records actual stage completion, test count, environment and complete elapsed time. `results/tests.txt` and `test_results.json` come from the unittest runner. The `results/logs/` directory contains subprocess logs, not invented validation declarations.
