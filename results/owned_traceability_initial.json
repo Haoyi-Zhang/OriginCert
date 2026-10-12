@@ -1,0 +1,525 @@
+{
+  "clean": [
+    {
+      "certificate_cells": 34,
+      "events": 576,
+      "inputs": 144,
+      "layout": "inside",
+      "pointwise_reference_matches": 144,
+      "source_bytes": 72864
+    },
+    {
+      "certificate_cells": 34,
+      "events": 576,
+      "inputs": 144,
+      "layout": "outside",
+      "pointwise_reference_matches": 144,
+      "source_bytes": 72864
+    }
+  ],
+  "environment": {
+    "executable": "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\pdf-env\\Scripts\\python.exe",
+    "machine": "AMD64",
+    "platform": "Windows-11-10.0.28000-SP0",
+    "processor": "Intel64 Family 6 Model 151 Stepping 2, GenuineIntel",
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "workers": 1
+  },
+  "limits": [
+    "authored two-layout template, not an upstream bug or industrial sample",
+    "source is a restricted call language, not arbitrary Python runtime semantics",
+    "direct reference shares strict source parser and subject validator",
+    "same-information detection ties; no new capability unavailable to a direct validator",
+    "reuse still requires complete checking; no incremental speedup established"
+  ],
+  "measurement_scope": "in-process one warmup, seven alternating paired repetitions; generation excluded; no RSS or statistical-significance claim",
+  "restriction_reuse": [
+    {
+      "event_monitor_payloads_unchanged": true,
+      "fresh_producer_calls": 0,
+      "layout": "inside",
+      "new_cells": 34,
+      "new_inputs": 72,
+      "old_binding_rejection": "result is not bound to the supplied generator case",
+      "old_cells": 34,
+      "old_inputs": 144
+    },
+    {
+      "event_monitor_payloads_unchanged": true,
+      "fresh_producer_calls": 0,
+      "layout": "outside",
+      "new_cells": 34,
+      "new_inputs": 72,
+      "old_binding_rejection": "result is not bound to the supplied generator case",
+      "old_cells": 34,
+      "old_inputs": 144
+    }
+  ],
+  "source_faults": [
+    {
+      "certificate_only_accepts": true,
+      "direct_rejection": "source row 34: full event relation differs",
+      "fault": "wrong_existing_origin",
+      "layout": "inside",
+      "source_bound_rejection": "source row 34 input {\"admin\":true,\"batches\":2,\"channel\":\"sql\",\"edition\":\"compact\",\"items\":2,\"site\":\"primary\"} event 2 line 6: fields ['origin'] differ from emitter 'sql.primary' occurrence [0, 0]"
+    },
+    {
+      "certificate_only_accepts": true,
+      "direct_rejection": "source row 34: full event relation differs",
+      "fault": "omitted_obligation",
+      "layout": "inside",
+      "source_bound_rejection": "source row 34 input {\"admin\":true,\"batches\":2,\"channel\":\"sql\",\"edition\":\"compact\",\"items\":2,\"site\":\"primary\"} event 2 line 6: fields ['obligations'] differ from emitter 'sql.primary' occurrence [0, 0]"
+    },
+    {
+      "certificate_only_accepts": true,
+      "direct_rejection": "source row 34: full event relation differs",
+      "fault": "extra_obligation",
+      "layout": "inside",
+      "source_bound_rejection": "source row 34 input {\"admin\":true,\"batches\":2,\"channel\":\"sql\",\"edition\":\"compact\",\"items\":2,\"site\":\"primary\"} event 2 line 6: fields ['obligations'] differ from emitter 'sql.primary' occurrence [0, 0]"
+    },
+    {
+      "certificate_only_accepts": true,
+      "direct_rejection": "source row 34: full event relation differs",
+      "fault": "wrong_occurrence",
+      "layout": "inside",
+      "source_bound_rejection": "source row 34 input {\"admin\":true,\"batches\":2,\"channel\":\"sql\",\"edition\":\"compact\",\"items\":2,\"site\":\"primary\"} event 2 line 6: fields ['occurrence'] differ from emitter 'sql.primary' occurrence [0, 0]"
+    },
+    {
+      "certificate_only_accepts": true,
+      "direct_rejection": "source row 34: full event relation differs",
+      "fault": "missing_statement",
+      "layout": "inside",
+      "source_bound_rejection": "source row 34: event completeness differs (19 statements, expected 20)"
+    },
+    {
+      "certificate_only_accepts": true,
+      "direct_rejection": "source row 34: full event relation differs",
+      "fault": "duplicate_statement",
+      "layout": "inside",
+      "source_bound_rejection": "source row 34: event completeness differs (21 statements, expected 20)"
+    },
+    {
+      "certificate_only_accepts": true,
+      "direct_rejection": "source row 34: full event relation differs",
+      "fault": "ordinary_payload",
+      "layout": "inside",
+      "source_bound_rejection": "source row 34 input {\"admin\":true,\"batches\":2,\"channel\":\"sql\",\"edition\":\"compact\",\"items\":2,\"site\":\"primary\"} event 2 line 6: fields ['source'] differ from emitter 'sql.primary' occurrence [0, 0]"
+    },
+    {
+      "certificate_only_accepts": true,
+      "direct_rejection": "source bundle does not cover the schema cardinality",
+      "fault": "missing_input",
+      "layout": "inside",
+      "source_bound_rejection": "source bundle does not cover the schema cardinality"
+    },
+    {
+      "certificate_only_accepts": true,
+      "direct_rejection": "source row 34 duplicates an input",
+      "fault": "duplicate_input",
+      "layout": "inside",
+      "source_bound_rejection": "source row 34 duplicates an input"
+    },
+    {
+      "certificate_only_accepts": true,
+      "direct_rejection": "source row 34: full event relation differs",
+      "fault": "wrong_existing_origin",
+      "layout": "outside",
+      "source_bound_rejection": "source row 34 input {\"admin\":true,\"batches\":2,\"channel\":\"sql\",\"edition\":\"compact\",\"items\":2,\"site\":\"primary\"} event 2 line 6: fields ['origin'] differ from emitter 'sql.primary' occurrence [0, 0]"
+    },
+    {
+      "certificate_only_accepts": true,
+      "direct_rejection": "source row 34: full event relation differs",
+      "fault": "omitted_obligation",
+      "layout": "outside",
+      "source_bound_rejection": "source row 34 input {\"admin\":true,\"batches\":2,\"channel\":\"sql\",\"edition\":\"compact\",\"items\":2,\"site\":\"primary\"} event 2 line 6: fields ['obligations'] differ from emitter 'sql.primary' occurrence [0, 0]"
+    },
+    {
+      "certificate_only_accepts": true,
+      "direct_rejection": "source row 34: full event relation differs",
+      "fault": "extra_obligation",
+      "layout": "outside",
+      "source_bound_rejection": "source row 34 input {\"admin\":true,\"batches\":2,\"channel\":\"sql\",\"edition\":\"compact\",\"items\":2,\"site\":\"primary\"} event 2 line 6: fields ['obligations'] differ from emitter 'sql.primary' occurrence [0, 0]"
+    },
+    {
+      "certificate_only_accepts": true,
+      "direct_rejection": "source row 34: full event relation differs",
+      "fault": "wrong_occurrence",
+      "layout": "outside",
+      "source_bound_rejection": "source row 34 input {\"admin\":true,\"batches\":2,\"channel\":\"sql\",\"edition\":\"compact\",\"items\":2,\"site\":\"primary\"} event 2 line 6: fields ['occurrence'] differ from emitter 'sql.primary' occurrence [0, 0]"
+    },
+    {
+      "certificate_only_accepts": true,
+      "direct_rejection": "source row 34: full event relation differs",
+      "fault": "missing_statement",
+      "layout": "outside",
+      "source_bound_rejection": "source row 34: event completeness differs (19 statements, expected 20)"
+    },
+    {
+      "certificate_only_accepts": true,
+      "direct_rejection": "source row 34: full event relation differs",
+      "fault": "duplicate_statement",
+      "layout": "outside",
+      "source_bound_rejection": "source row 34: event completeness differs (21 statements, expected 20)"
+    },
+    {
+      "certificate_only_accepts": true,
+      "direct_rejection": "source row 34: full event relation differs",
+      "fault": "ordinary_payload",
+      "layout": "outside",
+      "source_bound_rejection": "source row 34 input {\"admin\":true,\"batches\":2,\"channel\":\"sql\",\"edition\":\"compact\",\"items\":2,\"site\":\"primary\"} event 2 line 6: fields ['source'] differ from emitter 'sql.primary' occurrence [0, 0]"
+    },
+    {
+      "certificate_only_accepts": true,
+      "direct_rejection": "source bundle does not cover the schema cardinality",
+      "fault": "missing_input",
+      "layout": "outside",
+      "source_bound_rejection": "source bundle does not cover the schema cardinality"
+    },
+    {
+      "certificate_only_accepts": true,
+      "direct_rejection": "source row 34 duplicates an input",
+      "fault": "duplicate_input",
+      "layout": "outside",
+      "source_bound_rejection": "source row 34 duplicates an input"
+    }
+  ],
+  "source_sha256": {
+    "checker/check.py": "764b87959c51ec979a4b197b10d38a206e7a2a619ad121c2cd98327df77e5eb9",
+    "checker/source_binding.py": "9ae49fe4a5301ff30255cf4cdc418bc6b7378af2c359bad86a7fcdcb34db8c8c",
+    "checker/source_extract.py": "60f231325622c0004a25958a5076900db2d87a6b5ac3fcfd81c77353be781a91",
+    "scripts/owned_traceability.py": "4f2e95396c78736a0bb8acbb69c48b83b319da7e227d3584ed44945ffaf3b0f2",
+    "src/certify.py": "3cb55f9e1ff26e57d05b4b847176cb8a9f72d02cc162943402471eeddf18fcbb",
+    "src/core.py": "7cafba3aa53e433d2898d16a59b207e038a9f307e6585e6478e1ac7a4e00f6f3",
+    "src/traceability_reference.py": "d7e31f4f2c28b03cff05fa9ebdb204a96bb02ee5c0a6834cb6feacdfd824bbb7",
+    "src/traceability_workload.py": "a382fd75bfcb11b71ae10040eb70a6cdc136a398e237e7bae7b3e864ed55798b",
+    "tests/test_owned_traceability.py": "44686b9b36907502ddee6eebaf4bfeb8caa8f4a551cf4f4063a8fb29ffd41b4b"
+  },
+  "status": "PASS",
+  "subject_faults": [
+    {
+      "checked_input": {
+        "admin": false,
+        "batches": 1,
+        "channel": "sql",
+        "edition": "compact",
+        "items": 1,
+        "site": "primary"
+      },
+      "checked_violation": {
+        "detail": "origin 'sql.fallback' does not match emit node 'sql.primary'",
+        "event_index": 2,
+        "kind": "origin",
+        "obligation": null,
+        "prefix_length": 3
+      },
+      "fault": "origin",
+      "layout": "inside",
+      "reference": {
+        "emitter": "sql.primary",
+        "event_index": 2,
+        "input": {
+          "admin": false,
+          "batches": 1,
+          "channel": "sql",
+          "edition": "compact",
+          "items": 1,
+          "site": "primary"
+        },
+        "kind": "origin"
+      }
+    },
+    {
+      "checked_input": {
+        "admin": false,
+        "batches": 1,
+        "channel": "sql",
+        "edition": "compact",
+        "items": 1,
+        "site": "primary"
+      },
+      "checked_violation": {
+        "detail": "declared obligations [] do not equal required obligations ['sql.protected']",
+        "event_index": 2,
+        "kind": "coverage",
+        "obligation": "sql.protected",
+        "prefix_length": 3
+      },
+      "fault": "omission",
+      "layout": "inside",
+      "reference": {
+        "emitter": "sql.primary",
+        "event_index": 2,
+        "input": {
+          "admin": false,
+          "batches": 1,
+          "channel": "sql",
+          "edition": "compact",
+          "items": 1,
+          "site": "primary"
+        },
+        "kind": "coverage"
+      }
+    },
+    {
+      "checked_input": {
+        "admin": false,
+        "batches": 1,
+        "channel": "sql",
+        "edition": "compact",
+        "items": 1,
+        "site": "primary"
+      },
+      "checked_violation": {
+        "detail": "declared obligations ['html.protected', 'sql.protected'] do not equal required obligations ['sql.protected']",
+        "event_index": 2,
+        "kind": "coverage",
+        "obligation": "sql.protected",
+        "prefix_length": 3
+      },
+      "fault": "extra",
+      "layout": "inside",
+      "reference": {
+        "emitter": "sql.primary",
+        "event_index": 2,
+        "input": {
+          "admin": false,
+          "batches": 1,
+          "channel": "sql",
+          "edition": "compact",
+          "items": 1,
+          "site": "primary"
+        },
+        "kind": "coverage"
+      }
+    },
+    {
+      "checked_input": {
+        "admin": false,
+        "batches": 1,
+        "channel": "sql",
+        "edition": "compact",
+        "items": 1,
+        "site": "primary"
+      },
+      "checked_violation": {
+        "detail": "value 'clean' has ['html-encode'], needs ['sql-encode']",
+        "event_index": 2,
+        "kind": "safety",
+        "obligation": "sql.protected",
+        "prefix_length": 3
+      },
+      "fault": "safety",
+      "layout": "inside",
+      "reference": {
+        "emitter": "sql.primary",
+        "event_index": 2,
+        "input": {
+          "admin": false,
+          "batches": 1,
+          "channel": "sql",
+          "edition": "compact",
+          "items": 1,
+          "site": "primary"
+        },
+        "kind": "safety"
+      }
+    },
+    {
+      "checked_input": {
+        "admin": false,
+        "batches": 1,
+        "channel": "sql",
+        "edition": "compact",
+        "items": 1,
+        "site": "primary"
+      },
+      "checked_violation": {
+        "detail": "origin 'sql.fallback' does not match emit node 'sql.primary'",
+        "event_index": 2,
+        "kind": "origin",
+        "obligation": null,
+        "prefix_length": 3
+      },
+      "fault": "origin",
+      "layout": "outside",
+      "reference": {
+        "emitter": "sql.primary",
+        "event_index": 2,
+        "input": {
+          "admin": false,
+          "batches": 1,
+          "channel": "sql",
+          "edition": "compact",
+          "items": 1,
+          "site": "primary"
+        },
+        "kind": "origin"
+      }
+    },
+    {
+      "checked_input": {
+        "admin": false,
+        "batches": 1,
+        "channel": "sql",
+        "edition": "compact",
+        "items": 1,
+        "site": "primary"
+      },
+      "checked_violation": {
+        "detail": "declared obligations [] do not equal required obligations ['sql.protected']",
+        "event_index": 2,
+        "kind": "coverage",
+        "obligation": "sql.protected",
+        "prefix_length": 3
+      },
+      "fault": "omission",
+      "layout": "outside",
+      "reference": {
+        "emitter": "sql.primary",
+        "event_index": 2,
+        "input": {
+          "admin": false,
+          "batches": 1,
+          "channel": "sql",
+          "edition": "compact",
+          "items": 1,
+          "site": "primary"
+        },
+        "kind": "coverage"
+      }
+    },
+    {
+      "checked_input": {
+        "admin": false,
+        "batches": 1,
+        "channel": "sql",
+        "edition": "compact",
+        "items": 1,
+        "site": "primary"
+      },
+      "checked_violation": {
+        "detail": "declared obligations ['html.protected', 'sql.protected'] do not equal required obligations ['sql.protected']",
+        "event_index": 2,
+        "kind": "coverage",
+        "obligation": "sql.protected",
+        "prefix_length": 3
+      },
+      "fault": "extra",
+      "layout": "outside",
+      "reference": {
+        "emitter": "sql.primary",
+        "event_index": 2,
+        "input": {
+          "admin": false,
+          "batches": 1,
+          "channel": "sql",
+          "edition": "compact",
+          "items": 1,
+          "site": "primary"
+        },
+        "kind": "coverage"
+      }
+    },
+    {
+      "checked_input": {
+        "admin": false,
+        "batches": 1,
+        "channel": "sql",
+        "edition": "compact",
+        "items": 1,
+        "site": "primary"
+      },
+      "checked_violation": {
+        "detail": "value 'clean' has ['html-encode'], needs ['sql-encode']",
+        "event_index": 2,
+        "kind": "safety",
+        "obligation": "sql.protected",
+        "prefix_length": 3
+      },
+      "fault": "safety",
+      "layout": "outside",
+      "reference": {
+        "emitter": "sql.primary",
+        "event_index": 2,
+        "input": {
+          "admin": false,
+          "batches": 1,
+          "channel": "sql",
+          "edition": "compact",
+          "items": 1,
+          "site": "primary"
+        },
+        "kind": "safety"
+      }
+    }
+  ],
+  "timings": [
+    {
+      "certificate_only_ms_not_same_task": [
+        29.8045,
+        29.9377,
+        29.8318,
+        29.5601,
+        30.2375,
+        29.4516,
+        29.6003
+      ],
+      "direct_median_ms": 37.144,
+      "direct_ms": [
+        36.5077,
+        37.144,
+        36.7326,
+        37.4916,
+        36.9586,
+        37.4097,
+        39.3409
+      ],
+      "layout": "inside",
+      "repetitions": 7,
+      "source_bound_median_ms": 84.2191,
+      "source_bound_ms": [
+        85.0197,
+        85.8823,
+        83.4272,
+        83.9883,
+        84.2191,
+        83.9631,
+        84.9301
+      ]
+    },
+    {
+      "certificate_only_ms_not_same_task": [
+        61.1959,
+        29.3362,
+        29.2182,
+        29.8156,
+        30.4953,
+        41.7563,
+        29.1688
+      ],
+      "direct_median_ms": 37.567,
+      "direct_ms": [
+        39.5477,
+        40.4141,
+        37.6866,
+        37.4124,
+        36.9656,
+        37.567,
+        37.1135
+      ],
+      "layout": "outside",
+      "repetitions": 7,
+      "source_bound_median_ms": 84.7678,
+      "source_bound_ms": [
+        84.6823,
+        88.6596,
+        84.3465,
+        84.7678,
+        84.3771,
+        94.2469,
+        90.4749
+      ]
+    }
+  ],
+  "utc_time": "2026-10-12T00:27:23.110422+00:00"
+}

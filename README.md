@@ -48,6 +48,65 @@ python -B -m unittest discover -s tests -p test_merge_signatures.py -v
 
 The test uses authored finite inputs, an independent domain-index rectangle reference and a literal Cartesian interpreter/oracle; it also exercises the independent checker. Full test discovery in the scientific workflow includes it. The producer retains a lazily computed exact payload signature per working record within one greedy merge call; merges change only the cube, not the payload. Encounter order, type-sensitive JSON identity and the final cube order are unchanged. The retained 51- and 54-test receipts and runtime measurements predate this regression and signature reuse; neither is evidence of a measured improvement for this implementation. No minimum-cover claim is added.
 
+## Owned source-to-generation workload
+
+The supplemental `src/traceability_workload.py` template writes restricted
+batch-handler source directly, without calling either existing interpreter or
+event-to-source codec. Two layouts exercise channel selection inside/outside
+nested batch/item repetitions, real primary/fallback sites with identical sink
+calls, optional checked publication, and compact/spaced formatting. Each has
+144 configurations. Source is parsed, never executed; protection names are
+explicit model labels, not validated sanitizer implementations.
+
+`checker/source_binding.py:verify_sources` adds a source-bound positive check:
+verify the certificate, require one unique in-domain file per assignment, then
+compare every parsed statement with its unique cell's complete event payload.
+Certificate-only `verify` does not receive source files and cannot detect edits
+to those files. The added check retains strict parsing and introduces explicit
+per-file/bundle byte bounds; it does not weaken existing checker checks.
+
+`src/traceability_reference.py` is the same-information direct control. It checks
+completeness against an independently enumerated assignment set, reconstructs
+actual emitters with a separate iterative stack, and interprets the workload's
+protection/preceding-check rules. It does not use certificate cells or either
+existing concrete interpreter. Both paths share the restricted source parser,
+strict JSON validation and subject validator; parser/specification independence
+is not claimed.
+
+From the artifact root, these commands do not rewrite historical outputs:
+
+```bash
+python -B -m pytest -q -p no:cacheprovider tests/test_owned_traceability.py
+python -B scripts/owned_traceability.py
+```
+
+The experiment prints its JSON receipt to stdout. The saved
+`results/owned_traceability.json` records CPython 3.12.14/Windows, exact measured
+source identities, all raw repetitions and diagnostics. There are 288 pointwise
+matches, 1,152 emitted statements, nine passing tests (plus 18 source-fault
+subtests), and 34 cells per clean layout. Both source-bound paths accept two
+clean bundles and reject all 18 source faults. Eight subject faults yield checked
+counterexamples with independently matching least inputs, first failing event
+indices and fault classes. These are authored faults, not upstream discoveries.
+
+Detection ties. Seven alternating paired repetitions after a warmup, excluding
+source/certificate production, give certificate-plus-source versus direct
+medians of 89.149 versus 26.220 ms (inside) and 90.168 versus 25.815 ms (outside).
+The certificate path is slower; no statistical-significance or throughput claim
+is made. The initial measurement receipt is retained separately as
+`results/owned_traceability_initial.json`; its reference still shared the
+source-bundle completeness frontend before that check was independently
+implemented. It is not the final independence evidence or manuscript timing
+source.
+
+Intersecting/rebinding the existing certificates to compact formatting keeps
+their 34 event/monitor payloads unchanged and validates 72 retained inputs per
+layout without fresh certificate construction. Rechecking remains necessary;
+the old unrebound certificate rejects. Mismatch diagnostics identify input,
+source line, differing fields, expected site and occurrence. A direct validator
+could offer the same reuse/diagnostic facilities. No end-to-end build-system
+integration or certificate-specific speed/detection gain is established.
+
 ## Results and measurement scope
 
 `results/summary.json` aggregates the scientific counts, bytes and evaluation measurements. `results/case_results.csv` has one row per subject. `results/reproduction.json` records actual stage completion, test count, environment and complete elapsed time. `results/tests.txt` and `test_results.json` come from the unittest runner. The `results/logs/` directory contains subprocess logs, not invented validation declarations.

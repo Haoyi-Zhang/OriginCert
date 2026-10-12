@@ -138,7 +138,7 @@ The practical benefit of separate code is that a producer fault cannot automatic
 
 ## Consequences for Partitioning, Evolution, and Diagnostics
 
-The contract has consequences that are useful when changing the producer or maintaining a generator specification. We state them separately from the soundness theorem because they specify which edits preserve evidence and which require new evidence. They are algebraic consequences of the model, not a claim that certificate reuse has already been integrated with a build system.
+The contract has consequences that are useful when changing the producer or maintaining a generator specification. We state them separately from the soundness theorem because they specify which edits preserve evidence and which require new evidence. They are algebraic consequences of the model. The owned source workload exercises schema-restriction reuse and rechecking; no build-system integration or incremental speedup is established.
 
 ### Refinement and order of positive cells
 **Proposition 2 (refinement closure).**
@@ -182,6 +182,32 @@ Consider a field with domain $[0,1,2]$ and a generator that is safe only at $0$.
 ### Observation, preservation, and invalidation together
 Table (see the corresponding manuscript section) summarizes these consequences. The distinction between preservation and invalidation is more informative than asking whether an edit leaves the operation trace unchanged. Origin edits can invalidate traceability without changing operations. Catalogue additions can invalidate declarations without changing the safety truth value. Input restrictions can preserve a positive result but alter which negative input would be least. Partition refinements can preserve all semantics while increasing certificate size.
 
-
-
 These principles do not eliminate the need to recheck a changed subject. They explain what a proposed evidence transformation must preserve. In particular, proving that an edit preserves the operation projection establishes only one part of the contract; it does not supply a missing declaration or source relation. This is the same observation boundary that motivated the original problem, now expressed as conditions on maintenance operations.
+
+## Restricted-source binding consequence
+
+An abstract certificate alone says nothing about a separately submitted source
+file. The `checker/source_binding.py` operation first verifies a positive
+certificate, checks in-domain and duplicate-free source assignment identities
+whose count equals the finite schema cardinality, then checks exact parsed-event
+equality against the unique certified cell for each assignment.
+
+By finite cardinality, those assignment identities are precisely the full
+schema. Theorem 1 gives the concrete event relation on each certified cell.
+Selecting its unique cell and checking complete ordered event equality therefore
+binds every submitted source record to the same event relation, including all
+statements, emitter claims, declarations and full occurrence paths. This argument
+assumes the restricted source decoder implements its specified grammar. It does
+not give arbitrary Python runtime semantics or validate the concrete meaning of
+a named protection. The binding operation visits every submitted source record,
+unlike positive certificate-only checking.
+
+The owned direct reference checks the same predicate by an independent
+assignment-set completeness comparison, iterative emitter reconstruction and a
+protection/preceding-check rule interpreter. Strict parsing, JSON validation and
+subject validation are shared. The two implementations tie on the tested source
+faults, and source-bound certificate validation is slower in the recorded run.
+The independent reference also agrees on all eight owned counterexamples' least
+inputs, first event indices and fault classes. These executable checks support
+the stated bounded implementations; they are not a proof of the Python source,
+an exclusive capability of certificates, or a vendor defect claim.
