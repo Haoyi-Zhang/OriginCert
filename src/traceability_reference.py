@@ -14,6 +14,51 @@ from checker.check import inspect_case, inspect_json_value
 from checker.source_extract import extract_call_events
 
 
+MAX_REFERENCE_NODES = 2_000
+MAX_REFERENCE_STEPS = 2_000_000
+MAX_REFERENCE_EVENTS = 4_096
+
+
+class ReferenceResourceError(ValueError):
+    """Operational abort, not a semantic counterexample or accepted evidence."""
+
+
+def emission_summary(root):
+    """Independent iterative postorder summary for an already validated tree.
+
+    All static children are visited, including both conditional branches. Only
+    an emit-free subtree is skipped dynamically; the summary never validates a
+    subject or replaces the shared full-tree admission check.
+    """
+    pending = [(root, False)]
+    flags, static_nodes = {}, 0
+    while pending:
+        node, expanded = pending.pop()
+        kind = node["kind"]
+        if not expanded:
+            static_nodes += 1
+            if static_nodes > MAX_REFERENCE_NODES:
+                raise ReferenceResourceError("reference summary exceeds its static-node bound")
+            pending.append((node, True))
+            if kind == "seq":
+                pending.extend((child, False) for child in reversed(node["children"]))
+            elif kind == "if":
+                pending.extend([(node["else"], False), (node["then"], False)])
+            elif kind == "repeat":
+                pending.append((node["body"], False))
+            elif kind != "emit":
+                raise ValueError("outside reference grammar")
+        elif kind == "emit":
+            flags[node["node"]] = True
+        elif kind == "seq":
+            flags[node["node"]] = any(flags[child["node"]] for child in node["children"])
+        elif kind == "if":
+            flags[node["node"]] = flags[node["then"]["node"]] or flags[node["else"]["node"]]
+        else:
+            flags[node["node"]] = flags[node["body"]["node"]]
+    return flags, static_nodes
+
+
 def key(value):
     return json.dumps(value, sort_keys=True, separators=(",", ":"), allow_nan=False)
 
@@ -27,11 +72,23 @@ def ordered_inputs(case):
     return [assignment for _, assignment in sorted(rows)]
 
 
-def reference_trace(case, assignment):
+def reference_trace(case, assignment, *, statistics=None):
+    """Reconstruct an admitted assignment with bounded work and full occurrences.
+
+    The optional successful-run counters are work observations, not timings.
+    Public validators perform full subject admission before calling this helper.
+    """
+    flags, static_nodes = emission_summary(case["generator"])
     pending = [(case["generator"], ())]
     events, emitters = [], []
+    visits = 0
     while pending:
         node, occurrence = pending.pop()
+        visits += 1
+        if visits > MAX_REFERENCE_STEPS:
+            raise ReferenceResourceError("reference execution exceeds its traversal-step bound")
+        if not flags[node["node"]]:
+            continue
         kind = node["kind"]
         if kind == "seq":
             pending.extend((child, occurrence) for child in reversed(node["children"]))
@@ -43,6 +100,8 @@ def reference_trace(case, assignment):
             pending.extend((node["body"], occurrence + (index,))
                            for index in reversed(range(assignment[node["count_field"]])))
         elif kind == "emit":
+            if len(events) >= MAX_REFERENCE_EVENTS:
+                raise ReferenceResourceError("reference execution exceeds its event bound")
             event = copy.deepcopy(node["event"])
             event.update(origin=node.get("origin_override", node["node"]),
                          obligations=list(node.get("declared_obligations", [])))
@@ -52,6 +111,8 @@ def reference_trace(case, assignment):
             emitters.append(node["node"])
         else:
             raise ValueError("outside reference grammar")
+    if statistics is not None:
+        statistics.update(static_nodes=static_nodes, node_visits=visits, emitted_events=len(events))
     return events, emitters
 
 

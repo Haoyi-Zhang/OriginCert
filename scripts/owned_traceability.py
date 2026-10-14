@@ -17,7 +17,7 @@ from checker.check import CheckFailure, verify
 from checker.source_binding import verify_sources
 from checker.source_extract import extract_call_events
 from src.certify import make_result
-from src.traceability_reference import least_failure, reference_trace, verify_direct
+from src.traceability_reference import ReferenceResourceError, least_failure, reference_trace, verify_direct
 from src.traceability_workload import (faulty_case, generate_bundle, owned_case,
                                       restrict_edition, source_mutants)
 
@@ -25,6 +25,8 @@ from src.traceability_workload import (faulty_case, generate_bundle, owned_case,
 def rejection(function):
     try:
         function()
+    except ReferenceResourceError:
+        raise  # an unfinished check is not a successfully detected source fault
     except (CheckFailure, ValueError) as error:
         return str(error)
     return None

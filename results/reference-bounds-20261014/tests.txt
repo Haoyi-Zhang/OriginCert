@@ -1,0 +1,22 @@
+test_certificate_partition_faults_remain_rejected (test_owned_traceability.OwnedTraceabilityTests.test_certificate_partition_faults_remain_rejected) ... ok
+test_diagnostic_names_actual_site_and_source_line (test_owned_traceability.OwnedTraceabilityTests.test_diagnostic_names_actual_site_and_source_line) ... ok
+test_hand_calculated_nested_identity (test_owned_traceability.OwnedTraceabilityTests.test_hand_calculated_nested_identity) ... ok
+test_pointwise_independent_source_relation (test_owned_traceability.OwnedTraceabilityTests.test_pointwise_independent_source_relation) ... ok
+test_reference_does_not_call_binding_completeness_or_existing_interpreters (test_owned_traceability.OwnedTraceabilityTests.test_reference_does_not_call_binding_completeness_or_existing_interpreters) ... ok
+test_reuse_intersects_binds_and_rechecks (test_owned_traceability.OwnedTraceabilityTests.test_reuse_intersects_binds_and_rechecks) ... ok
+test_source_only_faults_are_not_certificate_checks (test_owned_traceability.OwnedTraceabilityTests.test_source_only_faults_are_not_certificate_checks) ... ok
+test_subject_fault_diagnostics_have_independent_least_input (test_owned_traceability.OwnedTraceabilityTests.test_subject_fault_diagnostics_have_independent_least_input) ... ok
+test_unsupported_source_is_never_executed (test_owned_traceability.OwnedTraceabilityTests.test_unsupported_source_is_never_executed) ... ok
+test_declared_limits_match_the_admission_contract (test_reference_bounds.ReferenceBoundsTests.test_declared_limits_match_the_admission_contract) ... ok
+test_empty_product_is_identity_with_accounted_static_cost (test_reference_bounds.ReferenceBoundsTests.test_empty_product_is_identity_with_accounted_static_cost) ... ok
+test_empty_summary_preserves_order_and_full_nested_occurrences (test_reference_bounds.ReferenceBoundsTests.test_empty_summary_preserves_order_and_full_nested_occurrences) ... ok
+test_event_exhaustion_is_an_operational_abort (test_reference_bounds.ReferenceBoundsTests.test_event_exhaustion_is_an_operational_abort) ... ok
+test_fault_experiment_does_not_count_resource_abort_as_detection (test_reference_bounds.ReferenceBoundsTests.test_fault_experiment_does_not_count_resource_abort_as_detection) ... ok
+test_malformed_empty_tree_cannot_bypass_admission (test_reference_bounds.ReferenceBoundsTests.test_malformed_empty_tree_cannot_bypass_admission) ... ok
+test_summary_and_execution_do_not_call_existing_semantics (test_reference_bounds.ReferenceBoundsTests.test_summary_and_execution_do_not_call_existing_semantics) ... ok
+test_work_exhaustion_aborts_direct_and_least_failure_without_verdict (test_reference_bounds.ReferenceBoundsTests.test_work_exhaustion_aborts_direct_and_least_failure_without_verdict) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 2.895s
+
+OK

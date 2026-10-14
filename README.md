@@ -76,7 +76,7 @@ is not claimed.
 From the artifact root, these commands do not rewrite historical outputs:
 
 ```bash
-python -B -m pytest -q -p no:cacheprovider tests/test_owned_traceability.py
+python -B -m unittest discover -s tests -p test_owned_traceability.py -v
 python -B scripts/owned_traceability.py
 ```
 
@@ -89,7 +89,7 @@ clean bundles and reject all 18 source faults. Eight subject faults yield checke
 counterexamples with independently matching least inputs, first failing event
 indices and fault classes. These are authored faults, not upstream discoveries.
 
-Detection ties. Seven alternating paired repetitions after a warmup, excluding
+Detection ties. The retained seven alternating paired repetitions after a warmup, excluding
 source/certificate production, give certificate-plus-source versus direct
 medians of 89.149 versus 26.220 ms (inside) and 90.168 versus 25.815 ms (outside).
 The certificate path is slower; no statistical-significance or throughput claim
@@ -98,6 +98,44 @@ is made. The initial measurement receipt is retained separately as
 source-bundle completeness frontend before that check was independently
 implemented. It is not the final independence evidence or manuscript timing
 source.
+
+### Bounded direct reference: current focused receipt
+
+The direct reference now uses an independently written iterative postorder
+emit-free summary, after full shared subject admission. It caps static nodes at
+2,000, per-input dynamic visits at 2,000,000 and events at 4,096. It does not call
+either existing summary/interpreter or use certificate cells. A
+`ReferenceResourceError` is an operational abort, not a semantic counterexample;
+the owned experiment propagates it rather than counting it as detected fault.
+
+Run this portable standard-library-only command from the artifact root, choosing
+a **new** result-directory name on each run:
+
+```bash
+python -B scripts/validate_reference_bounds.py --output-dir results/reference-bounds-fresh
+```
+
+It refuses an existing output directory or a destination outside this artifact's
+`results/` tree. `results/reference-bounds-20261014/receipt.json`, `tests.txt` and
+`owned_traceability.json` retain the current CPython 3.12.14/Windows execution:
+17 methods, zero failures/errors/skips; both clean bundles accepted; the same
+18 source edits rejected by both paths; eight subject diagnostics and two
+restricted bundles checked. Empty depth-2/depth-20 controls respectively use
+3/21 static nodes and one dynamic visit, with zero events. The mixed fixture
+uses 25 static nodes, 15 dynamic visits and preserves four full nested
+occurrences. Small lowered-budget controls test aborts without a large dynamic
+expansion. No generated source is executed.
+
+The new raw paired timings include the direct summary on every reconstructed
+input, along with full subject admission, assignment enumeration/order, all
+source parsing, complete comparison and rule checks. Certificate/source
+production is excluded on both sides. Static/dynamic node counters are not
+timings. Both paths still detect the same faults; the certificate-plus-source
+path still takes longer on these two layouts. The older
+`results/owned_traceability.json` and manuscript timing table identify the
+pre-bounded-reference implementation and are preserved as historical evidence,
+not current-code timing claims. The Linux nine-stage runner was not executed by
+this focused portable command.
 
 Intersecting/rebinding the existing certificates to compact formatting keeps
 their 34 event/monitor payloads unchanged and validates 72 retained inputs per

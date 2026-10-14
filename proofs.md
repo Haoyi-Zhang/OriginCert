@@ -211,3 +211,67 @@ The independent reference also agrees on all eight owned counterexamples' least
 inputs, first event indices and fault classes. These executable checks support
 the stated bounded implementations; they are not a proof of the Python source,
 an exclusive capability of certificates, or a vendor defect claim.
+
+### Same-information correspondence and bounded direct work
+
+The implemented direct fragment has operations `source`, `protect`, `check`,
+`sink`, and `privileged`, with `protection` and `preceded` catalogue rules. Let
+`Exec(G,d)=(t_d,a_d)` for a well-formed subject in this fragment. Define the
+source-bound predicate by:
+
+1. Source-row identities are in-domain, unique, and exactly the full finite
+   assignment set.
+2. For each assignment, restricted decoding yields exactly `t_d` under canonical
+   JSON identity, including ordinary fields, origin, declaration-list order,
+   and the full dynamic occurrence vector.
+3. The complete origin, declaration-set coverage and safety contract holds at
+   that assignment. Declaration coverage is set equality even though the source
+   comparison also preserves the list representation.
+
+Assume the restricted parser grammar and all admission, traversal, comparison
+and monitor operations remain within their declared bounds. The direct stack
+invariant is that the emitted prefix followed by pending executions is exactly
+the concrete execution. Reversed child/iteration insertion preserves sequence
+order; equality selects the same branch; each repeat appends its index to the
+whole occurrence prefix. Emit reconstruction records the actual node separately
+from the subject's public claim. Induction over a failure-free event prefix gives
+the same protection/capability state as the monitor, with checks before updates,
+and therefore the same first failure. Comparing the enumerated assignment set
+establishes item 1; full source equality and the independent rule fold establish
+items 2 and 3. Thus direct acceptance is exactly this predicate.
+
+For any positive certificate already accepted for the same subject, Theorem 1
+establishes item 3 and the exact generated relation. The complete source-binding
+operation checks items 1 and 2. Hence both paths accept the same bundles under
+these premises. This is a correspondence of algorithms on the stated fragment,
+not a proof of the Python runtime or a detection capability exclusive to
+certificates.
+
+The direct reference independently computes an iterative postorder summary.
+For emit the flag is true; for sequence it is the disjunction of child flags;
+for a conditional it is the disjunction of both branch flags; for repeat it is
+the body's flag. Structural induction proves a false flag has empty output for
+every assignment. Skipping such a validated subtree preserves events, actual
+emitters and occurrences because it contributes nothing. No invalid subtree is
+admitted through this summary: both public validators first validate the whole
+subject. The summary makes one enter and one exit per static node. Successful
+run counters report static nodes separately from dynamic node visits; these are
+not wall-clock measurements.
+
+Static nodes are bounded by 2,000, each reconstructed input's dynamic visits by
+2,000,000 and events by 4,096. Resource exhaustion raises
+`ReferenceResourceError`, which propagates through the direct validator, least
+failure search, and owned fault experiment without becoming a semantic verdict.
+The complete direct-check cost includes shared subject admission, assignment
+construction/order, the per-input static pass and dynamic visits, every file's
+strict parsing, canonical event comparison and rule evaluation. Unit-cost node
+counts do not include byte-level JSON/copy/parser costs.
+
+`tests/test_reference_bounds.py` preserves eight focused anchors: empty-output
+identity at depths 2/20 with static costs, semantic implementation separation,
+full-tree admission, mixed empty/emitting order and occurrences, work abort,
+event abort, no abort-as-detection, and matching declared limits. The new offline
+entry point `scripts/validate_reference_bounds.py` runs these and the existing
+nine owned tests into a fresh local result directory. Its current receipt keeps
+the 2 clean acceptances, 18 source-fault rejections, 8 least diagnostics and 2
+restricted bundles separate from historical measurements.
