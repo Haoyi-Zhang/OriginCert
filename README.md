@@ -173,3 +173,13 @@ The first command intentionally overwrites `paper/results.tex` and `paper/scalin
 The mathematical trusted boundary includes the supplied schema, tree, event abstraction and catalogue. The implementation trusted boundary includes the independently written Python checker, parser, runtime and their conformance to the stated mathematics. The project neither checks a vendor executable against that tree nor proves that a catalogue represents every relevant weakness.
 
 The inherited BSD 3-Clause license notice is retained unchanged. The manuscript byline does not add an assertion about copyright ownership or author approval.
+
+## Manuscript diagrams
+
+The model and protocol schematics are drawn directly in Python as vector PDFs
+with embedded STIX fonts. They encode the stated relationships, not measured
+performance. To regenerate them with Python 3.9+ and Matplotlib:
+
+```sh
+python -B figures/draw_schematics.py --output figures
+```
