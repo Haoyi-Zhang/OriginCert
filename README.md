@@ -162,7 +162,6 @@ The standalone scientific command does not read a sibling paper directory. In th
 ```bash
 python scripts/export_paper_results.py --paper-dir ../paper
 python scripts/audit_references.py --paper-dir ../paper
-python scripts/audit_writing.py --paper-dir ../paper
 ```
 
 The first command intentionally overwrites `paper/results.tex` and `paper/scaling.csv` with the current run. The delivered PDF retains the included run's numbers; an independent clean-run check should compare scientific values but need not replace the retained timings. Compile the manuscript using the commands in `paper/README.md`.
