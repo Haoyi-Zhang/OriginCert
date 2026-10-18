@@ -18,7 +18,7 @@
     }
   ],
   "environment": {
-    "executable": "C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+    "executable": "<PYTHON_ROOT>\\python.exe",
     "machine": "AMD64",
     "platform": "Windows-11-10.0.28000-SP0",
     "processor": "Intel64 Family 6 Model 151 Stepping 2, GenuineIntel",

@@ -1,6 +1,6 @@
 {
   "command": [
-    "C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+    "<PYTHON_ROOT>\\python.exe",
     "-B",
     "scripts/validate_reference_bounds.py",
     "--output-dir",
