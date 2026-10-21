@@ -1,42 +1,58 @@
 #!/usr/bin/env python3
-"""Bind the manuscript to one retained successful scientific run.
+"""Export a selected successful run and freshly render its paper plots.
 
-Explicit paper destination keeps the standalone scientific command independent
-of LaTeX files. Running this after a new run intentionally updates measurements.
+Default retained mode preserves the strict published CSV snapshot check.
+Use --mode selected-run --results-dir PATH for intentional new-run exports.
+This paper-only command does not run an experiment or compile TeX.
 """
-import argparse, json, shutil
+import argparse
+import importlib.util
+import json
 from pathlib import Path
-ROOT = Path(__file__).resolve().parents[1]
+import shutil
+import subprocess
+import sys
+import tempfile
+
+ROOT=Path(__file__).resolve().parents[1]
+
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--paper-dir", type=Path, required=True)
+    parser.add_argument('--paper-dir',type=Path,required=True)
+    parser.add_argument('--results-dir',type=Path,default=ROOT/'results')
+    parser.add_argument('--mode',choices=('retained','selected-run'),default='retained')
     args=parser.parse_args()
-    s=json.loads((ROOT/"results/summary.json").read_text(encoding="utf-8"))
-    r=json.loads((ROOT/"results/reproduction.json").read_text(encoding="utf-8"))
-    t=json.loads((ROOT/"results/test_results.json").read_text(encoding="utf-8"))
-    if r.get("status") != "PASS" or t.get("status") != "PASS":
-        raise SystemExit("A successful retained reproduction and test run are required")
-    p=s["performance"]
-    values={
-      "TestCount": str(r["tests_run"]),
-      "CertBytes": f'{s["certificate"]["median_bytes"]:,.0f}',
-      "CertPBytes": f'{s["certificate"]["p95_bytes"]:,.0f}',
-      "CexBytes": f'{s["counterexample"]["median_bytes"]:,.0f}',
-      "ProdMedian": f'{p["producer_median_ms"]:.3f}',
-      "ProdPfive": f'{p["producer_p95_ms"]:.3f}',
-      "CheckMedian": f'{p["checker_median_ms"]:.3f}',
-      "CheckPfive": f'{p["checker_p95_ms"]:.3f}',
-      "EvalTime": f'{p["evaluation_wall_seconds"]:.3f}',
-      "EvalRSS": f'{p["evaluation_peak_rss_kib"]:,}',
-      "FullTime": f'{r["elapsed_seconds"]:.3f}',
-      "FullRSS": f'{r["peak_rss_kib"]:,}',
-    }
-    args.paper_dir.mkdir(parents=True, exist_ok=True)
-    text="% Numerical values exported from one successful retained scientific run.\n"
-    for k,v in values.items():
-        text += "\\newcommand{\\"+k+"}{"+v+"}\n"
-    (args.paper_dir/"results.tex").write_text(text,encoding="utf-8")
-    shutil.copyfile(ROOT/"results/scaling_study.csv",args.paper_dir/"scaling.csv")
-    print(json.dumps({"status":"PASS","values":values},indent=2))
-if __name__ == "__main__":
+    paper=args.paper_dir.resolve()
+    # A failed attempt must not leave cached PDFs available as apparent success.
+    for name in ('main.pdf','figures/recall.pdf','figures/scaling.pdf'):
+        (paper/name).unlink(missing_ok=True)
+    if not (paper/'figures/draw_evaluation.py').is_file():
+        raise ValueError('The destination must contain the paper CSV renderer')
+    spec=importlib.util.spec_from_file_location('paper_evaluation_data',paper/'figures/evaluation_data.py')
+    data=importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(data)
+    summary=data.load_json(args.results_dir/'summary.json')
+    reproduction=data.load_json(args.results_dir/'reproduction.json')
+    tests=data.load_json(args.results_dir/'test_results.json')
+    values=data.export_values(summary,reproduction,tests)
+    text='% Numerical values exported from one successful retained scientific run.\n'
+    for key,value in values.items():
+        text+='\\newcommand{\\'+key+'}{'+value+'}\n'
+    # Do not publish changed numbers until both real plots have succeeded.
+    with tempfile.TemporaryDirectory(prefix='paper-export-',dir=paper) as directory:
+        stage=Path(directory)
+        (stage/'figures').mkdir()
+        (stage/'results.tex').write_text(text,encoding='utf-8',newline='')
+        (stage/'summary.json').write_text(json.dumps(summary,allow_nan=False),encoding='utf-8')
+        shutil.copyfile(args.results_dir/'scaling_study.csv',stage/'scaling.csv')
+        (stage/'figures/recall.csv').write_text(data.recall_csv(summary),encoding='utf-8',newline='')
+        command=[sys.executable,*(['-S'] if sys.flags.no_site else []),'-B',str(paper/'figures/draw_evaluation.py'),
+                 '--mode',args.mode,'--data-dir',str(stage),'--output-dir',str(stage/'figures'),
+                 '--summary',str(stage/'summary.json')]
+        subprocess.run(command,check=True)
+        for name in ('results.tex','scaling.csv','figures/recall.csv','figures/recall.pdf','figures/scaling.pdf'):
+            (stage/name).replace(paper/name)
+    print(json.dumps({'status':'PASS','mode':args.mode,'values':values,'plots_freshly_rendered':True},indent=2))
+
+if __name__=='__main__':
     main()

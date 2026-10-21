@@ -160,11 +160,27 @@ The accepted-certificate cell distribution is 3 cells: 3 records; 4 cells: 98; 6
 The standalone scientific command does not read a sibling paper directory. In the complete project, these separate commands bind a selected run to manuscript numbers and audit citation structure:
 
 ```bash
-python scripts/export_paper_results.py --paper-dir ../paper
+python -B scripts/export_paper_results.py --paper-dir ../paper --mode retained
 python scripts/audit_references.py --paper-dir ../paper
 ```
 
-The first command intentionally overwrites `paper/results.tex` and `paper/scaling.csv` with the current run. The delivered PDF retains the included run's numbers; an independent clean-run check should compare scientific values but need not replace the retained timings. Compile the manuscript using the commands in `paper/README.md`.
+The first command validates the successful retained receipts and CSV snapshot,
+then freshly renders the two Python vector plots before publishing numerical
+exports (`results.tex`, `scaling.csv`, `figures/recall.csv`) and their PDFs. It
+requires the paper renderer's ReportLab and TeX font lookup; failure is nonzero
+and invalidates cached statistical/manuscript PDFs. These dependencies do not
+apply to the standalone scientific command.
+
+To intentionally export a different completed run of the same experiment,
+choose it explicitly with `--mode selected-run --results-dir /path/to/results`.
+This mode retains schema, finite-number, millisecond-unit, row/cardinality and
+recall-count/denominator validation; it is not a validation bypass. Default
+`retained` mode continues to reject changes to its snapshots. No experiment is
+run by the exporter. The delivered measurements remain retained history; an
+independent clean-run check need not replace them. From `paper/`, `python -B
+build.py` performs export, actual plotting, bibliography rendering and TeX in
+that order, stopping on failure. See `paper/README.md` for explicit run selection
+and paper-only regressions.
 
 ## Interpretation of audits
 
