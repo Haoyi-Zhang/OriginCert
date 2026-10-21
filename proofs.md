@@ -21,7 +21,7 @@ Bibliographic keys below resolve in the accompanying paper. The standalone code 
 ### A safe operation trace with two wrong explanations
 Figure (see the corresponding manuscript section) separates three versions of a small generated trace. The first has correct origins and declarations. The second omits the database operation's applicable obligation. The third attributes that operation to a different emit node. Both modified traces retain the sanitization operation and the database operation with the same ordinary arguments. Therefore a monitor whose inputs are only those operations returns the same safety verdict for all three.
 
-\input{figures/motivating.tex}
+[Motivating trace example](figures/motivating.pdf)
 
 Using a nonexistent node makes the origin failure visually obvious, but existence is not the contract. Replacing the correct identifier with that of a different, real emit node is also a failure. An origin-membership check cannot distinguish this case. Exact traversal-derived equality can. Similarly, declaration coverage is not a count: replacing one required obligation with a different obligation can preserve the number of declared items while breaking the relation.
 
