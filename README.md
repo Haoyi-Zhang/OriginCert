@@ -147,6 +147,26 @@ integration or certificate-specific speed/detection gain is established.
 
 ## Results and measurement scope
 
+The separate owned path-structure study varies relevant branches rather than
+unused coordinates. Nine binary trees cover 511 original inputs; eight checked
+restrictions cover 255 retained inputs. At depth eight, the generator has 1,023
+nodes, 255 branches and 256 distinct origin-bearing certificate cells. The
+unchanged verifier performs 32,640 overlap comparisons. Restriction reuses
+payloads without calling the producer but still requires full checking; no
+timing gain or external-generator integration is claimed. The paper directly
+consumes `results/path-structure/table.tex` from this study.
+
+```sh
+python -B -m unittest discover -s tests -p test_path_structure.py -v
+python -O -B -m unittest discover -s tests -p test_path_structure.py -v
+python -B scripts/path_structure.py --out /new/path-study --compare results/path-structure
+```
+
+The last command refuses an existing output directory and compares all summary
+fields, the table, and decompressed case/certificate records. Compression
+container bytes do not determine scientific agreement. Its counts are separate
+from the retained 360-subject run and its measurements below.
+
 `results/summary.json` aggregates the scientific counts, bytes and evaluation measurements. `results/case_results.csv` has one row per subject. `results/reproduction.json` records actual stage completion, test count, environment and complete elapsed time. `results/tests.txt` and `test_results.json` come from the unittest runner. The `results/logs/` directory contains subprocess logs, not invented validation declarations.
 
 `evaluation_wall_seconds` measures the 360-subject evaluation; `reproduction_wall_seconds` inside the performance block is the core stage (including construction/tests); `complete_reproduction_wall_seconds` includes all scientific stages. Fresh runs legitimately change elapsed time and RSS. Scientific comparisons must not discard classification, case count, size, violation or oracle fields when normalizing those performance fields.

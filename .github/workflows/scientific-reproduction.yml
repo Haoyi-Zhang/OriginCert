@@ -19,6 +19,12 @@ jobs:
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
         with:
           python-version: '3.12'
+      - name: Check relevant paths and retained certificate reuse
+        shell: bash
+        run: |
+          python -B -m unittest discover -s tests -p test_path_structure.py -v
+          python -O -B -m unittest discover -s tests -p test_path_structure.py -v
+          python -B scripts/path_structure.py --out "$RUNNER_TEMP/path-structure-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT" --compare results/path-structure
       - name: Run reviewed Python model stages in a fresh copy
         timeout-minutes: 26
         shell: python
